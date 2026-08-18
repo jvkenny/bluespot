@@ -52,7 +52,9 @@ support them. Serve the viewer with the stdlib Range-capable server instead:
 
 Rebuild artifacts: `pipeline/fetch_dem.py` → `pipeline/fetch_water.py` →
 `pipeline/bluespot.py --chunked` → `pipeline/pools.py` →
-`pipeline/make_pmtiles.sh` (see docs/METHOD.md).
+`pipeline/make_pmtiles.sh` (see docs/METHOD.md), then the rain scenarios:
+`pipeline/scenario.py --chunked` → `pipeline/make_scenario_pmtiles.sh`
+(see docs/MODEL.md).
 
 Status: internal development. Coverage: the full City of Chicago (pilot was
 North Center / Roscoe Village / Lincoln Square).

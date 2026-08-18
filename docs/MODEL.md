@@ -66,3 +66,67 @@ compute buffer, so pools near the AOI edge under-collect; uniform C and D
 ignore land cover and the real sewer network entirely; the cascade has no
 timing (an event is a single bucket of water); NOAA Atlas 15 mid-century
 bookmark waits on publication.
+
+## Citywide (v0.3, 2026-08-18, `scenario.py --chunked`)
+
+The pilot ran the whole AOI as one domain. The city does not fit: a
+single-domain solve of Chicago would be ~2×10⁹ cells. So the citywide run
+mirrors `bluespot.py`'s chunking exactly — **one chunk per USGS 10 km DEM
+tile, core plus a 1 km halo** read from a VRT mosaic pinned to the 18
+IL_4_County_QL1_LiDAR_2016 tiles that meet the city (`select_tiles`; the
+Drive DEM folder is shared and also holds other projects and wider-area
+tiles, so the mosaic is selected by project + AOI, never by a bare glob).
+Each chunk runs in **its own subprocess** — the arrays are large enough that
+allocator retention across chunks, not any single chunk, is what pushes RSS
+up. Peak RSS is ~6.6 GB per chunk (12k × 12k domain) and returns to zero
+between chunks.
+
+### What chunking costs, and why the halo is 1 km
+Fill, D8 routing, catchment accumulation and the spill cascade are **all
+solved per chunk**, so all three truncate at the halo:
+
+- a pool whose contributing area reaches more than 1 km past its tile core
+  **under-collects** — the missing upslope cells simply never load it;
+- a spill cascade that would continue past the halo is cut short, and the
+  residual is counted as exported rather than stored downstream.
+
+Both push the same way: **chunking biases stored volume LOW**, and the bias
+concentrates near chunk seams and on features with long contributing areas
+(rail trenches, the Des Plaines and Calumet valleys, expressway corridors).
+
+The halo width was chosen by measurement, not assertion. The downtown tile
+(x44y464 — the Eisenhower trench, the biggest pool in the city) was solved
+twice, at 1 km and 2 km halo, and the **identical** 10 km core compared:
+
+| bookmark | core stored, 1 km halo | 2 km halo | change |
+|---|---|---|---|
+| 1.0″ | 228,238 m³ | 229,359 m³ | +0.49% |
+| 3.34″ | 1,674,258 m³ | 1,697,670 m³ | +1.38% |
+| 7.58″ | 3,268,916 m³ | 3,329,694 m³ | +1.83% |
+| 8.57″ | 3,556,986 m³ | 3,626,620 m³ | +1.92% |
+| static full fill | 11,528,063 m³ | 11,954,305 m³ | +3.57% |
+
+Doubling the halo — 1.5× the runtime, 8.5 GB peak — moves the rain
+scenarios by under 2%. Two things are worth saying about that table:
+
+1. The rain scenarios are **less** halo-sensitive than the static fill
+   (≤1.92% vs 3.57%). That is the expected direction: outside the largest
+   basins these scenarios are *load*-limited, not *capacity*-limited, so
+   giving a seam-adjacent pool more capacity changes nothing unless there is
+   also more water to put in it.
+2. 1 km keeps the scenario layers on **exactly the same fill domains, and
+   therefore the same pool geometry, as the shipped static depth COG**,
+   which was built by `bluespot.py` at a 1 km halo. That makes "every rain
+   stop is a subset of the max layer" true cell-by-cell rather than merely
+   on average — the invariant the viewer's rain control is built on.
+
+So: 1 km, with the ~0.5–2% low bias on stored volume stated rather than
+hidden. A single-domain citywide solve remains the only way to remove it.
+
+### Mass balance
+Every chunk checks, per bookmark, that `loaded = stored + exported` over its
+whole domain (halo included) — loaded being net rain depth × catchment area
+summed over pools. Observed relative imbalance is at float round-off,
+|ε| < 1e-14, against a 0.1% bug threshold. Citywide wet% and stored volume,
+by contrast, are accumulated from the **cropped, city-masked cores only**, so
+neither halo overlap nor cross-chunk double counting can inflate them.
