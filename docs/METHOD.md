@@ -78,8 +78,9 @@ continues outside the product.
 ## Web delivery (pipeline/make_pmtiles.sh, pipeline/serve.py)
 Depth and terrain ship as PMTiles archives (GDAL MBTiles + `pmtiles
 convert`): depth PNG z11–16 (1 m source; z17 would ~4× the archive for
-sub-pixel gain), terrain WEBP z11–15 from a 2 m decimation, alpha-masked to
-the city. Archives live on Drive (`bluespot-data/citywide/`), reached from
+sub-pixel gain), terrain PNG z11–15 from a 2 m decimation, alpha-masked to
+the city (PNG, not WEBP: GDAL's MBTiles WEBP writer drops the alpha
+band, blacking out the outside-city part of edge tiles). Archives live on Drive (`bluespot-data/citywide/`), reached from
 the repo via the gitignored `viewer/data` symlink. PMTiles requires HTTP
 Range requests, which `python -m http.server` does not honor — use
 `pipeline/serve.py` (stdlib, Range-capable).

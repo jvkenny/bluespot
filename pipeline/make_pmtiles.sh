@@ -6,8 +6,11 @@
 #             would roughly quadruple the archive for sub-pixel gain — the
 #             viewer overzooms with nearest resampling instead)
 #   terrain : multidirectional hillshade * hypsometric tint, alpha-masked to
-#             the city polygon, WEBP tiles, z11..15 (built from a 2 m
-#             decimation of the DEM; an underlay does not need 1 m)
+#             the city polygon, PNG tiles, z11..15 (built from a 2 m
+#             decimation of the DEM; an underlay does not need 1 m).
+#             PNG, not WEBP: GDAL's MBTiles WEBP writer encodes VP8 without
+#             the alpha band, which turns the outside-city area of edge
+#             tiles black instead of transparent.
 #
 # Requires: GDAL CLI (/opt/homebrew/bin), pmtiles (brew install pmtiles).
 # Usage: pipeline/make_pmtiles.sh <depth_cog.tif> <dem_mosaic.vrt> \
@@ -94,7 +97,7 @@ with rasterio.open(f"{d}/blend.tif", "w", **prof) as out:
 PY
 $G/gdalwarp -q -of VRT -t_srs EPSG:3857 -r bilinear $DIR/blend.tif $DIR/blend_3857.vrt
 echo "[terrain] mbtiles z15"
-$G/gdal_translate -q -of MBTILES -co TILE_FORMAT=WEBP \
+$G/gdal_translate -q -of MBTILES -co TILE_FORMAT=PNG \
   -co ZOOM_LEVEL_STRATEGY=LOWER $DIR/blend_3857.vrt $DIR/terrain.mbtiles
 $G/gdaladdo -q -r average $DIR/terrain.mbtiles 2 4 8 16
 pmtiles convert $DIR/terrain.mbtiles $OUT/terrain.pmtiles
