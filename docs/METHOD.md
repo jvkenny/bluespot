@@ -1,4 +1,8 @@
-# Method — bluespot depth layer (v1, citywide)
+# Method — bluespot depth layer (v1 citywide, v2 regional)
+
+Sections 1-5 describe the method. The **Regional extension**
+section near the end covers what changes at 7-county scale; the
+method itself does not change, only the machinery around it.
 
 1. **DEM**: USGS 3DEP 1m bare-earth DEM (`pipeline/fetch_dem.py`, TNM API,
    provenance in `<data_root>/dem/MANIFEST.jsonl` on Drive). Citywide: 18
@@ -44,6 +48,177 @@ Two pilot-vs-citywide deltas are understood and expected:
   cells vs 0.26M with correct assembly). v1's ring stitching fixes this;
   pilot wet% is unchanged (13.74 → 13.75) because the false mask was
   scattered rather than concentrated in wet areas.
+
+## Regional extension (v2 — the 7-county CMAP region)
+
+Coverage grows from the City of Chicago (606 km2, 18 DEM tiles) to Cook,
+DuPage, Kane, Kendall, Lake, McHenry and Will counties: 10,348 km2 of land,
+124 DEM tiles, 27 GB of raw elevation. The fill method is unchanged. Four
+things about the region are worth stating plainly.
+
+### Multiple lidar vintages, and where the seams are
+The city sat inside a single 2016 acquisition. The region does not. Across
+the 7 counties TNM offers 1-3 overlapping projects for most 10 km cells, so
+`pipeline/fetch_dem_region.py` picks exactly ONE project per cell from a
+priority list rather than taking whatever sorts first. That makes vintage
+seams follow acquisition boundaries deliberately instead of checkerboarding
+cell by cell. The chosen mix:
+
+| project | cells | published |
+|---|---|---|
+| IL_4_County_QL1_LiDAR_2016_B16 | 105 | 2024-11-18 |
+| IL_10CountyNRCS_D23 | 8 | 2026-04-04 |
+| IL LaSalle B2 2017 | 6 | 2020-03-30 |
+| IL_MidNorth_D22 | 3 | 2023-10-31 |
+| IL LaSalle B1 2017 | 2 | 2020-03-30 |
+
+IL_4_County_QL1 ranks first for two reasons: it alone covers 85% of the
+region as one consistent acquisition, and it is the acquisition the citywide
+product was built from, so pinning it keeps the regional product identical
+to the citywide one over Chicago (verified — see the consistency check in the
+repo report). The remaining 19 cells form a fringe on the western and
+southern edges.
+
+**Cross-vintage seams are a real caveat.** Where a 2016 cell abuts a 2023 or
+2017 cell, the two sides were flown years apart with different sensors and
+processing. Ground that was regraded in between — new subdivisions, detention
+basins, highway work — changes across the seam, and a depression straddling
+one is filled from two slightly different surfaces. Depths near those
+boundaries should be read as approximate. Every tile's project and
+publication date is recorded in `<data_root>/dem/MANIFEST.jsonl`, and the
+full selection (including the alternatives rejected per cell) in
+`<data_root>/regional/dem_plan.json`, so any seam can be traced to its two
+acquisitions.
+
+### Hollow tiles, and a second pass
+A tile listed by TNM for a cell is not a promise that the cell has data. At
+the ragged edge of an acquisition, 3DEP publishes tiles whose bounding box
+covers the ground but whose contents are almost entirely nodata. Choosing
+one of those by vintage priority leaves the cell empty even when a different
+project offers a full tile for the same ground. The first regional fill lost
+2,923 km2 of AOI land this way and left DuPage County 53% covered.
+
+`pipeline/fetch_dem_gapfill.py` is the second pass: it measures the true
+per-cell coverage from the first fill's own full-resolution statistics,
+downloads the alternatives for under-covered cells, and
+`bluespot_region.py`'s `vrt_order()` then sorts the mosaic so the preferred
+acquisition is drawn last. GDAL treats a source's nodata as transparent, so
+the preferred vintage wins wherever it genuinely has data and the fallbacks
+show through only in its holes. This is why a vintage seam can now fall
+*inside* a 10 km cell rather than only on cell boundaries — a strictly
+better trade than a hole, and every contributing tile is still recorded in
+MANIFEST.jsonl.
+
+A methodological warning worth keeping: **decimated reads lie about
+coverage.** Sampling these tiles through their overviews reported several as
+0% valid that are 54.8% valid at full resolution. Any coverage figure here
+is measured at full resolution.
+
+### A real hole in coverage: Will County
+After the second pass every county is at least 99% covered except Will,
+which sits at **15%**. That gap is real, not a selection artifact: TNM
+returns zero 1 m DEM products over west and southwest Will, and the tiles it
+does list across much of the rest of the county are the hollow kind
+described above, with no populated alternative from any project. Lidar was
+flown (IL_19County_D24, point cloud published 2026-04-28) but no raster
+derivative has been released, and deriving a DEM from raw point clouds is
+out of scope here.
+
+**Will County's row in the table below is a 325 km2 sample of a 2,165 km2
+county and must not be read as describing Will County.** The regional map
+has a large visible blank there. This is also why the table reports covered
+area next to legal land area: a wet-% over an unstated denominator is a
+misleading number.
+
+### The biggest regional "pools" are quarries
+At city scale the deepest bowls were highway trenches. At regional scale
+they are working limestone quarries along the Des Plaines and Sag corridors,
+and they dominate the volume ranking: #1 is Thornton Quarry at 108 m and
+123 million m3, #2 a 116 m pit at McCook, and several more in the top ten.
+Terrain screening is doing exactly what it claims — finding holes in the
+ground — but a quarry is a hole on purpose, sometimes (Thornton, McCook) a
+stormwater reservoir on purpose. Any presentation of the pool ranking has to
+say so; the viewer's source note does.
+
+### Per-county results
+Depth >= 5 cm, over cells the product can actually see. "covered" is that
+visible land against the county's TIGER land area.
+
+| county | covered km2 | % of land | wet >=5cm | >=15cm | >=30cm | >=1m | max m | volume Mm3 |
+|---|---|---|---|---|---|---|---|---|
+| Cook | 2,429 | 99% | 15.42% | 10.11% | 6.51% | 1.92% | 116.07 | 344.6 |
+| Will* | 325 | 15% | 13.13% | 10.32% | 8.05% | 3.89% | 35.20 | 42.9 |
+| Kane | 1,333 | 99% | 11.97% | 9.02% | 6.62% | 2.21% | 34.43 | 104.2 |
+| Lake | 1,136 | 99% | 11.66% | 8.58% | 6.35% | 2.32% | 14.65 | 80.8 |
+| DuPage | 846 | 100% | 11.27% | 7.93% | 5.43% | 1.62% | 57.65 | 56.6 |
+| McHenry | 1,546 | 99% | 9.92% | 7.28% | 5.33% | 1.79% | 11.92 | 96.8 |
+| Kendall | 823 | 99% | 7.56% | 5.09% | 3.28% | 0.77% | 42.14 | 43.8 |
+| **region** | **8,438** | **82%** | **12.09%** | | | | **116.08** | **769.7** |
+
+\* Will is a 15% sample, not a county figure — see above.
+
+Cook is the wettest and Kendall the driest, and the ordering is roughly
+urban-to-rural: the flat, built-up, heavily regraded east holds more water
+per unit area than the rolling moraine country to the west and north. Cook's
+116 m maximum is the McCook quarry, not a neighbourhood.
+
+### Consistency with the citywide product
+The region clipped to the City of Chicago gives **20.20%** wet >= 5 cm
+against the citywide product's **18.74%** over the same boundary. The
+Eisenhower/Greektown pool reproduces exactly — 8.41 m, 2,240,805 m3, the
+citywide figures — so the method is unchanged and the difference is in what
+the two products can see. A cell-by-cell comparison over the city splits it
+into two causes:
+
+| | area | citywide wet | regional wet |
+|---|---|---|---|
+| valid in both products | 585.5 km2 | 109.7 km2 | 115.8 km2 |
+| valid only in the regional product | 9.1 km2 | — | 4.4 km2 |
+| valid only in the citywide product | 0.0 km2 | — | — |
+
+1. **Halo context (about +1.04 points).** Values differ on 11.7 km2 —
+   roughly 2% — of the shared area, and always in the direction of more
+   water. The citywide mosaic was 18 tiles, so chunks at the city edge had
+   nodata beyond them and the domain edge acted as an artificial outlet,
+   draining depressions that straddle the city line. In the region those
+   chunks see real suburban terrain for a kilometre in every direction, so
+   those depressions fill instead of draining. Everywhere further than the
+   halo reach from an edge, the two rasters are bit-identical.
+2. **Extra coverage (about +0.42 points).** The region sees 9.1 km2 of the
+   city the citywide 18-tile mosaic never covered, and that sliver is 48%
+   wet — it is mostly edge-of-mosaic ground along the waterways. Nothing
+   goes the other way: there is no cell the citywide product covers and the
+   regional one does not.
+
+The regional number is the better one; the citywide one is the more
+conservative. Neither is a correction of the other.
+
+### Chunking at 124 tiles: one process per chunk
+The citywide run did every chunk inside one python process and its RSS crept
+from ~4 GB to 9.2 GB, because freed numpy blocks are retained by the
+allocator and `skimage.morphology.reconstruction` leaves large transients.
+That is survivable over 18 chunks and not over 124. `pipeline/bluespot_region.py`
+runs each chunk in its own subprocess, so every byte returns to the OS at
+chunk exit and peak memory is one chunk's worth regardless of chunk count —
+measured 2-5 GB per worker, 3 workers concurrently. Two other scale changes:
+water polygons are bbox-filtered to the chunk before rasterizing (the
+regional OSM water file holds 22,009 polygons; rasterizing all of them into
+each of 124 windows is pure waste), and per-chunk stats are written to
+`chunkstats/` so an interrupted run resumes without recomputing.
+
+The 1 km halo and its trade-off are unchanged from the citywide method
+(above) — but note the region contains genuinely long depressions (the Des
+Plaines and Fox valleys, the I&M canal corridor) where the halo assumption
+bites harder than it does inside the city.
+
+### Denominators, and the lake
+The AOI is the **legal** TIGER county polygons, so Cook and Lake extend
+miles out into Lake Michigan. No DEM exists there, so those cells are nodata
+and drop out of every statistic. Reported "land cells" therefore means
+"land this product can actually see", which is what the per-county table's
+covered-km2 column makes explicit. Keeping the legal boundary (rather than
+drawing our own coastline) also means the pools `edge_truncated` test fires
+on real land edges of the region.
 
 ## Known limits (say these out loud in any UI)
 - Terrain screening, not hydraulics: no sewers, culverts, infiltration, or

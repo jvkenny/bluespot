@@ -1,0 +1,33 @@
+{
+ "raster": "data/raw/region_depth_cog.tif",
+ "total": {
+  "land_cells": 594675146,
+  "covered_km2": 594.7,
+  "wet_cells_5cm": 120130476,
+  "wet_pct_5cm": 20.2,
+  "volume_m3": 152607037,
+  "windows_read": 595,
+  "secs": 140
+ },
+ "counties": [
+  {
+   "county": "CHICAGO",
+   "geoid": null,
+   "aland_km2": 0.0,
+   "covered_km2": 594.7,
+   "covered_pct_of_land": null,
+   "land_cells": 594675146,
+   "wet_cells_5cm": 120130476,
+   "wet_pct_5cm": 20.2,
+   "wet_pct_15cm": 12.63,
+   "wet_pct_30cm": 7.78,
+   "wet_pct_1m": 1.85,
+   "volume_m3": 51962211,
+   "max_depth_m": 14.22,
+   "max_depth_xy": [
+    448472.4996929798,
+    4637402.500320533
+   ]
+  }
+ ]
+}

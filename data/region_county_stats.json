@@ -1,0 +1,147 @@
+{
+ "raster": "data/raw/region_depth_cog.tif",
+ "total": {
+  "land_cells": 8438208943,
+  "covered_km2": 8438.2,
+  "wet_cells_5cm": 1020225064,
+  "wet_pct_5cm": 12.09,
+  "volume_m3": 769717871,
+  "windows_read": 595,
+  "secs": 325
+ },
+ "counties": [
+  {
+   "county": "Cook",
+   "geoid": "17031",
+   "aland_km2": 2447.3,
+   "covered_km2": 2428.9,
+   "covered_pct_of_land": 99.2,
+   "land_cells": 2428882259,
+   "wet_cells_5cm": 374510100,
+   "wet_pct_5cm": 15.42,
+   "wet_pct_15cm": 10.11,
+   "wet_pct_30cm": 6.51,
+   "wet_pct_1m": 1.92,
+   "volume_m3": 344625716,
+   "max_depth_m": 116.07,
+   "max_depth_xy": [
+    428885.4996897904,
+    4627652.500317358
+   ]
+  },
+  {
+   "county": "Will",
+   "geoid": "17197",
+   "aland_km2": 2164.9,
+   "covered_km2": 325.2,
+   "covered_pct_of_land": 15.0,
+   "land_cells": 325249388,
+   "wet_cells_5cm": 42705925,
+   "wet_pct_5cm": 13.13,
+   "wet_pct_15cm": 10.32,
+   "wet_pct_30cm": 8.05,
+   "wet_pct_1m": 3.89,
+   "volume_m3": 42902759,
+   "max_depth_m": 35.2,
+   "max_depth_xy": [
+    412454.49968711485,
+    4613409.50031272
+   ]
+  },
+  {
+   "county": "Kane",
+   "geoid": "17089",
+   "aland_km2": 1344.9,
+   "covered_km2": 1333.1,
+   "covered_pct_of_land": 99.1,
+   "land_cells": 1333055012,
+   "wet_cells_5cm": 159596233,
+   "wet_pct_5cm": 11.97,
+   "wet_pct_15cm": 9.02,
+   "wet_pct_30cm": 6.62,
+   "wet_pct_1m": 2.21,
+   "volume_m3": 104207642,
+   "max_depth_m": 34.43,
+   "max_depth_xy": [
+    390608.4996835575,
+    4628624.500317675
+   ]
+  },
+  {
+   "county": "Lake",
+   "geoid": "17097",
+   "aland_km2": 1149.1,
+   "covered_km2": 1136.2,
+   "covered_pct_of_land": 98.9,
+   "land_cells": 1136160208,
+   "wet_cells_5cm": 132492118,
+   "wet_pct_5cm": 11.66,
+   "wet_pct_15cm": 8.58,
+   "wet_pct_30cm": 6.35,
+   "wet_pct_1m": 2.32,
+   "volume_m3": 80778033,
+   "max_depth_m": 14.65,
+   "max_depth_xy": [
+    403855.49968571455,
+    4690417.500337799
+   ]
+  },
+  {
+   "county": "DuPage",
+   "geoid": "17043",
+   "aland_km2": 849.1,
+   "covered_km2": 846.2,
+   "covered_pct_of_land": 99.7,
+   "land_cells": 846185215,
+   "wet_cells_5cm": 95329409,
+   "wet_pct_5cm": 11.27,
+   "wet_pct_15cm": 7.93,
+   "wet_pct_30cm": 5.43,
+   "wet_pct_1m": 1.62,
+   "volume_m3": 56637264,
+   "max_depth_m": 57.65,
+   "max_depth_xy": [
+    420903.4996884906,
+    4639276.500321143
+   ]
+  },
+  {
+   "county": "McHenry",
+   "geoid": "17111",
+   "aland_km2": 1562.8,
+   "covered_km2": 1546.1,
+   "covered_pct_of_land": 98.9,
+   "land_cells": 1546057302,
+   "wet_cells_5cm": 153400400,
+   "wet_pct_5cm": 9.92,
+   "wet_pct_15cm": 7.28,
+   "wet_pct_30cm": 5.33,
+   "wet_pct_1m": 1.79,
+   "volume_m3": 96812244,
+   "max_depth_m": 11.92,
+   "max_depth_xy": [
+    400654.49968519335,
+    4704246.500342302
+   ]
+  },
+  {
+   "county": "Kendall",
+   "geoid": "17093",
+   "aland_km2": 829.4,
+   "covered_km2": 822.6,
+   "covered_pct_of_land": 99.2,
+   "land_cells": 822619559,
+   "wet_cells_5cm": 62190879,
+   "wet_pct_5cm": 7.56,
+   "wet_pct_15cm": 5.09,
+   "wet_pct_30cm": 3.28,
+   "wet_pct_1m": 0.77,
+   "volume_m3": 43754213,
+   "max_depth_m": 42.14,
+   "max_depth_xy": [
+    378672.49968161393,
+    4592695.500305974
+   ]
+  }
+ ]
+}

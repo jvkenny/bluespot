@@ -47,6 +47,58 @@ download records live in `<data_root>/dem/MANIFEST.jsonl` on Google Drive
    7.58 in for the Chicago area). The 1.0 in bookmark is a reference
    nuisance rain, not a design storm.
 
+6. US Census Bureau TIGER/Line Shapefiles 2024 — Counties (and equivalent),
+   https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip
+   Retrieved 2026-08-17. Extracted by `pipeline/make_region_aoi.sh` to the
+   7-county CMAP region (Illinois, STATEFP 17; COUNTYFP 031 Cook, 043 DuPage,
+   089 Kane, 093 Kendall, 097 Lake, 111 McHenry, 197 Will) and saved as
+   `data/aoi/region-cmap7.geojson` in EPSG:4326, one feature per county with
+   NAME/GEOID/ALAND/AWATER retained. 10,348 km2 of land. These are the LEGAL
+   county polygons, so Cook and Lake include their Lake Michigan water areas
+   (1,786 and 2,395 km2) where no DEM exists; those cells are nodata in the
+   product. Public domain.
+
+7. USGS 3DEP 1 meter DEM, regional coverage (`pipeline/fetch_dem_region.py`,
+   TNM Access API, same endpoint as source 1). Retrieved 2026-08-17/18.
+   124 10 km tiles, 26.9 GB, selected one-project-per-cell from 302 candidate
+   products by the priority list in that script; the full per-tile plan
+   (project, publicationDate, URL, alternatives rejected) is written to
+   `<data_root>/regional/dem_plan.json` and per-tile download records to
+   `<data_root>/dem/MANIFEST.jsonl`. Projects used:
+   IL_4_County_QL1_LiDAR_2016_B16 (105 cells, pub. 2024-11-18),
+   IL_10CountyNRCS_D23 (8, pub. 2026-04-04),
+   IL LaSalle B2 2017 (6, pub. 2020-03-30),
+   IL_MidNorth_D22 (3, pub. 2023-10-31),
+   IL LaSalle B1 2017 (2, pub. 2020-03-30).
+   A second pass (`pipeline/fetch_dem_gapfill.py`, retrieved 2026-08-18)
+   added 62 more tiles, 10.6 GB, for cells where the first-choice product
+   turned out to be almost entirely nodata: 186 tiles / 38 GB in total,
+   backing 124 distinct 10 km cells. Where a cell holds more than one tile
+   the mosaic composites them with the priority project on top (see
+   docs/METHOD.md). Gap-fill tiles are flagged `"role": "gapfill"` in
+   MANIFEST.jsonl and add these projects: IL KankakeeCo 2014,
+   IL 12-County-KaneCo 2008, IL McHenryCo 2008, IL LaSalle B2 2017,
+   IL Boone 2018, IN_Indiana_Statewide_LiDAR_2017_B17.
+   Coverage caveat: Will County has only 15% of its land covered by any
+   published 3DEP 1 m DEM — TNM returns zero 1 m DEM products over west and
+   southwest Will, and most of the tiles it does list elsewhere in the county
+   are empty with no populated alternative. Lidar for that area exists as an
+   unprocessed point cloud (IL_19County_D24, published 2026-04-28), but no
+   DEM raster derivative has been released and deriving one from raw LPC is
+   out of scope. Every other county is at least 99% covered. Public domain.
+
+8. OpenStreetMap water polygons, regional extent
+   (`pipeline/fetch_water_region.py`): the same Overpass query as source 2,
+   issued over a 5x4 grid of sub-bboxes covering the region AOI + 0.02 deg,
+   merged and deduplicated by OSM element id. Retrieved 2026-08-18.
+   (c) OpenStreetMap contributors, ODbL. Drainage outlets only, not displayed.
+   22,009 polygons (21,333 ways + 676 relations, including the Lake Michigan
+   multipolygon relation 1205149 assembled from ~750 member ways).
+   Working names for the top 60 regional pools reverse-geocoded from OSM
+   Nominatim (1 req/s), retrieved 2026-08-18. These are nearest-feature
+   labels, not curated place names — several name a road beside the feature
+   rather than the feature itself, and the deepest ones are quarries.
+
 Planned (not yet used — verify before relying on):
 - NLCD Tree Canopy Cover + Impervious Surface (MRLC), for the shade/heat layer.
 - Landsat Collection 2 surface temperature, for block-scale heat exposure.

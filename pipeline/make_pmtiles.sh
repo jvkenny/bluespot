@@ -12,19 +12,30 @@
 #             the alpha band, which turns the outside-city area of edge
 #             tiles black instead of transparent.
 #
+# Env overrides (defaults reproduce the citywide build exactly):
+#   DECIM_PCT  terrain DEM decimation, percent of source (default 50 = 2 m).
+#              Set 25 (= 4 m) for the region: a z15 tile is ~3.6 m/px at this
+#              latitude, so 2 m source buys nothing there and would put a
+#              ~21 GB intermediate through hillshade/tint/blend.
+#   WORKDIR    scratch dir for intermediates (default mktemp -d). The region
+#              needs tens of GB and /tmp may be smaller than you think.
+#   ONLY       "depth" or "terrain" to build just one (default both).
+#
 # Requires: GDAL CLI (/opt/homebrew/bin), pmtiles (brew install pmtiles).
 # Usage: pipeline/make_pmtiles.sh <depth_cog.tif> <dem_mosaic.vrt> \
-#          <city.geojson> <out_dir>
+#          <mask.geojson> <out_dir>
 # Writes <out_dir>/depth.pmtiles and <out_dir>/terrain.pmtiles.
 set -e
 G=/opt/homebrew/bin
 DEPTH=$1; DEMVRT=$2; CITY=$3; OUT=$4
-DIR=$(mktemp -d); trap "rm -rf $DIR" EXIT
+DECIM_PCT=${DECIM_PCT:-50}
+if [ -n "$WORKDIR" ]; then DIR=$WORKDIR; mkdir -p $DIR
+else DIR=$(mktemp -d); trap "rm -rf $DIR" EXIT; fi
 mkdir -p $OUT
 
 # ---- depth --------------------------------------------------------------
-if [ -f $OUT/depth.pmtiles ]; then
-  echo "[depth] $OUT/depth.pmtiles exists, skipping"
+if [ -f $OUT/depth.pmtiles ] || [ "$ONLY" = terrain ]; then
+  echo "[depth] skipping"
 else
 cat > $DIR/ramp.txt <<RAMP
 nv 0 0 0 0
@@ -39,7 +50,8 @@ nv 0 0 0 0
 RAMP
 echo "[depth] colorize"
 $G/gdaldem color-relief -q $DEPTH $DIR/ramp.txt $DIR/rgba.tif \
-  -alpha -nearest_color_entry -co COMPRESS=DEFLATE -co TILED=YES
+  -alpha -nearest_color_entry -co COMPRESS=DEFLATE -co TILED=YES \
+  -co BIGTIFF=IF_SAFER -co NUM_THREADS=ALL_CPUS
 $G/gdalwarp -q -of VRT -t_srs EPSG:3857 -r bilinear $DIR/rgba.tif $DIR/rgba_3857.vrt
 echo "[depth] mbtiles z16"
 $G/gdal_translate -q -of MBTILES -co TILE_FORMAT=PNG \
@@ -51,15 +63,16 @@ ls -la $OUT/depth.pmtiles
 fi
 
 # ---- terrain ------------------------------------------------------------
-if [ -f $OUT/terrain.pmtiles ]; then
-  echo "[terrain] $OUT/terrain.pmtiles exists, skipping"; exit 0
+if [ -f $OUT/terrain.pmtiles ] || [ "$ONLY" = depth ]; then
+  echo "[terrain] skipping"; exit 0
 fi
-echo "[terrain] 2m dem"
-$G/gdal_translate -q -outsize 50% 50% -r average $DEMVRT $DIR/dem2m.tif \
-  -co COMPRESS=DEFLATE -co TILED=YES
+echo "[terrain] decimating dem to ${DECIM_PCT}%"
+$G/gdal_translate -q -outsize ${DECIM_PCT}% ${DECIM_PCT}% -r average \
+  $DEMVRT $DIR/dem2m.tif \
+  -co COMPRESS=DEFLATE -co TILED=YES -co BIGTIFF=IF_SAFER -co NUM_THREADS=ALL_CPUS
 echo "[terrain] hillshade + tint"
 $G/gdaldem hillshade -q -multidirectional -compute_edges $DIR/dem2m.tif $DIR/hs.tif \
-  -co COMPRESS=DEFLATE -co TILED=YES
+  -co COMPRESS=DEFLATE -co TILED=YES -co BIGTIFF=IF_SAFER
 cat > $DIR/tint.txt <<RAMP
 nv 0 0 0
 172 138 152 134
@@ -71,7 +84,7 @@ nv 0 0 0
 195 193 168 133
 RAMP
 $G/gdaldem color-relief -q $DIR/dem2m.tif $DIR/tint.txt $DIR/tint.tif \
-  -co COMPRESS=DEFLATE -co TILED=YES
+  -co COMPRESS=DEFLATE -co TILED=YES -co BIGTIFF=IF_SAFER
 echo "[terrain] blend + city-mask alpha (windowed)"
 PY="$(cd "$(dirname "$0")/.." && pwd)/.venv/bin/python"
 $PY - $DIR $CITY <<'PY'
@@ -83,7 +96,7 @@ hs = rasterio.open(f"{d}/hs.tif"); tint = rasterio.open(f"{d}/tint.tif")
 city = [transform_geom("EPSG:4326", tint.crs, f["geometry"])
         for f in json.load(open(city_path))["features"]]
 prof = tint.profile
-prof.update(count=4, compress="deflate", tiled=True)
+prof.update(count=4, compress="deflate", tiled=True, BIGTIFF="IF_SAFER")
 with rasterio.open(f"{d}/blend.tif", "w", **prof) as out:
     for _, win in tint.block_windows(1):
         h = hs.read(1, window=win).astype("float32") / 255.0
