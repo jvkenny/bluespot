@@ -2,10 +2,12 @@
 """Fetch USGS 3DEP 1m DEM tiles intersecting an AOI, via the TNM Access API.
 
 Usage: fetch_dem.py data/aoi/<name>.geojson
-Writes tiles to data/raw/ and appends provenance to data/raw/MANIFEST.jsonl.
+Writes tiles to <data_root>/dem/ (Google Drive by default; see paths.py)
+and appends provenance to MANIFEST.jsonl there.
 Idempotent: skips tiles already fully downloaded.
 """
 import json, os, sys, urllib.request, urllib.parse, datetime
+from paths import data_root
 
 TNM = "https://tnmaccess.nationalmap.gov/api/v1/products"
 DATASET = "Digital Elevation Model (DEM) 1 meter"
@@ -23,7 +25,7 @@ def bbox_of(geojson_path):
     return min(xs), min(ys), max(xs), max(ys)
 
 def main(aoi_path):
-    raw = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
+    raw = os.path.join(data_root(), "dem")
     os.makedirs(raw, exist_ok=True)
     bbox = ",".join(str(v) for v in bbox_of(aoi_path))
     q = urllib.parse.urlencode({"datasets": DATASET, "bbox": bbox,

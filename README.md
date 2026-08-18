@@ -31,8 +31,9 @@ number traceable to a cited public source — built for residents, not agencies.
 ## Layout
 
 - `pipeline/` — fetch + analysis (Python/GDAL/QGIS-grade raster work)
-- `data/` — AOI definitions and source manifest (`raw/` and `derived/` are
-  gitignored; heavy artifacts are backed up to Drive, sources re-fetchable)
+- `data/` — AOI definitions and source manifest. Heavy data (raw DEMs,
+  region-scale outputs) lives primarily on Google Drive (`bluespot-data/`,
+  see `pipeline/paths.py`); local `data/raw/` is only a transient cache
 - `viewer/` — MapLibre globe → neighborhood scrollytelling front end
 - `docs/` — method notes
 

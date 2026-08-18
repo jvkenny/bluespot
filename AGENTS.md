@@ -10,9 +10,13 @@ Hard rules:
   prediction — any UI or prose presenting it must say so. No dollar-cost
   claims. Every dataset gets an entry in data/SOURCES.md with URL + retrieval
   date before it is used.
-- `data/raw/` and `data/derived/` are gitignored: raw inputs must be
-  re-fetchable by script from public sources; large derived artifacts are
-  backed up to the maintainer's Google Drive (folder: bluespot-data).
+- **Large data lives on Google Drive, not local disk** (folder
+  `bluespot-data/`, resolved by `pipeline/paths.py`; override with
+  $BLUESPOT_DATA_ROOT). Raw DEMs download to `<data_root>/dem/` on Drive.
+  Local `data/raw/` is a transient cache only — safe to delete, never the
+  primary copy. `data/derived/` holds small AOI-scale outputs; region-scale
+  derived artifacts also go to Drive. Everything must stay re-fetchable or
+  re-computable by script from public sources.
 - Private repo until the maintainer explicitly says to publish. Never enable
   GitHub Pages or make the repo public without being asked.
 
