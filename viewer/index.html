@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Bluespot — where the water wants to go</title>
 <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
 <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
@@ -29,6 +30,19 @@
   #stops button span{font-size:9.5px;color:#8B877B;letter-spacing:.01em}
   #stops button.on{background:var(--terra);border-color:var(--terra);color:#FDFCF8}
   #stops button.on span{color:rgba(253,252,248,.85)}
+  #search{top:14px;left:50%;transform:translateX(-50%);padding:6px 8px;width:min(360px,52vw)}
+  #search form{display:flex;gap:6px;align-items:center}
+  #search input{flex:1;font-family:var(--serif);font-size:14px;color:var(--ink);
+    background:none;border:none;outline:none;padding:3px 4px}
+  #search input::placeholder{color:#8B877B;font-style:italic}
+  #search button{font-family:var(--serif);font-size:13px;background:none;cursor:pointer;
+    border:1px solid rgba(38,36,30,.18);border-radius:6px;padding:3px 9px;color:var(--ink)}
+  #results{list-style:none;margin:4px 0 0;padding:0;max-height:210px;overflow:auto}
+  #results:empty{margin:0}
+  #results li{font-size:13px;padding:5px 6px;border-radius:6px;cursor:pointer;line-height:1.3}
+  #results li:hover,#results li:focus{background:rgba(181,82,47,.10)}
+  #results li.msg{cursor:default;color:#8B877B;font-style:italic}
+  #results li.msg:hover{background:none}
   #legend{bottom:14px;left:14px;padding:8px 12px;font-size:12px}
   #legend .row{display:flex;gap:10px;align-items:center}
   #legend i{width:16px;height:11px;border-radius:2px;display:inline-block;vertical-align:-1px}
@@ -49,6 +63,11 @@
 <body>
 <div id="map"></div>
 <div class="chip" id="title"><b>Bluespot</b><span>where the water wants to go</span></div>
+<div class="chip" id="search">
+  <form id="geo"><input id="q" placeholder="find an address or place…"
+    autocomplete="off" spellcheck="false"><button type="submit">go</button></form>
+  <ul id="results"></ul>
+</div>
 <div class="chip" id="cap"></div>
 <div class="chip" id="legend">
   <div class="row">
@@ -74,7 +93,7 @@
   IL 4-County QL1 2016 over most of the region) · deep pools near the Des Plaines
   and Sag corridors are working limestone quarries, not flood hollows ·
   west Will County has no 3DEP 1m coverage and is blank ·
-  water &amp; names © OpenStreetMap · county boundaries US Census TIGER 2024 ·
+  water, names &amp; address search © OpenStreetMap (Nominatim) · county boundaries US Census TIGER 2024 ·
   city boundary Chicago Data Portal ·
   basemap Esri World Topo · design storms ISWS Bulletins 70 &amp; 75
   (NE Illinois, 24-hr) · rain scenarios assume uniform runoff C&nbsp;=&nbsp;0.55
@@ -87,6 +106,7 @@ maplibregl.addProtocol('pmtiles', protocol.tile);
 const REGION_BOUNDS = [-88.7074,41.2016,-87.0199,42.4956];  // 7-county CMAP, for framing
 // Where the regional rasters actually hold data (no DEM over Lake Michigan).
 const REGION_DATA_BOUNDS = [-88.8264,41.1775,-87.4770,42.5414];
+const DATA_MINZOOM = 11;   // lowest zoom present in the PMTiles archives
 const CITY_BOUNDS = [-87.9401,41.6445,-87.5241,42.0231];
 const PILOT_BOUNDS = [-87.7205,41.9295,-87.6595,41.9705];
 const pm = n => ({type:'raster',url:'pmtiles://'+P+'data/citywide/depth_'+n+'.pmtiles',tileSize:256,bounds:CITY_BOUNDS});
@@ -153,7 +173,14 @@ function step(i){
   if(i>=steps.length){ endTour(); return; }
   touring=true;
   const s=steps[i];
-  if(s.fit) map.fitBounds(s.fit,{padding:60,duration:2600,essential:true});
+  if(s.fit){
+    // The regional PMTiles archives start at z11; framing the whole region
+    // lands near z10, where no tiles exist and the map reads empty. Fit when
+    // that is >= DATA_MINZOOM, otherwise sit at DATA_MINZOOM over the middle.
+    const cam=map.cameraForBounds(s.fit,{padding:60});
+    if(cam && cam.zoom>=DATA_MINZOOM) map.fitBounds(s.fit,{padding:60,duration:2600,essential:true});
+    else map.flyTo({center:cam?cam.center:[-87.87,41.85],zoom:DATA_MINZOOM,speed:0.5,curve:1.6,essential:true});
+  }
   else map.flyTo({...s.v, essential:true});
   map.once('moveend',()=>{ if(!touring) return; setCap(s.c);
     tourTimer=setTimeout(()=>{ setCap(null); tourTimer=setTimeout(()=>step(i+1),650); }, s.dwell); });
@@ -204,15 +231,79 @@ function setScn(id){
     map.setLayoutProperty(s.layer,'visibility',showDepth&&s.id===scn?'visible':'none');
   // Regional full-fill only makes sense against the citywide full-fill; on a
   // scenario stop it would misread as that storm's regional result.
-  map.setLayoutProperty('bluespot-region','visibility',showDepth&&scn==='full'?'visible':'none');
+  if(typeof syncRegionLayers==='function') syncRegionLayers();
 }
 setScn(scn);
 
-const T={'tg-terrain':['terrain','terrain-region'],'tg-pools':['pool-line','pool-pt','pool-name']};
+const T={'tg-terrain':['terrain'],'tg-pools':['pool-line','pool-pt','pool-name']};
 for(const[id,layers]of Object.entries(T))
   document.getElementById(id).onchange=e=>layers.forEach(l=>
     map.setLayoutProperty(l,'visibility',e.target.checked?'visible':'none'));
 document.getElementById('tg-depth').onchange=()=>setScn(scn);
+document.getElementById('tg-terrain').addEventListener('change',syncRegionLayers);
+// The regional archive is coarser than the citywide one (whole-region render).
+// Below the city it adds nothing but blocky bleed through the city layer's
+// transparent pixels, so inside Chicago at detail zooms the finer product wins.
+function inCity(c){ return c.lng>=CITY_BOUNDS[0]&&c.lng<=CITY_BOUNDS[2]
+                        &&c.lat>=CITY_BOUNDS[1]&&c.lat<=CITY_BOUNDS[3]; }
+function syncRegionLayers(){
+  const hide = map.getZoom()>13.5 && inCity(map.getCenter());
+  const depthOn = document.getElementById('tg-depth').checked && scn==='full' && !hide;
+  const terrOn  = document.getElementById('tg-terrain').checked && !hide;
+  if(map.getLayer('bluespot-region'))
+    map.setLayoutProperty('bluespot-region','visibility',depthOn?'visible':'none');
+  if(map.getLayer('terrain-region'))
+    map.setLayoutProperty('terrain-region','visibility',terrOn?'visible':'none');
+}
+map.on('moveend',syncRegionLayers);
+
+// --- address search -------------------------------------------------------
+// OpenStreetMap Nominatim: free, no key, no tracking. Results are biased to
+// the seven-county region and capped at one request per submit (their usage
+// policy asks for <= 1/s and no autocomplete-as-you-type).
+const qEl=document.getElementById('q'), resEl=document.getElementById('results');
+let marker=null, searching=false;
+function say(t){ resEl.innerHTML=''; const li=document.createElement('li');
+  li.className='msg'; li.textContent=t; resEl.appendChild(li); }
+function goTo(r){
+  resEl.innerHTML=''; qEl.value=r.display_name.split(',').slice(0,3).join(',');
+  if(touring) endTour();
+  if(marker) marker.remove();
+  marker=new maplibregl.Marker({color:'#B5522F'})
+    .setLngLat([+r.lon,+r.lat])
+    .setPopup(new maplibregl.Popup({offset:26}).setHTML(
+      `<b>${r.display_name.split(',').slice(0,2).join(',')}</b>`+
+      `<br><i>is this block a bowl? zoom in and look</i>`))
+    .addTo(map);
+  map.flyTo({center:[+r.lon,+r.lat],zoom:16.4,speed:0.7,curve:1.5,essential:true});
+  marker.togglePopup();
+}
+document.getElementById('geo').addEventListener('submit',async ev=>{
+  ev.preventDefault();
+  const q=qEl.value.trim();
+  if(!q||searching) return;
+  searching=true; say('searching…');
+  try{
+    const u=new URL('https://nominatim.openstreetmap.org/search');
+    u.search=new URLSearchParams({q,format:'jsonv2',limit:'6',addressdetails:'0',
+      countrycodes:'us',viewbox:REGION_BOUNDS.join(','),bounded:'1'});
+    const rows=await (await fetch(u)).json();
+    if(!rows.length){ say('nothing found in the seven counties'); return; }
+    resEl.innerHTML='';
+    for(const r of rows){
+      const li=document.createElement('li');
+      li.tabIndex=0; li.textContent=r.display_name.split(',').slice(0,4).join(', ');
+      li.onclick=()=>goTo(r);
+      li.onkeydown=e=>{ if(e.key==='Enter') goTo(r); };
+      resEl.appendChild(li);
+    }
+  }catch(err){ say('search unavailable — try again'); }
+  finally{ searching=false; }
+});
+document.addEventListener('click',e=>{
+  if(!document.getElementById('search').contains(e.target)) resEl.innerHTML='';
+});
+
 map.on('click','pool-pt',e=>{
   const p=e.features[0].properties;
   new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
