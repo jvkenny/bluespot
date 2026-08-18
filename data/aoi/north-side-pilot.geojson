@@ -1,0 +1,39 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "north-side-pilot",
+    "note": "North Center / Roscoe Village / Lincoln Square edges, Chicago"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -87.7205,
+       41.9295
+      ],
+      [
+       -87.6595,
+       41.9295
+      ],
+      [
+       -87.6595,
+       41.9705
+      ],
+      [
+       -87.7205,
+       41.9705
+      ],
+      [
+       -87.7205,
+       41.9295
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
