@@ -15,9 +15,19 @@
   #title{top:14px;left:14px;padding:8px 14px}
   #title b{font-size:18px;letter-spacing:-.01em}
   #title span{font-style:italic;color:#5C594F;font-size:13px;margin-left:8px}
-  #cap{left:50%;transform:translateX(-50%);bottom:64px;max-width:560px;text-align:center;
+  #cap{left:50%;transform:translateX(-50%);bottom:96px;max-width:560px;text-align:center;
     padding:12px 22px;font-size:19px;line-height:1.45;opacity:0;transition:opacity .6s}
   #cap.on{opacity:1}
+  #rain{left:50%;transform:translateX(-50%);bottom:14px;padding:7px 10px;text-align:center}
+  #rain .q{font-style:italic;color:#5C594F;font-size:11.5px;margin-bottom:4px}
+  #rain .q b{font-style:normal;color:var(--terra);font-weight:600}
+  #stops{display:flex;gap:4px}
+  #stops button{font-family:var(--serif);background:none;border:1px solid rgba(38,36,30,.18);
+    border-radius:7px;padding:4px 9px 3px;cursor:pointer;color:var(--ink);line-height:1.15}
+  #stops button b{display:block;font-size:14px}
+  #stops button span{font-size:9.5px;color:#8B877B;letter-spacing:.01em}
+  #stops button.on{background:var(--terra);border-color:var(--terra);color:#FDFCF8}
+  #stops button.on span{color:rgba(253,252,248,.85)}
   #legend{bottom:14px;left:14px;padding:8px 12px;font-size:12px}
   #legend .row{display:flex;gap:10px;align-items:center}
   #legend i{width:16px;height:11px;border-radius:2px;display:inline-block;vertical-align:-1px}
@@ -49,9 +59,16 @@
     <label><input type="checkbox" id="tg-pools" checked>pools</label>
   </div>
 </div>
+<div class="chip" id="rain">
+  <div class="q">how much rain? <b id="rain-wet"></b></div>
+  <div id="stops"></div>
+</div>
 <div class="chip" id="foot"><b>terrain screening, not a flood prediction</b> ·
   <details><summary>sources</summary> USGS 3DEP 1m lidar DEM (IL 4-County QL1) ·
-  water &amp; names © OpenStreetMap · basemap Esri World Topo</details></div>
+  water &amp; names © OpenStreetMap · basemap Esri World Topo ·
+  design storms ISWS Bulletins 70 &amp; 75 (NE Illinois, 24-hr) ·
+  scenarios assume uniform runoff C&nbsp;=&nbsp;0.55 and 10&nbsp;mm/event sewer
+  capture — stated assumptions, not data (pipeline/scenario.py)</details></div>
 <button id="skip">skip tour</button>
 <script>
 const P = location.origin + location.pathname.replace(/index\.html$/,'');
@@ -66,6 +83,10 @@ const map = new maplibregl.Map({
         tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP'},
       terrain:{type:'raster',tiles:[P+'tiles/terrain/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
       depth:{type:'raster',tiles:[P+'tiles/depth/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
+      depth_r10:{type:'raster',tiles:[P+'tiles/depth_r10/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
+      depth_b75_2yr:{type:'raster',tiles:[P+'tiles/depth_b75_2yr/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
+      depth_b70_100yr:{type:'raster',tiles:[P+'tiles/depth_b70_100yr/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
+      depth_b75_100yr:{type:'raster',tiles:[P+'tiles/depth_b75_100yr/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
       pools:{type:'geojson',data:P+'north-side-pilot_pools.geojson'},
       labels:{type:'geojson',data:P+'north-side-pilot_pool_labels.geojson'}
     },
@@ -73,6 +94,10 @@ const map = new maplibregl.Map({
       {id:'base',type:'raster',source:'esri'},
       {id:'terrain',type:'raster',source:'terrain',paint:{'raster-opacity':0.85}},
       {id:'bluespot',type:'raster',source:'depth',paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
+      {id:'bluespot-r10',type:'raster',source:'depth_r10',layout:{visibility:'none'},paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
+      {id:'bluespot-b75_2yr',type:'raster',source:'depth_b75_2yr',layout:{visibility:'none'},paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
+      {id:'bluespot-b70_100yr',type:'raster',source:'depth_b70_100yr',layout:{visibility:'none'},paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
+      {id:'bluespot-b75_100yr',type:'raster',source:'depth_b75_100yr',layout:{visibility:'none'},paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
       {id:'pool-line',type:'line',source:'pools',paint:{'line-color':'#B5522F','line-width':2,'line-opacity':.9}},
       {id:'pool-pt',type:'circle',source:'labels',paint:{'circle-radius':4,'circle-color':'#B5522F',
         'circle-stroke-color':'#FDFCF8','circle-stroke-width':1.5}},
@@ -119,10 +144,44 @@ document.getElementById('skip').onclick=()=>{ touring?endTour():startTour(); };
 map.on('load',()=>setTimeout(startTour,800));
 map.on('mousedown',()=>{ if(touring) endTour(); });
 
-const T={'tg-terrain':['terrain'],'tg-depth':['bluespot'],'tg-pools':['pool-line','pool-pt','pool-name']};
+// --- how much rain? -------------------------------------------------------
+// Bookmarks verified from ISWS Bulletin 70/75 (see data/SOURCES.md #4);
+// "1.0″" is a reference nuisance rain, not a design storm.
+const SCN=[
+  {id:'r10',       layer:'bluespot-r10',       lab:'1.0″',  prov:'reference'},
+  {id:'b75_2yr',   layer:'bluespot-b75_2yr',   lab:'3.34″', prov:'B75 2-yr'},
+  {id:'b70_100yr', layer:'bluespot-b70_100yr', lab:'7.58″', prov:'B70 100-yr'},
+  {id:'b75_100yr', layer:'bluespot-b75_100yr', lab:'8.57″', prov:'B75 100-yr'},
+  {id:'full',      layer:'bluespot',           lab:'max',   prov:'full fill'}
+];
+let scn='full', wetPct={};
+const stopsEl=document.getElementById('stops'), wetEl=document.getElementById('rain-wet');
+fetch(P+'north-side-pilot_scenarios.json').then(r=>r.json()).then(j=>{
+  j.scenarios.forEach(s=>wetPct[s.id]=s.wet_pct); setScn(scn); }).catch(()=>{});
+for(const s of SCN){
+  const b=document.createElement('button');
+  b.innerHTML=`<b>${s.lab}</b><span>${s.prov}</span>`;
+  b.title=s.prov; b.onclick=()=>setScn(s.id);
+  s.btn=b; stopsEl.appendChild(b);
+}
+let styleReady=false;
+map.on('load',()=>{styleReady=true; setScn(scn);});
+function setScn(id){
+  scn=id;
+  for(const s of SCN) s.btn.classList.toggle('on',s.id===scn);
+  wetEl.textContent=wetPct[scn]!=null?`${wetPct[scn]}% of land wet`:'';
+  if(!styleReady) return;   // style defaults already show 'full'
+  const showDepth=document.getElementById('tg-depth').checked;
+  for(const s of SCN)
+    map.setLayoutProperty(s.layer,'visibility',showDepth&&s.id===scn?'visible':'none');
+}
+setScn(scn);
+
+const T={'tg-terrain':['terrain'],'tg-pools':['pool-line','pool-pt','pool-name']};
 for(const[id,layers]of Object.entries(T))
   document.getElementById(id).onchange=e=>layers.forEach(l=>
     map.setLayoutProperty(l,'visibility',e.target.checked?'visible':'none'));
+document.getElementById('tg-depth').onchange=()=>setScn(scn);
 map.on('click','pool-pt',e=>{
   const p=e.features[0].properties;
   new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
