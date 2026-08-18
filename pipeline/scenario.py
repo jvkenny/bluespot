@@ -449,10 +449,13 @@ def select_tiles(dem_dir, aoi_path, margin_m=0.0):
     wider-area AOIs. Selecting by project + AOI keeps the citywide mosaic
     reproducible no matter what else lands there.
 
-    Called twice, with two different margins: `margin_m=halo_m` chooses the
-    VRT mosaic sources (halo reads need a ring of neighbours around the city),
-    while `margin_m=0` chooses the chunk cores (a tile that only supplies halo
-    context has no in-product core and must not be solved)."""
+    `margin_m=0` gives the chunk cores, which are also the VRT mosaic
+    sources: halo context comes from neighbouring core tiles, and the
+    outermost halo ring falls outside the mosaic and reads nodata. That is
+    exactly how bluespot.py builds the static citywide layer, so the two stay
+    cell-for-cell consistent — and it makes the mosaic a function of the AOI
+    alone, rather than of whatever else happens to be sitting in the shared
+    Drive folder when the run starts."""
     cand = sorted(os.path.abspath(t)
                   for t in glob.glob(os.path.join(dem_dir, f"*{DEM_PROJECT}*.tif")))
     if not cand:
@@ -546,15 +549,14 @@ def chunk(vrt, tile, aoi_path, water_path, chunk_dir, halo_m=1000.0):
 def chunked(dem_dir, aoi_path, water_path, chunk_dir, out_dir, halo_m=1000.0,
             jobs=1):
     halo_m, jobs = float(halo_m), int(jobs)
-    tiles = select_tiles(dem_dir, aoi_path, 0.0)          # chunk cores
+    tiles = select_tiles(dem_dir, aoi_path, 0.0)   # chunk cores AND VRT sources
     if not tiles:
         sys.exit(f"no {DEM_PROJECT} tiles meeting the AOI in {dem_dir}")
     os.makedirs(chunk_dir, exist_ok=True)
     os.makedirs(out_dir, exist_ok=True)
     vrt = os.path.join(chunk_dir, "dem_mosaic.vrt")
     if not os.path.exists(vrt):
-        subprocess.run([f"{GDAL}/gdalbuildvrt", "-q", vrt]
-                       + select_tiles(dem_dir, aoi_path, halo_m), check=True)
+        subprocess.run([f"{GDAL}/gdalbuildvrt", "-q", vrt] + tiles, check=True)
     print(f"{len(tiles)} DEM tiles | halo {halo_m:.0f} m | {jobs} job(s)", flush=True)
 
     t_all = time.time()
