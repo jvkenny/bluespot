@@ -70,18 +70,34 @@ download records live in `<data_root>/dem/MANIFEST.jsonl` on Google Drive
    IL LaSalle B2 2017 (6, pub. 2020-03-30),
    IL_MidNorth_D22 (3, pub. 2023-10-31),
    IL LaSalle B1 2017 (2, pub. 2020-03-30).
-   Coverage caveat: west/southwest Will County (~636 km2, ~29% of the county's
-   land) has NO published 3DEP 1 m DEM — TNM returns zero 1 m DEM products
-   there. Lidar for that area does exist as an unprocessed point cloud
-   (IL_19County_D24, published 2026-04-28), but no DEM raster derivative has
-   been released, and deriving one from raw LPC is out of scope. All other
-   six counties are fully covered. Public domain.
+   A second pass (`pipeline/fetch_dem_gapfill.py`, retrieved 2026-08-18)
+   added 62 more tiles, 10.6 GB, for cells where the first-choice product
+   turned out to be almost entirely nodata: 186 tiles / 38 GB in total,
+   backing 124 distinct 10 km cells. Where a cell holds more than one tile
+   the mosaic composites them with the priority project on top (see
+   docs/METHOD.md). Gap-fill tiles are flagged `"role": "gapfill"` in
+   MANIFEST.jsonl and add these projects: IL KankakeeCo 2014,
+   IL 12-County-KaneCo 2008, IL McHenryCo 2008, IL LaSalle B2 2017,
+   IL Boone 2018, IN_Indiana_Statewide_LiDAR_2017_B17.
+   Coverage caveat: Will County has only 15% of its land covered by any
+   published 3DEP 1 m DEM — TNM returns zero 1 m DEM products over west and
+   southwest Will, and most of the tiles it does list elsewhere in the county
+   are empty with no populated alternative. Lidar for that area exists as an
+   unprocessed point cloud (IL_19County_D24, published 2026-04-28), but no
+   DEM raster derivative has been released and deriving one from raw LPC is
+   out of scope. Every other county is at least 99% covered. Public domain.
 
 8. OpenStreetMap water polygons, regional extent
    (`pipeline/fetch_water_region.py`): the same Overpass query as source 2,
    issued over a 5x4 grid of sub-bboxes covering the region AOI + 0.02 deg,
    merged and deduplicated by OSM element id. Retrieved 2026-08-18.
    (c) OpenStreetMap contributors, ODbL. Drainage outlets only, not displayed.
+   22,009 polygons (21,333 ways + 676 relations, including the Lake Michigan
+   multipolygon relation 1205149 assembled from ~750 member ways).
+   Working names for the top 60 regional pools reverse-geocoded from OSM
+   Nominatim (1 req/s), retrieved 2026-08-18. These are nearest-feature
+   labels, not curated place names — several name a road beside the feature
+   rather than the feature itself, and the deepest ones are quarries.
 
 Planned (not yet used — verify before relying on):
 - NLCD Tree Canopy Cover + Impervious Surface (MRLC), for the shade/heat layer.

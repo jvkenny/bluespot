@@ -90,16 +90,89 @@ full selection (including the alternatives rejected per cell) in
 `<data_root>/regional/dem_plan.json`, so any seam can be traced to its two
 acquisitions.
 
-### A real hole in coverage: western Will County
-West and southwest Will County — roughly 636 km2, about 29% of the county's
-land — has **no published 3DEP 1 m DEM at all**. This is not a selection
-artifact: TNM returns zero 1 m DEM products for that area. Lidar was flown
-(IL_19County_D24, point cloud published 2026-04-28) but no raster derivative
-has been released, and deriving a DEM from raw point clouds is out of scope
-here. Consequence: Will County's numbers describe only the ~71% of it the
-product can see, and the regional map has a visible blank there. The
-per-county table reports covered area next to legal land area for exactly
-this reason — a wet-% over an unstated denominator is a misleading number.
+### Hollow tiles, and a second pass
+A tile listed by TNM for a cell is not a promise that the cell has data. At
+the ragged edge of an acquisition, 3DEP publishes tiles whose bounding box
+covers the ground but whose contents are almost entirely nodata. Choosing
+one of those by vintage priority leaves the cell empty even when a different
+project offers a full tile for the same ground. The first regional fill lost
+2,923 km2 of AOI land this way and left DuPage County 53% covered.
+
+`pipeline/fetch_dem_gapfill.py` is the second pass: it measures the true
+per-cell coverage from the first fill's own full-resolution statistics,
+downloads the alternatives for under-covered cells, and
+`bluespot_region.py`'s `vrt_order()` then sorts the mosaic so the preferred
+acquisition is drawn last. GDAL treats a source's nodata as transparent, so
+the preferred vintage wins wherever it genuinely has data and the fallbacks
+show through only in its holes. This is why a vintage seam can now fall
+*inside* a 10 km cell rather than only on cell boundaries — a strictly
+better trade than a hole, and every contributing tile is still recorded in
+MANIFEST.jsonl.
+
+A methodological warning worth keeping: **decimated reads lie about
+coverage.** Sampling these tiles through their overviews reported several as
+0% valid that are 54.8% valid at full resolution. Any coverage figure here
+is measured at full resolution.
+
+### A real hole in coverage: Will County
+After the second pass every county is at least 99% covered except Will,
+which sits at **15%**. That gap is real, not a selection artifact: TNM
+returns zero 1 m DEM products over west and southwest Will, and the tiles it
+does list across much of the rest of the county are the hollow kind
+described above, with no populated alternative from any project. Lidar was
+flown (IL_19County_D24, point cloud published 2026-04-28) but no raster
+derivative has been released, and deriving a DEM from raw point clouds is
+out of scope here.
+
+**Will County's row in the table below is a 325 km2 sample of a 2,165 km2
+county and must not be read as describing Will County.** The regional map
+has a large visible blank there. This is also why the table reports covered
+area next to legal land area: a wet-% over an unstated denominator is a
+misleading number.
+
+### The biggest regional "pools" are quarries
+At city scale the deepest bowls were highway trenches. At regional scale
+they are working limestone quarries along the Des Plaines and Sag corridors,
+and they dominate the volume ranking: #1 is Thornton Quarry at 108 m and
+123 million m3, #2 a 116 m pit at McCook, and several more in the top ten.
+Terrain screening is doing exactly what it claims — finding holes in the
+ground — but a quarry is a hole on purpose, sometimes (Thornton, McCook) a
+stormwater reservoir on purpose. Any presentation of the pool ranking has to
+say so; the viewer's source note does.
+
+### Per-county results
+Depth >= 5 cm, over cells the product can actually see. "covered" is that
+visible land against the county's TIGER land area.
+
+| county | covered km2 | % of land | wet >=5cm | >=15cm | >=30cm | >=1m | max m | volume Mm3 |
+|---|---|---|---|---|---|---|---|---|
+| Cook | 2,429 | 99% | 15.42% | 10.11% | 6.51% | 1.92% | 116.07 | 344.6 |
+| Will* | 325 | 15% | 13.13% | 10.32% | 8.05% | 3.89% | 35.20 | 42.9 |
+| Kane | 1,333 | 99% | 11.97% | 9.02% | 6.62% | 2.21% | 34.43 | 104.2 |
+| Lake | 1,136 | 99% | 11.66% | 8.58% | 6.35% | 2.32% | 14.65 | 80.8 |
+| DuPage | 846 | 100% | 11.27% | 7.93% | 5.43% | 1.62% | 57.65 | 56.6 |
+| McHenry | 1,546 | 99% | 9.92% | 7.28% | 5.33% | 1.79% | 11.92 | 96.8 |
+| Kendall | 823 | 99% | 7.56% | 5.09% | 3.28% | 0.77% | 42.14 | 43.8 |
+| **region** | **8,438** | **82%** | **12.09%** | | | | **116.08** | **769.7** |
+
+\* Will is a 15% sample, not a county figure — see above.
+
+Cook is the wettest and Kendall the driest, and the ordering is roughly
+urban-to-rural: the flat, built-up, heavily regraded east holds more water
+per unit area than the rolling moraine country to the west and north. Cook's
+116 m maximum is the McCook quarry, not a neighbourhood.
+
+### Consistency with the citywide product
+The region clipped to the City of Chicago gives **20.20%** wet >= 5 cm
+against the citywide product's **18.74%** over the same boundary, and the
+Eisenhower/Greektown pool reproduces exactly (8.41 m, 2,240,805 m3 — the
+citywide figures). The wet-% difference is expected and is a halo effect,
+not a method change: the citywide mosaic was 18 tiles, so chunks at the city
+edge had nodata beyond them and the domain edge acted as an artificial
+outlet, draining depressions that straddle the city line. In the region
+those same chunks see real suburban terrain for a kilometre in every
+direction, so those depressions fill instead of draining. The regional
+number is the better one; the citywide one is the more conservative.
 
 ### Chunking at 124 tiles: one process per chunk
 The citywide run did every chunk inside one python process and its RSS crept
