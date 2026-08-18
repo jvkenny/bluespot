@@ -37,5 +37,22 @@ number traceable to a cited public source — built for residents, not agencies.
 - `viewer/` — MapLibre globe → neighborhood scrollytelling front end
 - `docs/` — method notes
 
-Status: internal development. Pilot AOI: Chicago North Side
-(North Center / Roscoe Village / Lincoln Square).
+## Running the viewer
+
+The depth and terrain layers are PMTiles archives on Google Drive
+(`bluespot-data/citywide/`), reached through the gitignored `viewer/data`
+symlink:
+
+    ln -s "$HOME/Library/CloudStorage/GoogleDrive-jkenny2334@gmail.com/My Drive/bluespot-data/citywide" viewer/data
+
+PMTiles needs HTTP Range requests and `python -m http.server` does not
+support them. Serve the viewer with the stdlib Range-capable server instead:
+
+    python3 pipeline/serve.py            # http://localhost:8666/
+
+Rebuild artifacts: `pipeline/fetch_dem.py` → `pipeline/fetch_water.py` →
+`pipeline/bluespot.py --chunked` → `pipeline/pools.py` →
+`pipeline/make_pmtiles.sh` (see docs/METHOD.md).
+
+Status: internal development. Coverage: the full City of Chicago (pilot was
+North Center / Roscoe Village / Lincoln Square).
