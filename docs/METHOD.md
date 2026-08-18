@@ -164,15 +164,34 @@ per unit area than the rolling moraine country to the west and north. Cook's
 
 ### Consistency with the citywide product
 The region clipped to the City of Chicago gives **20.20%** wet >= 5 cm
-against the citywide product's **18.74%** over the same boundary, and the
-Eisenhower/Greektown pool reproduces exactly (8.41 m, 2,240,805 m3 — the
-citywide figures). The wet-% difference is expected and is a halo effect,
-not a method change: the citywide mosaic was 18 tiles, so chunks at the city
-edge had nodata beyond them and the domain edge acted as an artificial
-outlet, draining depressions that straddle the city line. In the region
-those same chunks see real suburban terrain for a kilometre in every
-direction, so those depressions fill instead of draining. The regional
-number is the better one; the citywide one is the more conservative.
+against the citywide product's **18.74%** over the same boundary. The
+Eisenhower/Greektown pool reproduces exactly — 8.41 m, 2,240,805 m3, the
+citywide figures — so the method is unchanged and the difference is in what
+the two products can see. A cell-by-cell comparison over the city splits it
+into two causes:
+
+| | area | citywide wet | regional wet |
+|---|---|---|---|
+| valid in both products | 585.5 km2 | 109.7 km2 | 115.8 km2 |
+| valid only in the regional product | 9.1 km2 | — | 4.4 km2 |
+| valid only in the citywide product | 0.0 km2 | — | — |
+
+1. **Halo context (about +1.04 points).** Values differ on 11.7 km2 —
+   roughly 2% — of the shared area, and always in the direction of more
+   water. The citywide mosaic was 18 tiles, so chunks at the city edge had
+   nodata beyond them and the domain edge acted as an artificial outlet,
+   draining depressions that straddle the city line. In the region those
+   chunks see real suburban terrain for a kilometre in every direction, so
+   those depressions fill instead of draining. Everywhere further than the
+   halo reach from an edge, the two rasters are bit-identical.
+2. **Extra coverage (about +0.42 points).** The region sees 9.1 km2 of the
+   city the citywide 18-tile mosaic never covered, and that sliver is 48%
+   wet — it is mostly edge-of-mosaic ground along the waterways. Nothing
+   goes the other way: there is no cell the citywide product covers and the
+   regional one does not.
+
+The regional number is the better one; the citywide one is the more
+conservative. Neither is a correction of the other.
 
 ### Chunking at 124 tiles: one process per chunk
 The citywide run did every chunk inside one python process and its RSS crept
