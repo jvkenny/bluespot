@@ -24,8 +24,21 @@ Usage:
 import json, os, sys, time, urllib.request
 from fetch_water import ENDPOINTS, bbox_of, relation_geom
 
+# A region run makes ~20 sequential queries, and the two endpoints
+# fetch_water.py rotates between start returning 504 under that load (they
+# throttle per IP by slot, so the failures get MORE frequent as the run
+# goes on, not less). Spreading across more public mirrors is the difference
+# between ~9 min and well under a minute per chunk. Order matters: the first
+# two are the well-resourced ones.
+REGION_ENDPOINTS = ENDPOINTS + [
+    "https://overpass.private.coffee/api/interpreter",
+    "https://overpass.osm.jp/api/interpreter",
+    "https://overpass.osm.ch/api/interpreter",
+]
+POLITE_S = 3           # s between chunks: this is someone else's free service
+
 TIMEOUT = 240          # s, Overpass-side query budget per chunk
-MAX_ATTEMPTS = 6
+MAX_ATTEMPTS = 10
 
 
 def query(s, w, n, e, cache, tag):
@@ -42,7 +55,7 @@ def query(s, w, n, e, cache, tag):
  way["waterway"="riverbank"]({s},{w},{n},{e}););
 out geom;"""
     for attempt in range(MAX_ATTEMPTS):
-        ep = ENDPOINTS[attempt % len(ENDPOINTS)]
+        ep = REGION_ENDPOINTS[attempt % len(REGION_ENDPOINTS)]
         try:
             req = urllib.request.Request(ep, data=q.encode(),
                 headers={"User-Agent": "bluespot-pipeline/0.1"})
@@ -54,7 +67,7 @@ out geom;"""
         except Exception as ex:
             print(f"    {tag}: {ep}: {ex}; retry {attempt+1}/{MAX_ATTEMPTS}",
                   flush=True)
-            time.sleep(20 * (attempt + 1))
+            time.sleep(min(10 * (attempt + 1), 60))
     return None
 
 
@@ -74,6 +87,8 @@ def main(aoi, pad, out, nx=4, ny=4, cache=None):
             w = w0 + (e0 - w0) * i / nx
             e = w0 + (e0 - w0) * (i + 1) / nx
             tag = f"{i}_{j}"
+            if not os.path.exists(os.path.join(cache, f"water_{tag}.json")):
+                time.sleep(POLITE_S)
             els = query(s, w, n, e, cache, tag)
             if els is None:
                 print(f"  chunk {tag}: FAILED", flush=True); failed.append(tag); continue

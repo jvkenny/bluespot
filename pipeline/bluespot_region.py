@@ -29,7 +29,7 @@ Usage:
   worker: bluespot_region.py --chunk <vrt> <tile.tif> <aoi> <water> \
               <out.tif> <stats.json> <halo_m>
 """
-import glob, json, os, resource, subprocess, sys, time
+import glob, json, os, re, resource, subprocess, sys, time
 import numpy as np
 import rasterio
 from rasterio.windows import from_bounds, Window
@@ -37,6 +37,41 @@ from rasterio.warp import transform_geom, transform_bounds
 from rasterio.features import rasterize
 
 from bluespot import compute_depth, _core_bounds, GDAL
+from fetch_dem_region import PRIORITY
+
+
+CELL_FROM_NAME = re.compile(r"x(\d+)y(\d+)")
+
+
+def by_cell(tiles):
+    """Group tile paths by their 10 km cell, parsed from the filename."""
+    out = {}
+    for t in tiles:
+        m = CELL_FROM_NAME.search(os.path.basename(t))
+        if not m:
+            sys.exit(f"cannot parse cell from {t}")
+        out.setdefault((int(m.group(1)), int(m.group(2))), []).append(t)
+    return out
+
+
+def vrt_order(tiles):
+    """Order tiles for gdalbuildvrt so the preferred acquisition wins.
+
+    GDAL renders VRT sources in list order and treats a source's nodata
+    pixels as transparent, so the LAST source that has real data at a pixel
+    is the one you see. Sorting least-preferred first therefore means: the
+    priority project is drawn on top wherever it actually has data, and the
+    fallback tiles downloaded by fetch_dem_gapfill.py show through only in
+    its holes. Without this ordering the mosaic is at the mercy of glob
+    order, and a near-empty edge tile can sit on top of a full one.
+    """
+    def key(path):
+        name = os.path.basename(path)
+        for i, proj in enumerate(PRIORITY):
+            if proj.replace(" ", "_") in name or proj in name:
+                return (-i, name)         # priority 0 sorts last
+        return (-len(PRIORITY), name)     # unlisted projects sort first
+    return sorted(tiles, key=key)
 
 
 def _bbox(geom):
@@ -157,17 +192,30 @@ def driver(dem_dir, aoi_path, water_path, out_dir, out_cog, halo_m=1000.0,
     print(f"{len(tiles)} DEM tiles; CRS precheck:")
     crs_precheck(tiles)
     vrt = os.path.join(out_dir, "dem_mosaic.vrt")
-    subprocess.run([f"{GDAL}/gdalbuildvrt", "-q", "-overwrite", vrt] + tiles, check=True)
+    ordered = vrt_order(tiles)
+    print(f"  VRT order: {os.path.basename(ordered[0])[:44]} (bottom) ... "
+          f"{os.path.basename(ordered[-1])[:44]} (top)")
+    subprocess.run([f"{GDAL}/gdalbuildvrt", "-q", "-overwrite", vrt] + ordered,
+                   check=True)
     print(f"VRT -> {vrt}\nfilling with {workers} concurrent chunk processes, "
           f"halo {halo_m} m", flush=True)
 
     me = os.path.abspath(__file__)
     py = sys.executable
     jobs, running, done = [], [], 0
-    for t in tiles:
+    # ONE CHUNK PER 10 km CELL, not per tile. After the gap-fill pass a cell
+    # can be backed by several tiles from different projects; they all live
+    # in the VRT (that is the point), but they describe the same ground, so
+    # emitting a chunk per tile would produce duplicate overlapping rasters
+    # in the merge. The representative tile is the highest-priority one,
+    # which is also the one the original plan chose — so chunk filenames stay
+    # stable across this second pass and completed chunks are still reusable.
+    for cell, group in sorted(by_cell(tiles).items()):
+        t = vrt_order(group)[-1]
         name = os.path.basename(t).replace(".tif", "")
         jobs.append((t, os.path.join(out_dir, f"depth_{name}.tif"),
                      os.path.join(sdir, f"{name}.json")))
+    print(f"{len(tiles)} tiles -> {len(jobs)} distinct 10 km cells")
     todo = [j for j in jobs if not os.path.exists(j[2])]
     print(f"{len(jobs) - len(todo)} chunks already done, {len(todo)} to run", flush=True)
 
