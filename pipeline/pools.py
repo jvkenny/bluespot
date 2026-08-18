@@ -45,6 +45,18 @@ def revgeo(lon, lat):
     except Exception:
         return "unnamed"
 
+SIMPLIFY_TOL = 1.25  # m: Douglas-Peucker on pool outlines (pixel-perimeter
+                     # polygons are ~20x heavier than the map needs)
+
+def simplify(geom):
+    from skimage.measure import approximate_polygon
+    out = []
+    for ring in geom["coordinates"]:
+        r = approximate_polygon(np.array(ring), tolerance=SIMPLIFY_TOL)
+        if len(r) >= 4:
+            out.append(r.tolist())
+    return {"type": "Polygon", "coordinates": out or geom["coordinates"]}
+
 def boundary_lines(boundary_path, crs):
     """City-limit polygon rings as LineStrings in the raster CRS."""
     if not boundary_path:
@@ -111,6 +123,7 @@ def refine(src, sl, decim, lab, lab_id, blines):
         edge = bool((ndimage.binary_dilation(sel, np.ones((3, 3))) & bl).any())
     geoms = [g for g, v in features.shapes(sel.astype("uint8"), mask=sel,
              transform=tr, connectivity=8) if v == 1]
+    geoms = [simplify(g) for g in geoms]
     return {"area_m2": int(round(area)), "volume_m3": int(round(vol)),
             "max_depth_m": round(float(d[k]), 2), "edge_truncated": edge,
             "rc": (k[0] + r0, k[1] + c0), "geoms": geoms, "tr": tr}
