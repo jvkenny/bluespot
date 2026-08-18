@@ -12,7 +12,7 @@ Usage: serve.py [port] [root]      (default: 8666, repo viewer/)
 Then open http://localhost:<port>/
 """
 import os, re, sys
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 class RangeHandler(SimpleHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
@@ -74,4 +74,6 @@ if __name__ == "__main__":
         os.path.dirname(os.path.abspath(__file__)), "..", "viewer")
     os.chdir(root)
     print(f"serving {os.getcwd()} on http://localhost:{port}/ (Range enabled)")
-    HTTPServer(("127.0.0.1", port), RangeHandler).serve_forever()
+    # Threading is required: HTTP/1.1 keep-alive on a single-threaded
+    # server deadlocks as soon as a browser holds one connection open.
+    ThreadingHTTPServer(("127.0.0.1", port), RangeHandler).serve_forever()
