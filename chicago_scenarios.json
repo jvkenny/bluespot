@@ -1,0 +1,91 @@
+{
+ "assumptions": {
+  "runoff_c": 0.55,
+  "drain_mm": 10.0,
+  "note": "terrain screening, not a flood prediction; C and D are stated assumptions (pipeline/scenario.py)"
+ },
+ "coverage": "City of Chicago",
+ "chunking": {
+  "tiles": 15,
+  "halo_m": 1000.0,
+  "note": "catchments and spill cascades are solved per DEM-tile chunk and truncate at the halo; see docs/MODEL.md"
+ },
+ "scenarios": [
+  {
+   "id": "r10",
+   "rain_in": 1.0,
+   "rain_mm": 25.4,
+   "label": "1.0\u2033",
+   "provenance": "nuisance rain (reference, not a design storm)",
+   "wet_pct": 2.33,
+   "stored_m3": 1356787,
+   "land_cells": 585558393,
+   "wet_cells": 13660012,
+   "max_depth_m": 4.65,
+   "exported_m3": 1829300,
+   "domain_loaded_m3": 6284437,
+   "domain_stored_m3": 4455136,
+   "balance_rel_err": -2.2229261918664046e-16
+  },
+  {
+   "id": "b75_2yr",
+   "rain_in": 3.34,
+   "rain_mm": 84.8,
+   "label": "3.34\u2033",
+   "provenance": "Bulletin 75 2-yr 24-hr, NE Illinois",
+   "wet_pct": 10.04,
+   "stored_m3": 9268766,
+   "land_cells": 585558393,
+   "wet_cells": 58778674,
+   "max_depth_m": 7.44,
+   "exported_m3": 33238981,
+   "domain_loaded_m3": 58031785,
+   "domain_stored_m3": 24792804,
+   "balance_rel_err": -1.9900128673769697e-15
+  },
+  {
+   "id": "b70_100yr",
+   "rain_in": 7.58,
+   "rain_mm": 192.5,
+   "label": "7.58\u2033",
+   "provenance": "Bulletin 70 100-yr 24-hr (superseded 1989 standard)",
+   "wet_pct": 14.42,
+   "stored_m3": 17749785,
+   "land_cells": 585558393,
+   "wet_cells": 84463111,
+   "max_depth_m": 7.91,
+   "exported_m3": 106625930,
+   "domain_loaded_m3": 151796212,
+   "domain_stored_m3": 45170281,
+   "balance_rel_err": 2.944967009077948e-16
+  },
+  {
+   "id": "b75_100yr",
+   "rain_in": 8.57,
+   "rain_mm": 217.7,
+   "label": "8.57\u2033",
+   "provenance": "Bulletin 75 100-yr 24-hr (current standard)",
+   "wet_pct": 15.02,
+   "stored_m3": 19271816,
+   "land_cells": 585558393,
+   "wet_cells": 87930741,
+   "max_depth_m": 7.95,
+   "exported_m3": 124970628,
+   "domain_loaded_m3": 173689321,
+   "domain_stored_m3": 48718693,
+   "balance_rel_err": 8.579204019540984e-17
+  },
+  {
+   "id": "full",
+   "rain_in": null,
+   "rain_mm": null,
+   "label": "max",
+   "provenance": "full fill \u2014 static upper envelope, every pool at capacity",
+   "wet_pct": 18.74,
+   "stored_m3": 43627051,
+   "land_cells": 585558393,
+   "wet_cells": 109716203,
+   "max_depth_m": 14.22
+  }
+ ]
+}
