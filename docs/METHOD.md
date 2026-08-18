@@ -28,3 +28,10 @@
   311 water-in-street complaints, MWRD overflow records).
 - Riverside pools at AOI west edge (Horner Park reach) need a look — possible
   OSM water polygon vs. DEM channel misalignment.
+
+## Pools layer (pipeline/pools.py)
+Connected regions ≥ 15 cm deep and ≥ 400 m², ranked by stored volume; names
+reverse-geocoded from OSM Nominatim (working labels, hand-curate before any
+public use). Known issue: pools touching the AOI boundary (e.g. #1, the
+Kennedy mainline trench) are edge-truncated — their area/volume are fragments
+of the real feature. Flag or merge these when the AOI grows.
