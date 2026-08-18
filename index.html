@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bluespot — where the water wants to go</title>
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+  :root{--ink:#26241E;--paper:rgba(253,252,248,.94);--accent:#31628F;--terra:#B5522F}
+  html,body{margin:0;height:100%}
+  #map{position:absolute;inset:0}
+  .panel{position:absolute;z-index:2;background:var(--paper);color:var(--ink);
+    font-family:'Iowan Old Style',Palatino,Georgia,serif;border-radius:10px;
+    box-shadow:0 2px 14px rgba(0,0,0,.18);padding:14px 18px;max-width:340px}
+  #intro{top:18px;left:18px}
+  #intro h1{margin:0 0 2px;font-size:26px;letter-spacing:-.01em}
+  #intro .sub{font-style:italic;color:#5C594F;font-size:14.5px;margin:0 0 8px}
+  #intro p{font-size:13.5px;line-height:1.5;margin:6px 0}
+  .disclaim{border-left:3px solid var(--terra);padding:6px 10px;background:rgba(181,82,47,.07);
+    font-size:12.5px;line-height:1.45}
+  #legend{bottom:28px;left:18px;padding:10px 14px}
+  #legend .t{font-size:12px;text-transform:uppercase;letter-spacing:.12em;
+    font-family:ui-monospace,Menlo,monospace;color:#5C594F;margin-bottom:6px}
+  .sw{display:flex;align-items:center;gap:8px;font-size:12.5px;margin:2px 0}
+  .sw i{width:22px;height:13px;border-radius:2px;display:inline-block}
+  #replay{position:absolute;top:18px;right:18px;z-index:2;font:13px ui-monospace,Menlo,monospace;
+    background:var(--paper);border:1px solid rgba(38,36,30,.25);border-radius:8px;
+    padding:7px 12px;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="panel" id="intro">
+  <h1>Bluespot</h1>
+  <p class="sub">where the water wants to go — Chicago's North Side</p>
+  <p>Blue marks every place the bare earth would hold water if rain outran
+  drainage, computed by filling a 1-meter USGS lidar terrain model
+  (depression depth, ≥ 5&nbsp;cm). Deeper blue, deeper pool — the deepest are
+  the rail viaducts you already know flood.</p>
+  <div class="disclaim"><b>Terrain screening, not a flood prediction.</b>
+  This map knows the shape of the ground — not the sewers, culverts, or soil
+  beneath it. It shows where water would gather first, not whether it will.</div>
+  <p style="font-size:11.5px;color:#8B877B">Sources: USGS 3DEP 1m DEM (IL 4-County QL1 lidar) ·
+  water outlets © OpenStreetMap contributors · basemap Esri World Topographic</p>
+</div>
+<div class="panel" id="legend">
+  <div class="t">ponding depth</div>
+  <div class="sw"><i style="background:rgba(198,219,239,.75)"></i> 5–15 cm — nuisance</div>
+  <div class="sw"><i style="background:rgba(107,174,214,.85)"></i> 15–50 cm — curb-deep</div>
+  <div class="sw"><i style="background:rgba(8,81,156,.95)"></i> 0.5–1 m — stalls a car</div>
+  <div class="sw"><i style="background:rgb(8,48,107)"></i> &gt; 1 m — viaduct-deep</div>
+</div>
+<button id="replay">↺ replay flight</button>
+<script>
+const AOI = {center:[-87.6900,41.9500], zoom:13.4};
+const map = new maplibregl.Map({
+  container:'map',
+  style:{
+    version:8,
+    projection:{type:'globe'},
+    sources:{
+      esri:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'],
+        tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP'},
+      depth:{type:'raster',tiles:[location.origin+location.pathname.replace(/index\.html$/,'')+'tiles/depth/{z}/{x}/{y}.png'],
+        tileSize:256,minzoom:11,maxzoom:17}
+    },
+    layers:[
+      {id:'base',type:'raster',source:'esri'},
+      {id:'bluespot',type:'raster',source:'depth',paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}}
+    ],
+    sky:{'atmosphere-blend':['interpolate',['linear'],['zoom'],0,1,10,0.2,12,0]}
+  },
+  center:[-30,25], zoom:1.2, attributionControl:{compact:true}
+});
+map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'bottom-right');
+function flight(){
+  map.jumpTo({center:[-30,25],zoom:1.2,bearing:0,pitch:0});
+  map.flyTo({center:AOI.center,zoom:AOI.zoom,speed:0.55,curve:1.6,essential:true});
+}
+new ResizeObserver(()=>map.resize()).observe(document.getElementById('map'));
+map.on('load',()=>setTimeout(flight,900));
+document.getElementById('replay').onclick=flight;
+</script>
+</body>
+</html>
