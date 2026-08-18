@@ -6,6 +6,7 @@
 <title>Bluespot — where the water wants to go</title>
 <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
 <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/pmtiles@3/dist/pmtiles.js"></script>
 <style>
   :root{--ink:#26241E;--paper:rgba(253,252,248,.92);--terra:#B5522F;--serif:'Iowan Old Style',Palatino,Georgia,serif}
   html,body{margin:0;height:100%}
@@ -51,10 +52,13 @@
 </div>
 <div class="chip" id="foot"><b>terrain screening, not a flood prediction</b> ·
   <details><summary>sources</summary> USGS 3DEP 1m lidar DEM (IL 4-County QL1) ·
-  water &amp; names © OpenStreetMap · basemap Esri World Topo</details></div>
+  water &amp; names © OpenStreetMap · boundary Chicago Data Portal · basemap Esri World Topo</details></div>
 <button id="skip">skip tour</button>
 <script>
 const P = location.origin + location.pathname.replace(/index\.html$/,'');
+const protocol = new pmtiles.Protocol();
+maplibregl.addProtocol('pmtiles', protocol.tile);
+const CITY_BOUNDS = [-87.9401,41.6445,-87.5241,42.0231];
 const map = new maplibregl.Map({
   container:'map',
   style:{
@@ -63,11 +67,11 @@ const map = new maplibregl.Map({
     glyphs:'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
     sources:{
       esri:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'],
-        tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP'},
-      terrain:{type:'raster',tiles:[P+'tiles/terrain/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
-      depth:{type:'raster',tiles:[P+'tiles/depth/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
-      pools:{type:'geojson',data:P+'north-side-pilot_pools.geojson'},
-      labels:{type:'geojson',data:P+'north-side-pilot_pool_labels.geojson'}
+        tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP | City of Chicago'},
+      terrain:{type:'raster',url:'pmtiles://'+P+'data/terrain.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
+      depth:{type:'raster',url:'pmtiles://'+P+'data/depth.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
+      pools:{type:'geojson',data:P+'chicago_pools.geojson'},
+      labels:{type:'geojson',data:P+'chicago_pool_labels.geojson'}
     },
     layers:[
       {id:'base',type:'raster',source:'esri'},
@@ -76,7 +80,7 @@ const map = new maplibregl.Map({
       {id:'pool-line',type:'line',source:'pools',paint:{'line-color':'#B5522F','line-width':2,'line-opacity':.9}},
       {id:'pool-pt',type:'circle',source:'labels',paint:{'circle-radius':4,'circle-color':'#B5522F',
         'circle-stroke-color':'#FDFCF8','circle-stroke-width':1.5}},
-      {id:'pool-name',type:'symbol',source:'labels',minzoom:13.5,layout:{
+      {id:'pool-name',type:'symbol',source:'labels',minzoom:12.5,layout:{
         'text-field':['format',['get','name'],{},'\n',{},
           ['concat','max ',['to-string',['get','max_depth_m']],' m'],{'font-scale':0.85}],
         'text-font':['Open Sans Bold'],'text-size':12,'text-offset':[0,1.1],'text-anchor':'top',
@@ -92,13 +96,11 @@ new ResizeObserver(()=>map.resize()).observe(document.getElementById('map'));
 
 const cap = document.getElementById('cap');
 const steps = [
-  {v:{center:[-87.6900,41.9500],zoom:12.6,speed:0.55,curve:1.6},dwell:4200,
-   c:'Every blue mark is a bowl in the bare earth — 1-meter lidar, nothing hidden.'},
-  {v:{center:[-87.7185,41.9478],zoom:16.1,speed:0.5},dwell:5200,
-   c:'The deepest holds 3.5 m — where Irving Park Road ducks under the Kennedy.'},
-  {v:{center:[-87.6742,41.9536],zoom:15.4,speed:0.5},dwell:5200,
-   c:'Embankments cross the flat like dams. The streets beneath them pond first.'},
-  {v:{center:[-87.6900,41.9500],zoom:13.4,speed:0.5},dwell:5200,
+  {v:{center:[-87.6980,41.8340],zoom:10.3,speed:0.55,curve:1.6},dwell:4600,
+   c:'Every blue mark is a bowl in the bare earth — 1-meter lidar, all 234 square miles of Chicago.'},
+  {v:{center:[-87.6467,41.8757],zoom:15.3,speed:0.5},dwell:5200,
+   c:'The biggest bowl is the Eisenhower trench at Greektown — 8.4 m deep where the ramps dive, room for 2.2 million m³.'},
+  {v:{center:[-87.6980,41.8340],zoom:10.8,speed:0.5},dwell:5200,
    c:'The ground, not the sewers. Where water gathers first — not whether it will.'}
 ];
 let tourTimer=null, touring=false;
@@ -127,7 +129,8 @@ map.on('click','pool-pt',e=>{
   const p=e.features[0].properties;
   new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
     `<b>#${p.rank} ${p.name}</b><br>max ${p.max_depth_m} m · `+
-    `${Number(p.area_m2).toLocaleString()} m² · ~${Number(p.volume_m3).toLocaleString()} m³`).addTo(map);
+    `${Number(p.area_m2).toLocaleString()} m² · ~${Number(p.volume_m3).toLocaleString()} m³`+
+    (p.edge_truncated===true||p.edge_truncated==='true'?'<br><i>continues past the city limit — figures are the in-city fragment</i>':'')).addTo(map);
 });
 </script>
 </body>
