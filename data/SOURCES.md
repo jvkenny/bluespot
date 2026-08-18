@@ -15,3 +15,9 @@ Planned (not yet used — verify before relying on):
 - Landsat Collection 2 surface temperature, for block-scale heat exposure.
 - ISWS Bulletin 75 precipitation frequency (vs. Bulletin 70) and NOAA Atlas 15,
   for the "the design storm grew" change-over-time story.
+
+2. OpenStreetMap water polygons (natural=water, waterway=riverbank) via
+   Overpass API, AOI + 0.015 deg. Retrieved 2026-08-17. © OpenStreetMap
+   contributors, ODbL. Used as drainage outlets only, not displayed.
+3. Basemap (viewer only): Esri World Topographic Map raster tiles. Display,
+   not analysis.
