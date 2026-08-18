@@ -75,3 +75,11 @@ gap in western Will County.
 Status: internal development. Coverage: the 7-county CMAP region — Cook,
 DuPage, Kane, Kendall, Lake, McHenry and Will counties, Illinois — with the
 City of Chicago and the North Side pilot as nested products.
+
+Regional product at a glance: 8,438 km2 of visible land out of 10,348 km2
+legal land area, 12.09% of it wet at 5 cm or more, 770 million m3 of
+capacity. Every county is at least 99% covered except Will, which has only
+15% — a real hole in published 3DEP 1 m DEM coverage, not a processing
+choice. Read docs/METHOD.md before quoting any of these numbers; the Will
+caveat and the fact that the deepest "pools" are working quarries both
+matter.
