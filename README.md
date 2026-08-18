@@ -45,7 +45,7 @@ through the gitignored `viewer/data` symlink. The symlink points at the
 sub-directory — `data/citywide/depth.pmtiles`, `data/regional/depth.pmtiles`
 — so one link serves every extent:
 
-    ln -s "$HOME/Library/CloudStorage/GoogleDrive-jkenny2334@gmail.com/My Drive/bluespot-data" viewer/data
+    ln -s "$HOME/Library/CloudStorage/GoogleDrive-<account>/My Drive/bluespot-data" viewer/data
 
     bluespot-data/
       dem/              raw USGS 1 m tiles + MANIFEST.jsonl  (shared)

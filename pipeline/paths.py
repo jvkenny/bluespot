@@ -9,15 +9,32 @@ Resolution order:
 """
 import os
 
-_DRIVE = os.path.expanduser(
-    "~/Library/CloudStorage/GoogleDrive-jkenny2334@gmail.com/My Drive/bluespot-data")
+def _drive():
+    """Google Drive for desktop mount holding bluespot-data.
+
+    Prefer a mount where the folder already exists and has data in it (a
+    machine may have several accounts mounted); fall back to the first mount
+    only when nothing has been created yet. $BLUESPOT_DATA_ROOT overrides.
+    """
+    import glob
+    mounts = sorted(glob.glob(os.path.expanduser(
+        "~/Library/CloudStorage/GoogleDrive-*/My Drive")))
+    candidates = [os.path.join(m, "bluespot-data") for m in mounts]
+    for c in candidates:
+        if os.path.isdir(os.path.join(c, "dem")):
+            return c
+    for c in candidates:
+        if os.path.isdir(c):
+            return c
+    return candidates[0] if candidates else None
 _LOCAL = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
 
 def data_root():
     p = os.environ.get("BLUESPOT_DATA_ROOT")
     if p:
         return p
-    if os.path.isdir(os.path.dirname(_DRIVE)):
-        os.makedirs(_DRIVE, exist_ok=True)
-        return _DRIVE
+    d = _drive()
+    if d and os.path.isdir(os.path.dirname(d)):
+        os.makedirs(d, exist_ok=True)
+        return d
     return _LOCAL
