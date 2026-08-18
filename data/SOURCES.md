@@ -21,3 +21,15 @@ Planned (not yet used — verify before relying on):
    contributors, ODbL. Used as drainage outlets only, not displayed.
 3. Basemap (viewer only): Esri World Topographic Map raster tiles. Display,
    not analysis.
+4. ISWS design-storm depths (scenario bookmarks, pipeline/scenario.py):
+   Bulletin 70 (Huff & Angel 1989), Northeast Illinois section, 100-yr 24-hr
+   = 7.58 in; Bulletin 75 (Angel & Markus, "Precipitation Frequency Study
+   for Illinois", ISWS, March 2020), Section 2 (Northeast, incl. Cook Co.),
+   24-hr: 2-yr = 3.34 in, 100-yr = 8.57 in. Verified 2026-08-17 from the
+   lead author's IAFSM presentation (Markus, "Revised Bulletin 70 / New
+   Bulletin 75", Table 5.4 + 100-yr comparison maps),
+   https://www.illinoisfloods.org/content/documents/3a_revised_bulletin_70.pdf,
+   cross-checked against Prairie Research Institute,
+   https://www.prairie.illinois.edu/news/features/hidden-dangers/ (8.57 vs
+   7.58 in for the Chicago area). The 1.0 in bookmark is a reference
+   nuisance rain, not a design storm.
