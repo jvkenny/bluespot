@@ -38,18 +38,22 @@ for SID in $SIDS; do
   OUT=$DIR/depth_$SID.pmtiles
   if [ -f $OUT ]; then echo "[$SID] $OUT exists, skipping"; continue; fi
   if [ ! -f $SRC ]; then echo "[$SID] missing $SRC, skipping"; continue; fi
+  # per-scenario temp names: GDAL refuses to overwrite an existing output,
+  # so a shared name would fail on the second pass through the loop
+  RGBA=$TMP/rgba_$SID.tif; VRT=$TMP/rgba_$SID.vrt; MBT=$TMP/$SID.mbtiles
+  rm -f $RGBA $VRT $MBT
   echo "[$SID] colorize"
-  $G/gdaldem color-relief -q $SRC $TMP/ramp.txt $TMP/rgba.tif \
+  $G/gdaldem color-relief -q $SRC $TMP/ramp.txt $RGBA \
     -alpha -nearest_color_entry -co COMPRESS=DEFLATE -co TILED=YES \
     -co NUM_THREADS=ALL_CPUS -co BIGTIFF=IF_SAFER
-  $G/gdalwarp -q -of VRT -t_srs EPSG:3857 -r bilinear $TMP/rgba.tif $TMP/rgba_3857.vrt
+  $G/gdalwarp -q -of VRT -t_srs EPSG:3857 -r bilinear $RGBA $VRT
   echo "[$SID] mbtiles z16"
   $G/gdal_translate -q -of MBTILES -co TILE_FORMAT=PNG \
-    -co ZOOM_LEVEL_STRATEGY=LOWER $TMP/rgba_3857.vrt $TMP/$SID.mbtiles
+    -co ZOOM_LEVEL_STRATEGY=LOWER $VRT $MBT
   echo "[$SID] overviews z11-15"
-  $G/gdaladdo -q -r average $TMP/$SID.mbtiles 2 4 8 16 32
-  pmtiles convert $TMP/$SID.mbtiles $OUT
-  rm -f $TMP/rgba.tif $TMP/$SID.mbtiles
+  $G/gdaladdo -q -r average $MBT 2 4 8 16 32
+  pmtiles convert $MBT $OUT
+  rm -f $RGBA $VRT $MBT
   ls -la $OUT
 done
 echo "scenario pmtiles -> $DIR"
