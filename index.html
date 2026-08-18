@@ -7,80 +7,128 @@
 <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
 <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
 <style>
-  :root{--ink:#26241E;--paper:rgba(253,252,248,.94);--accent:#31628F;--terra:#B5522F}
+  :root{--ink:#26241E;--paper:rgba(253,252,248,.92);--terra:#B5522F;--serif:'Iowan Old Style',Palatino,Georgia,serif}
   html,body{margin:0;height:100%}
   #map{position:absolute;inset:0}
-  .panel{position:absolute;z-index:2;background:var(--paper);color:var(--ink);
-    font-family:'Iowan Old Style',Palatino,Georgia,serif;border-radius:10px;
-    box-shadow:0 2px 14px rgba(0,0,0,.18);padding:14px 18px;max-width:340px}
-  #intro{top:18px;left:18px}
-  #intro h1{margin:0 0 2px;font-size:26px;letter-spacing:-.01em}
-  #intro .sub{font-style:italic;color:#5C594F;font-size:14.5px;margin:0 0 8px}
-  #intro p{font-size:13.5px;line-height:1.5;margin:6px 0}
-  .disclaim{border-left:3px solid var(--terra);padding:6px 10px;background:rgba(181,82,47,.07);
-    font-size:12.5px;line-height:1.45}
-  #legend{bottom:28px;left:18px;padding:10px 14px}
-  #legend .t{font-size:12px;text-transform:uppercase;letter-spacing:.12em;
-    font-family:ui-monospace,Menlo,monospace;color:#5C594F;margin-bottom:6px}
-  .sw{display:flex;align-items:center;gap:8px;font-size:12.5px;margin:2px 0}
-  .sw i{width:22px;height:13px;border-radius:2px;display:inline-block}
-  #replay{position:absolute;top:18px;right:18px;z-index:2;font:13px ui-monospace,Menlo,monospace;
-    background:var(--paper);border:1px solid rgba(38,36,30,.25);border-radius:8px;
-    padding:7px 12px;cursor:pointer}
+  .chip{position:absolute;z-index:2;background:var(--paper);color:var(--ink);border-radius:9px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);font-family:var(--serif)}
+  #title{top:14px;left:14px;padding:8px 14px}
+  #title b{font-size:18px;letter-spacing:-.01em}
+  #title span{font-style:italic;color:#5C594F;font-size:13px;margin-left:8px}
+  #cap{left:50%;transform:translateX(-50%);bottom:64px;max-width:560px;text-align:center;
+    padding:12px 22px;font-size:19px;line-height:1.45;opacity:0;transition:opacity .6s}
+  #cap.on{opacity:1}
+  #legend{bottom:14px;left:14px;padding:8px 12px;font-size:12px}
+  #legend .row{display:flex;gap:10px;align-items:center}
+  #legend i{width:16px;height:11px;border-radius:2px;display:inline-block;vertical-align:-1px}
+  #legend label{display:inline-flex;gap:4px;align-items:center;cursor:pointer;margin-right:8px}
+  #foot{bottom:14px;right:52px;padding:6px 12px;font-size:11.5px;color:#5C594F}
+  #foot b{color:var(--terra)}
+  #foot details{display:inline}
+  #foot summary{cursor:pointer;display:inline;color:#8B877B}
+  #skip{position:absolute;top:14px;right:14px;z-index:2;font:12.5px ui-monospace,Menlo,monospace;
+    background:var(--paper);border:1px solid rgba(38,36,30,.25);border-radius:8px;padding:6px 11px;cursor:pointer}
 </style>
 </head>
 <body>
 <div id="map"></div>
-<div class="panel" id="intro">
-  <h1>Bluespot</h1>
-  <p class="sub">where the water wants to go — Chicago's North Side</p>
-  <p>Blue marks every place the bare earth would hold water if rain outran
-  drainage, computed by filling a 1-meter USGS lidar terrain model
-  (depression depth, ≥ 5&nbsp;cm). Deeper blue, deeper pool — the deepest are
-  the rail viaducts you already know flood.</p>
-  <div class="disclaim"><b>Terrain screening, not a flood prediction.</b>
-  This map knows the shape of the ground — not the sewers, culverts, or soil
-  beneath it. It shows where water would gather first, not whether it will.</div>
-  <p style="font-size:11.5px;color:#8B877B">Sources: USGS 3DEP 1m DEM (IL 4-County QL1 lidar) ·
-  water outlets © OpenStreetMap contributors · basemap Esri World Topographic</p>
+<div class="chip" id="title"><b>Bluespot</b><span>where the water wants to go</span></div>
+<div class="chip" id="cap"></div>
+<div class="chip" id="legend">
+  <div class="row">
+    <i style="background:rgba(198,219,239,.9)"></i>5cm
+    <i style="background:rgba(107,174,214,.9)"></i>15
+    <i style="background:rgba(49,130,189,.95)"></i>50
+    <i style="background:rgb(8,81,156)"></i>1m
+    <i style="background:rgb(8,48,107)"></i>3m+
+    <i style="background:none;border:1.5px solid var(--terra);height:8px"></i>top pools
+  </div>
+  <div class="row" style="margin-top:5px">
+    <label><input type="checkbox" id="tg-terrain" checked>terrain</label>
+    <label><input type="checkbox" id="tg-depth" checked>water</label>
+    <label><input type="checkbox" id="tg-pools" checked>pools</label>
+  </div>
 </div>
-<div class="panel" id="legend">
-  <div class="t">ponding depth</div>
-  <div class="sw"><i style="background:rgba(198,219,239,.75)"></i> 5–15 cm — nuisance</div>
-  <div class="sw"><i style="background:rgba(107,174,214,.85)"></i> 15–50 cm — curb-deep</div>
-  <div class="sw"><i style="background:rgba(8,81,156,.95)"></i> 0.5–1 m — stalls a car</div>
-  <div class="sw"><i style="background:rgb(8,48,107)"></i> &gt; 1 m — viaduct-deep</div>
-</div>
-<button id="replay">↺ replay flight</button>
+<div class="chip" id="foot"><b>terrain screening, not a flood prediction</b> ·
+  <details><summary>sources</summary> USGS 3DEP 1m lidar DEM (IL 4-County QL1) ·
+  water &amp; names © OpenStreetMap · basemap Esri World Topo</details></div>
+<button id="skip">skip tour</button>
 <script>
-const AOI = {center:[-87.6900,41.9500], zoom:13.4};
+const P = location.origin + location.pathname.replace(/index\.html$/,'');
 const map = new maplibregl.Map({
   container:'map',
   style:{
     version:8,
     projection:{type:'globe'},
+    glyphs:'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
     sources:{
       esri:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'],
         tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP'},
-      depth:{type:'raster',tiles:[location.origin+location.pathname.replace(/index\.html$/,'')+'tiles/depth/{z}/{x}/{y}.png'],
-        tileSize:256,minzoom:11,maxzoom:17}
+      terrain:{type:'raster',tiles:[P+'tiles/terrain/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
+      depth:{type:'raster',tiles:[P+'tiles/depth/{z}/{x}/{y}.png'],bounds:[-87.7205,41.9295,-87.6595,41.9705],tileSize:256,minzoom:11,maxzoom:17},
+      pools:{type:'geojson',data:P+'north-side-pilot_pools.geojson'},
+      labels:{type:'geojson',data:P+'north-side-pilot_pool_labels.geojson'}
     },
     layers:[
       {id:'base',type:'raster',source:'esri'},
-      {id:'bluespot',type:'raster',source:'depth',paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}}
+      {id:'terrain',type:'raster',source:'terrain',paint:{'raster-opacity':0.85}},
+      {id:'bluespot',type:'raster',source:'depth',paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
+      {id:'pool-line',type:'line',source:'pools',paint:{'line-color':'#B5522F','line-width':2,'line-opacity':.9}},
+      {id:'pool-pt',type:'circle',source:'labels',paint:{'circle-radius':4,'circle-color':'#B5522F',
+        'circle-stroke-color':'#FDFCF8','circle-stroke-width':1.5}},
+      {id:'pool-name',type:'symbol',source:'labels',minzoom:13.5,layout:{
+        'text-field':['format',['get','name'],{},'\n',{},
+          ['concat','max ',['to-string',['get','max_depth_m']],' m'],{'font-scale':0.85}],
+        'text-font':['Open Sans Bold'],'text-size':12,'text-offset':[0,1.1],'text-anchor':'top',
+        'text-variable-anchor':['top','bottom','left','right']},
+        paint:{'text-color':'#7E3A21','text-halo-color':'rgba(253,252,248,.92)','text-halo-width':1.6}}
     ],
     sky:{'atmosphere-blend':['interpolate',['linear'],['zoom'],0,1,10,0.2,12,0]}
   },
   center:[-30,25], zoom:1.2, attributionControl:{compact:true}
 });
 map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'bottom-right');
-function flight(){
-  map.jumpTo({center:[-30,25],zoom:1.2,bearing:0,pitch:0});
-  map.flyTo({center:AOI.center,zoom:AOI.zoom,speed:0.55,curve:1.6,essential:true});
-}
 new ResizeObserver(()=>map.resize()).observe(document.getElementById('map'));
-map.on('load',()=>setTimeout(flight,900));
-document.getElementById('replay').onclick=flight;
+
+const cap = document.getElementById('cap');
+const steps = [
+  {v:{center:[-87.6900,41.9500],zoom:12.6,speed:0.55,curve:1.6},dwell:4200,
+   c:'Every blue mark is a bowl in the bare earth — 1-meter lidar, nothing hidden.'},
+  {v:{center:[-87.7185,41.9478],zoom:16.1,speed:0.5},dwell:5200,
+   c:'The deepest holds 3.5 m — where Irving Park Road ducks under the Kennedy.'},
+  {v:{center:[-87.6742,41.9536],zoom:15.4,speed:0.5},dwell:5200,
+   c:'Embankments cross the flat like dams. The streets beneath them pond first.'},
+  {v:{center:[-87.6900,41.9500],zoom:13.4,speed:0.5},dwell:5200,
+   c:'The ground, not the sewers. Where water gathers first — not whether it will.'}
+];
+let tourTimer=null, touring=false;
+function setCap(t){ if(!t){cap.classList.remove('on');return;} cap.textContent=t; cap.classList.add('on'); }
+function step(i){
+  if(i>=steps.length){ endTour(); return; }
+  touring=true;
+  const s=steps[i];
+  map.flyTo({...s.v, essential:true});
+  map.once('moveend',()=>{ if(!touring) return; setCap(s.c);
+    tourTimer=setTimeout(()=>{ setCap(null); tourTimer=setTimeout(()=>step(i+1),650); }, s.dwell); });
+}
+function endTour(){ touring=false; clearTimeout(tourTimer); setCap(null);
+  document.getElementById('skip').textContent='↺ replay tour'; }
+function startTour(){ clearTimeout(tourTimer);
+  map.jumpTo({center:[-30,25],zoom:1.2,bearing:0,pitch:0}); step(0); }
+document.getElementById('skip').onclick=()=>{ touring?endTour():startTour(); };
+map.on('load',()=>setTimeout(startTour,800));
+map.on('mousedown',()=>{ if(touring) endTour(); });
+
+const T={'tg-terrain':['terrain'],'tg-depth':['bluespot'],'tg-pools':['pool-line','pool-pt','pool-name']};
+for(const[id,layers]of Object.entries(T))
+  document.getElementById(id).onchange=e=>layers.forEach(l=>
+    map.setLayoutProperty(l,'visibility',e.target.checked?'visible':'none'));
+map.on('click','pool-pt',e=>{
+  const p=e.features[0].properties;
+  new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+    `<b>#${p.rank} ${p.name}</b><br>max ${p.max_depth_m} m · `+
+    `${Number(p.area_m2).toLocaleString()} m² · ~${Number(p.volume_m3).toLocaleString()} m³`).addTo(map);
+});
 </script>
 </body>
 </html>
