@@ -121,7 +121,8 @@ def _core_bounds(path):
 
 def chunked(dem_dir, aoi_path, water_path, out_dir, out_cog, halo_m=1000.0):
     halo_m = float(halo_m)
-    tiles = sorted(glob.glob(os.path.join(dem_dir, "*.tif")))
+    tiles = sorted(os.path.abspath(t)
+                   for t in glob.glob(os.path.join(dem_dir, "*.tif")))
     if not tiles:
         sys.exit(f"no .tif in {dem_dir}")
     os.makedirs(out_dir, exist_ok=True)

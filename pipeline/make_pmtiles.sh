@@ -20,6 +20,9 @@ DIR=$(mktemp -d); trap "rm -rf $DIR" EXIT
 mkdir -p $OUT
 
 # ---- depth --------------------------------------------------------------
+if [ -f $OUT/depth.pmtiles ]; then
+  echo "[depth] $OUT/depth.pmtiles exists, skipping"
+else
 cat > $DIR/ramp.txt <<RAMP
 nv 0 0 0 0
 0.0 0 0 0 0
@@ -42,8 +45,12 @@ echo "[depth] overviews z11-15"
 $G/gdaladdo -q -r average $DIR/depth.mbtiles 2 4 8 16 32
 pmtiles convert $DIR/depth.mbtiles $OUT/depth.pmtiles
 ls -la $OUT/depth.pmtiles
+fi
 
 # ---- terrain ------------------------------------------------------------
+if [ -f $OUT/terrain.pmtiles ]; then
+  echo "[terrain] $OUT/terrain.pmtiles exists, skipping"; exit 0
+fi
 echo "[terrain] 2m dem"
 $G/gdal_translate -q -outsize 50% 50% -r average $DEMVRT $DIR/dem2m.tif \
   -co COMPRESS=DEFLATE -co TILED=YES
