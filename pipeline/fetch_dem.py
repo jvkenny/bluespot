@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Fetch USGS 3DEP 1m DEM tiles intersecting an AOI, via the TNM Access API.
 
-Usage: fetch_dem.py data/aoi/<name>.geojson
+Usage: fetch_dem.py data/aoi/<name>.geojson [project_substring]
 Writes tiles to <data_root>/dem/ (Google Drive by default; see paths.py)
 and appends provenance to MANIFEST.jsonl there.
 Idempotent: skips tiles already fully downloaded.
+
+Where multiple lidar projects overlap an AOI, pass a project_substring
+(e.g. "IL_4_County") to pin one vintage — mixing projects creates seams
+at acquisition boundaries.
 """
 import json, os, sys, urllib.request, urllib.parse, datetime
 from paths import data_root
@@ -24,14 +28,17 @@ def bbox_of(geojson_path):
         walk(f["geometry"]["coordinates"])
     return min(xs), min(ys), max(xs), max(ys)
 
-def main(aoi_path):
+def main(aoi_path, project=None):
     raw = os.path.join(data_root(), "dem")
     os.makedirs(raw, exist_ok=True)
     bbox = ",".join(str(v) for v in bbox_of(aoi_path))
     q = urllib.parse.urlencode({"datasets": DATASET, "bbox": bbox,
                                 "outputFormat": "JSON", "max": "100"})
     items = json.load(urllib.request.urlopen(f"{TNM}?{q}"))["items"]
-    print(f"{len(items)} tile(s) intersect {os.path.basename(aoi_path)}")
+    if project:
+        items = [it for it in items if project in it["title"]]
+    print(f"{len(items)} tile(s) intersect {os.path.basename(aoi_path)}"
+          + (f" (project filter: {project})" if project else ""))
     for it in items:
         url = it["downloadURL"]
         dest = os.path.join(raw, os.path.basename(url))
@@ -47,4 +54,4 @@ def main(aoi_path):
                 "retrieved": datetime.date.today().isoformat()}) + "\n")
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)
