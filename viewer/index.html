@@ -204,8 +204,14 @@
   <div id="stops"></div>
 </div>
 
+<script src="config.js"></script>
 <script>
 const P = location.origin + location.pathname.replace(/index\.html$/,'');
+// Where the PMTiles archives live. Relative by default (the gitignored
+// viewer/data symlink into Drive); set an absolute base in config.js to serve
+// them from object storage instead. Must support HTTP Range + CORS.
+const DB = (window.BLUESPOT_DATA_BASE || 'data/');
+const D = /^https?:\/\//.test(DB) ? DB.replace(/\/?$/,'/') : P + DB.replace(/^\/?/,'').replace(/\/?$/,'/');
 const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol('pmtiles', protocol.tile);
 const REGION_BOUNDS = [-88.7074,41.2016,-87.0199,42.4956];  // 7-county CMAP, for framing
@@ -214,7 +220,7 @@ const REGION_DATA_BOUNDS = [-88.8264,41.1775,-87.4770,42.5414];
 const DATA_MINZOOM = 11;   // lowest zoom present in the PMTiles archives
 const CITY_BOUNDS = [-87.9401,41.6445,-87.5241,42.0231];
 const PILOT_BOUNDS = [-87.7205,41.9295,-87.6595,41.9705];
-const pm = n => ({type:'raster',url:'pmtiles://'+P+'data/citywide/depth_'+n+'.pmtiles',tileSize:256,bounds:CITY_BOUNDS});
+const pm = n => ({type:'raster',url:'pmtiles://'+D+'citywide/depth_'+n+'.pmtiles',tileSize:256,bounds:CITY_BOUNDS});
 const map = new maplibregl.Map({
   container:'map',
   style:{
@@ -224,10 +230,10 @@ const map = new maplibregl.Map({
     sources:{
       esri:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'],
         tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP | City of Chicago'},
-      terrain_r:{type:'raster',url:'pmtiles://'+P+'data/regional/terrain.pmtiles',tileSize:256,bounds:REGION_DATA_BOUNDS},
-      depth_r:{type:'raster',url:'pmtiles://'+P+'data/regional/depth.pmtiles',tileSize:256,bounds:REGION_DATA_BOUNDS},
-      terrain:{type:'raster',url:'pmtiles://'+P+'data/citywide/terrain.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
-      depth:{type:'raster',url:'pmtiles://'+P+'data/citywide/depth.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
+      terrain_r:{type:'raster',url:'pmtiles://'+D+'regional/terrain.pmtiles',tileSize:256,bounds:REGION_DATA_BOUNDS},
+      depth_r:{type:'raster',url:'pmtiles://'+D+'regional/depth.pmtiles',tileSize:256,bounds:REGION_DATA_BOUNDS},
+      terrain:{type:'raster',url:'pmtiles://'+D+'citywide/terrain.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
+      depth:{type:'raster',url:'pmtiles://'+D+'citywide/depth.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
       depth_r10:pm('r10'), depth_b75_2yr:pm('b75_2yr'),
       depth_b70_100yr:pm('b70_100yr'), depth_b75_100yr:pm('b75_100yr'),
       pools:{type:'geojson',data:P+'region_pools.geojson'},
