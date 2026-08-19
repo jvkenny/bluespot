@@ -40,3 +40,13 @@ verify the viewer loads with the local `viewer/data` symlink removed.
 - Basemap terms: Esri World Topographic tiles are used via the public ArcGIS
   Online endpoint — confirm that is acceptable for a public site, or swap to
   an OSM-based raster/vector basemap.
+
+## Status log
+- **2026-08-18** — Bucket `bluespot` created (ENAM), CORS set, Public
+  Development URL enabled, bucket-scoped token in `.env.publish`. Citywide
+  archives uploaded (513 MB, 6 files) and verified over the public URL:
+  `206 Partial Content`, `Access-Control-Allow-Origin: *`,
+  `Access-Control-Expose-Headers: content-length,content-range,etag`,
+  week-long immutable caching. Regional pair (1.7 GB) uploading.
+  Still private: nothing links to the bucket, `viewer/config.js` still points
+  at the local symlink, and the repo remains private.
