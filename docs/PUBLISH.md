@@ -50,3 +50,13 @@ verify the viewer loads with the local `viewer/data` symlink removed.
   week-long immutable caching. Regional pair (1.7 GB) uploading.
   Still private: nothing links to the bucket, `viewer/config.js` still points
   at the local symlink, and the repo remains private.
+- **2026-08-19 — PUBLISHED.** Repo public; site live at
+  https://jvkenny.github.io/bluespot/ from the `gh-pages` branch (a
+  `git subtree split --prefix=viewer`). Tiles served from R2; the viewer picks
+  its data source by hostname (localhost → Drive symlink, else R2).
+  Licensing shipped: MIT (code) + ODbL (derived data), see LICENSE and
+  LICENSE-DATA.md. Basemap swapped from Esri to USGS The National Map
+  (public domain) to avoid third-party basemap terms on a public site.
+  Pool labels now read "near <name>" — nearest named feature, not identity.
+  To redeploy the viewer after edits:
+  `git subtree split --prefix=viewer -b gh-pages -f && git push -f origin gh-pages`
