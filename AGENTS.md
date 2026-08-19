@@ -17,8 +17,10 @@ Hard rules:
   primary copy. `data/derived/` holds small AOI-scale outputs; region-scale
   derived artifacts also go to Drive. Everything must stay re-fetchable or
   re-computable by script from public sources.
-- Private repo until the maintainer explicitly says to publish. Never enable
-  GitHub Pages or make the repo public without being asked.
+- **PUBLIC as of 2026-08-19** (John's explicit go-ahead). Code MIT, derived
+  data ODbL — see LICENSE and LICENSE-DATA.md; keep attribution intact in the
+  viewer. Tiles are served from Cloudflare R2, not the repo. Treat anything
+  added here as world-readable.
 
 Conventions:
 - Pipeline scripts are stdlib + numpy/rasterio/scikit-image (repo .venv);
