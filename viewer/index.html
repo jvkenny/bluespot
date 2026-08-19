@@ -178,14 +178,17 @@
   <button class="tab" id="tab-info" aria-label="sources and caveats">›</button>
   <div class="body">
     <b>Terrain screening, not a flood prediction.</b> This map knows the shape of
-    the ground — not the sewers, culverts, or soil beneath it.
+    the ground — not the sewers, culverts, or soil beneath it. It is published
+    for public understanding: <b>not for insurance, real-estate, or emergency
+    decisions</b>, and it carries no warranty. Pool names are the nearest
+    named feature, not the pool's identity.
     <p style="margin:8px 0 0">USGS 3DEP 1m lidar DEM (5 projects, 2016–2023;
     IL 4-County QL1 2016 over most of the region) · deep pools near the Des Plaines
     and Sag corridors are working limestone quarries, not flood hollows ·
     west Will County has no 3DEP 1m coverage and is blank ·
     water, names &amp; address search © OpenStreetMap (Nominatim) ·
     county boundaries US Census TIGER 2024 · city boundary Chicago Data Portal ·
-    basemap Esri World Topo · design storms ISWS Bulletins 70 &amp; 75
+    basemap USGS The National Map · design storms ISWS Bulletins 70 &amp; 75
     (NE Illinois, 24-hr) · rain scenarios assume uniform runoff C&nbsp;=&nbsp;0.55
     and 10&nbsp;mm/event sewer capture — stated assumptions, not data.</p>
   </div>
@@ -228,8 +231,11 @@ const map = new maplibregl.Map({
     projection:{type:'globe'},
     glyphs:'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
     sources:{
-      esri:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'],
-        tileSize:256,maxzoom:19,attribution:'Esri, USGS | © OpenStreetMap contributors | USGS 3DEP | City of Chicago'},
+      // USGS The National Map topo basemap: federal public domain, same
+      // agency as the lidar underneath, and no third-party terms to honor on
+      // a public site.
+      base:{type:'raster',tiles:['https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}'],
+        tileSize:256,maxzoom:16,attribution:'Basemap &amp; elevation: USGS The National Map | Water &amp; names © OpenStreetMap contributors (ODbL) | Boundaries: US Census TIGER, City of Chicago'},
       terrain_r:{type:'raster',url:'pmtiles://'+D+'regional/terrain.pmtiles',tileSize:256,bounds:REGION_DATA_BOUNDS},
       depth_r:{type:'raster',url:'pmtiles://'+D+'regional/depth.pmtiles',tileSize:256,bounds:REGION_DATA_BOUNDS},
       terrain:{type:'raster',url:'pmtiles://'+D+'citywide/terrain.pmtiles',tileSize:256,bounds:CITY_BOUNDS},
@@ -240,7 +246,7 @@ const map = new maplibregl.Map({
       labels:{type:'geojson',data:P+'region_pool_labels.geojson'}
     },
     layers:[
-      {id:'base',type:'raster',source:'esri'},
+      {id:'base',type:'raster',source:'base'},
       {id:'terrain-region',type:'raster',source:'terrain_r',paint:{'raster-opacity':0.85}},
       {id:'terrain',type:'raster',source:'terrain',paint:{'raster-opacity':0.85}},
       {id:'bluespot-region',type:'raster',source:'depth_r',paint:{'raster-opacity':0.92,'raster-resampling':'nearest'}},
@@ -253,7 +259,7 @@ const map = new maplibregl.Map({
       {id:'pool-pt',type:'circle',source:'labels',paint:{'circle-radius':4,'circle-color':'#B5522F',
         'circle-stroke-color':'#FDFCF8','circle-stroke-width':1.5}},
       {id:'pool-name',type:'symbol',source:'labels',minzoom:12.5,layout:{
-        'text-field':['format',['get','name'],{},'\n',{},
+        'text-field':['format',['concat','near ',['get','name']],{},'\n',{},
           ['concat','max ',['to-string',['get','max_depth_m']],' m'],{'font-scale':0.85}],
         'text-font':['Open Sans Bold'],'text-size':12,'text-offset':[0,1.1],'text-anchor':'top',
         'text-variable-anchor':['top','bottom','left','right']},
@@ -469,7 +475,7 @@ layoutForWidth();   // after every panel const is initialized
 map.on('click','pool-pt',e=>{
   const p=e.features[0].properties;
   new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
-    `<b>#${p.rank} ${p.name}</b><br>max ${p.max_depth_m} m · `+
+    `<b>#${p.rank} · near ${p.name}</b><br>max ${p.max_depth_m} m · `+
     `${Number(p.area_m2).toLocaleString()} m² · ~${Number(p.volume_m3).toLocaleString()} m³`+
     (p.edge_truncated===true||p.edge_truncated==='true'?'<br><i>continues past the boundary — figures are the in-area fragment</i>':'')).addTo(map);
 });
