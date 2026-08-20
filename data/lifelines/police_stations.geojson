@@ -1,0 +1,426 @@
+{
+ "type": "FeatureCollection",
+ "name": "police_stations",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Albany Park District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-qqvu.rnf6_wxam",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.728115,
+     41.966053
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Austin District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-n3pc_94tf.h23z",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.7682,
+     41.880083
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Calumet District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-tfa6~htpf-e529",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.604506,
+     41.692723
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Central District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-fc5m-k4np-iu3g",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627356,
+     41.858373
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Chicago Lawn District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-yrnu_iask_6jqc",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708864,
+     41.778987
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Deering District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-2aau.9jhn~eg4f",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646408,
+     41.837394
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Englewood District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-9w74_aens_ufyr",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.660887,
+     41.779632
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Grand Central District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-9qcm.w43h.s976",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.765574,
+     41.918609
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Grand Crossing District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-pcpr.nzun_7kie",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.605748,
+     41.766431
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Gresham District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-c4dx-yr49~jx6g",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644229,
+     41.752137
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Harrison District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-s8bd-d3a7_vqtv",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705488,
+     41.873582
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Headquarters",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-f2he~mzx8.vx5u",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623395,
+     41.830702
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jefferson Park District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-f845_5tgd_x6qx",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766149,
+     41.974094
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Lincoln District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-r5gz-4tnq-mw5y",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692845,
+     41.97955
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Morgan Park District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-rxbs_hjjn~fr8e",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.66852,
+     41.691435
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Near North District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-c4au-phs3.sbv8",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.643352,
+     41.903242
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Near West District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-3e2s_et4c~xxeq",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656973,
+     41.862977
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ogden District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-z8dj~u6tc~tqtr",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708382,
+     41.856685
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rogers Park District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-yvfb~jk5b-ieea",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.671324,
+     41.999763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Shakespeare District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-eav6~xedj~7s7g",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.697452,
+     41.921103
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "South Chicago District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-wr2q_thjk-btbn",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.568349,
+     41.707933
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Town Hall District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-a89m.euyp.x5j2",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.651512,
+     41.9474
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Wentworth District station",
+    "category": "police_stations",
+    "source": "chicago_data_portal_z8bn-74gv",
+    "source_id": "row-w8n8_ep9y-ep35",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.63056,
+     41.801811
+    ]
+   }
+  }
+ ]
+}

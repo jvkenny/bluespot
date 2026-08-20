@@ -1,0 +1,606 @@
+{
+ "type": "FeatureCollection",
+ "name": "hospitals",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Advocate Illinois Masonic Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140182",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.652202,
+     41.936363
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Advocate Trinity Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140048",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.567846,
+     41.726272
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Amita Health Resurrection Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140117",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.812922,
+     41.988607
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ann & Robert H Lurie Childrens Hospital Of Chicago",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "143300",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622924,
+     41.896694
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Chicago Read Mental Health Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "144010",
+    "retrieved": "2026-08-19",
+    "subtype": "no_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.797695,
+     41.957171
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Community First Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140251",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.768191,
+     41.945804
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Hartgrove Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "144026",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.767568,
+     41.865613
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Holy Cross Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140133",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.690798,
+     41.769985
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Humboldt Park Health",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140206",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699351,
+     41.899817
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Insight Hospital And Medical Center Chicago",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140158",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623307,
+     41.845416
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jackson Park Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140177",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.585639,
+     41.757803
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jesse Brown Va Medical Center - Va Chicago Healthcare System",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "14003F",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.676452,
+     41.871189
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "John H Stroger Jr Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140124",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674086,
+     41.874023
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Larabida Childrens Hospital I",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+osm_nominatim",
+    "source_id": "143301",
+    "retrieved": "2026-08-19",
+    "subtype": "no_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.571326,
+     41.777411
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Loretto Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140083",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.764503,
+     41.872688
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Louis A Weiss Memorial Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140082",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.648947,
+     41.96647
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Methodist Hospital Of Chicago",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140197",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.671049,
+     41.972749
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Montrose Behavioral Health Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "144043",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65017,
+     41.968194
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mt Sinai Hospital Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140018",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.69572,
+     41.860126
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Northwestern Memorial Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140281",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621516,
+     41.894944
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Presence Saint Joseph Hospital - Chicago",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140224",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632856,
+     41.935259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Presence Saints Mary And Elizabeth Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140180",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.682962,
+     41.903036
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Provident Hospital Of Chicago",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140300",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.612578,
+     41.802205
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Roseland Community Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140068",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624336,
+     41.692514
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rush University Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+osm_nominatim",
+    "source_id": "140119",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669135,
+     41.874644
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Saint Anthony Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140095",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.698093,
+     41.855464
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Shriners Hospital For Children",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "143302",
+    "retrieved": "2026-08-19",
+    "subtype": "no_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.794959,
+     41.91695
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "South Shore Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140181",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.568713,
+     41.749734
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "St Bernard Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140103",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631874,
+     41.778184
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Swedish Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+osm_nominatim",
+    "source_id": "140114",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699405,
+     41.975114
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "The University Of Chicago Medical Center",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140088",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.604857,
+     41.788774
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Thorek Memorial Hospital",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140115",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.652317,
+     41.954575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "University Of Illinois Hospital And Clinics",
+    "category": "hospitals",
+    "source": "cms_hospital_general_information+census_geocoder",
+    "source_id": "140150",
+    "retrieved": "2026-08-19",
+    "subtype": "with_emergency_department"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670709,
+     41.869261
+    ]
+   }
+  }
+ ]
+}

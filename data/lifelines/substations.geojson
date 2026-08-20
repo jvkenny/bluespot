@@ -1,0 +1,3090 @@
+{
+ "type": "FeatureCollection",
+ "name": "substations",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1026527494",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.91431,
+     41.954344
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1060129955",
+    "retrieved": "2026-08-19",
+    "subtype": "transition"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.661932,
+     41.889181
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1088262811",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.558149,
+     41.756027
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1173851387",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622694,
+     41.825308
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1265439366",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.93544,
+     41.998212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1316224936",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647479,
+     41.901187
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1323951497",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65645,
+     41.850772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1323951498",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.655076,
+     41.850017
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1327074923",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.544207,
+     41.674002
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1425661240",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622597,
+     41.879244
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1447193552",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.601795,
+     41.736918
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1451201023",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653775,
+     41.949335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1452413313",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.640625,
+     41.918733
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1460345440",
+    "retrieved": "2026-08-19",
+    "subtype": "yes"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624863,
+     41.720704
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1475354753",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719347,
+     41.822838
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1476168603",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654665,
+     41.849832
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1476168604",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654426,
+     41.851492
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1476168605",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653986,
+     41.851017
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1476168609",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654579,
+     41.848729
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1485092324",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.556984,
+     41.684192
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1485092325",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.556475,
+     41.68421
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1498073206",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638531,
+     41.866979
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1503862139",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675749,
+     41.873561
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1504338963",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.67338,
+     41.871877
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1514904076",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.755222,
+     41.867611
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1526469486",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.876108,
+     41.97904
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/160719248",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644707,
+     41.882194
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/162513333",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.76236,
+     41.869995
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163482360",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.845398,
+     41.979766
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163490918",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.896963,
+     41.979454
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210541837",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626935,
+     41.862926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210665974",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641572,
+     41.87091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/28257545",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.896648,
+     41.979825
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/28257696",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.883412,
+     41.975978
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/28520698",
+    "retrieved": "2026-08-19",
+    "subtype": "transition"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.695485,
+     41.946451
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449889481",
+    "retrieved": "2026-08-19",
+    "subtype": "transition"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.740304,
+     41.86613
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/450130903",
+    "retrieved": "2026-08-19",
+    "subtype": "transition"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626164,
+     41.782718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/490367498",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.612134,
+     41.667665
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/628830987",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.718793,
+     41.826311
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/714521524",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.666812,
+     41.843895
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/750291221",
+    "retrieved": "2026-08-19",
+    "subtype": "yes"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.717531,
+     41.828821
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/924579624",
+    "retrieved": "2026-08-19",
+    "subtype": "yes"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.541609,
+     41.735723
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "62nd Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210906244",
+    "retrieved": "2026-08-19",
+    "subtype": "substation"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.605541,
+     41.7825
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bronzeville Community Microgrid Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "node/12360623313",
+    "retrieved": "2026-08-19",
+    "subtype": "yes"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.610689,
+     41.821658
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Brookdale Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/211173326",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.591961,
+     41.76944
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 17th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1516695552",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669338,
+     41.858404
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 18th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1506161604",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626091,
+     41.858728
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 27th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1519725193",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.630272,
+     41.844016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 35th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1519749335",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626098,
+     41.830336
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 48th Place Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1523786653",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681591,
+     41.805087
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 50th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1521925734",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632436,
+     41.803232
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 59th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1507555583",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618558,
+     41.787044
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 79th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1523077517",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627337,
+     41.751165
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA 95th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1523109395",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.625452,
+     41.720538
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Archer Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1518515154",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686374,
+     41.826063
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Armitage Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1510719443",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.652619,
+     41.917536
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Ashland Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1518533298",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665241,
+     41.838271
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Barry Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1508523813",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.712746,
+     41.937256
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Broadway Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1509645587",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659313,
+     41.988202
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Bryn Mawr Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163327752",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.809801,
+     41.982057
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Calumet Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1507864669",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618501,
+     41.808931
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Canal Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1518976195",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638158,
+     41.852362
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Chicago/Austin Susbstation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/953290008",
+    "retrieved": "2026-08-19",
+    "subtype": "substation"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.774621,
+     41.89494
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Clark Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1509659911",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653506,
+     41.943056
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Clifton Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1509653317",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.657454,
+     41.962476
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Cottage Grove Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1507835769",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.603235,
+     41.780715
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Cumberland Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/680273088",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.838493,
+     41.983347
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Damen Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1508615950",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.678296,
+     41.910124
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Douglas Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1516672432",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.685313,
+     41.854286
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA East 63rd Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1462641671",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618423,
+     41.780594
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA East Lake Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1508003021",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627366,
+     41.886068
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Edmunds Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1511816896",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.765899,
+     41.971833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Farwell Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1509599806",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665759,
+     42.006347
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Franklin Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1508003475",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.634784,
+     41.877604
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Grace Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1509939765",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674466,
+     41.950179
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Harding Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1515712776",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.723919,
+     41.854251
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Haymarket Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1514064698",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.643854,
+     41.88407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Hermitage Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1503923965",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669843,
+     41.873492
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Hill Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1333101516",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.636637,
+     41.90183
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Illinois Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1512668126",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.633216,
+     41.891037
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Kedvale Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1512123171",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.73023,
+     41.954245
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Kedzie Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1515050412",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.70635,
+     41.873851
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Kedzie Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1518480541",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705107,
+     41.804589
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Keeler Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1517051376",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.727908,
+     41.798919
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Kimball Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1510045041",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.711688,
+     41.96634
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Kolmar Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1514951863",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.739427,
+     41.872728
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Lincoln Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1330210707",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653119,
+     41.928198
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Loomis Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1462666467",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.6597,
+     41.778703
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Lotus Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1513565194",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.76214,
+     41.887077
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Midway Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1517049881",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.738647,
+     41.787641
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Milwaukee Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1512615537",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.66377,
+     41.901345
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Morgan Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1512627678",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65216,
+     41.875536
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Nagle Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1511815043",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.784547,
+     41.982713
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Navy Pier Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/953291457",
+    "retrieved": "2026-08-19",
+    "subtype": "substation"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.610367,
+     41.892808
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA O'Hare Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1511813371",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.898105,
+     41.980344
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Pershing Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1520822938",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631685,
+     41.822426
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Princeton Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1521957810",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632413,
+     41.780201
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Ravenswood Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1510040524",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.687403,
+     41.96608
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Sacramento Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1512293519",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.702724,
+     41.925461
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Sedgwick Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1332831214",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639435,
+     41.910393
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Springfield Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1513725968",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.724105,
+     41.885632
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA State Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1518981795",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626974,
+     41.866548
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Washington Blvd Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1502580937",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670138,
+     41.882988
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CTA Western Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1513749375",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686133,
+     41.884869
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Calumet Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/91611113",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.546157,
+     41.71542
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Clybourn Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/35799001",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656128,
+     41.913847
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd 138kV-345kV West Loop Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/403683305",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653794,
+     41.901171
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Beverly Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/217007024",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654145,
+     41.703522
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Crosby 138kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449872370",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646231,
+     41.902316
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Diversey Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/209884169",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675947,
+     41.930761
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Galewood Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449369704",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.785789,
+     41.923169
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Garfield 345kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/214219069",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628138,
+     41.795758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Higgins 138kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449418938",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.807662,
+     41.979322
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Hyde Park Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1049138672",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.605496,
+     41.803323
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Montrose Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1509653311",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.657245,
+     41.962018
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Natoma Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/217817024",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.790903,
+     41.925216
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Northwest 138kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/28084754",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.69691,
+     41.945186
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Rockwell 138kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/241490186",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692277,
+     41.891863
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Rosehill Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449872373",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674193,
+     41.98708
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Sawyer Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/489998639",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.713162,
+     41.804758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/209477942",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686383,
+     41.96608
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ComEd Taylor 138kV-345kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/95357393",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.636587,
+     41.870902
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Congress Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/209359404",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.690901,
+     41.8744
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Crawford 138kV-345kV Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/229431908",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.726833,
+     41.829071
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Crawford Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/229431907",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.726324,
+     41.827119
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "DeKoven Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/148903010",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642787,
+     41.868981
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Dearborn Street  Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/124865475",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.629166,
+     41.88377
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Facility Power Substation 1 & 2",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163500118",
+    "retrieved": "2026-08-19",
+    "subtype": "industrial"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.905068,
+     41.979897
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Facility Power Substation 6",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163490905",
+    "retrieved": "2026-08-19",
+    "subtype": "industrial"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.883355,
+     41.988196
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Finkl Steel Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/406305839",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.58836,
+     41.724053
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ford City Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449872367",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.733356,
+     41.761986
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Hanson Park Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449369705",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.753903,
+     41.916463
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Harbor Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/490252922",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.545275,
+     41.724737
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Harper Avenue Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/144479779",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.588624,
+     41.792945
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Hayford Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/95063618",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.713398,
+     41.756408
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Hegewisch Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/103532273",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.550766,
+     41.663443
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Humboldt Park Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/209388403",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.687353,
+     41.900847
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Irving Park Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1305986866",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.745286,
+     41.95379
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jefferson Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210665969",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.643049,
+     41.870833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Kingsbury Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210679946",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638434,
+     41.891773
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "LaSalle Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/148803815",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631379,
+     41.87285
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Lakeview Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210320778",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656639,
+     41.931953
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra 16th Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210542510",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621179,
+     41.859605
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra 31st Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/984992704",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.610837,
+     41.837758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra 51st Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/984992673",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.588151,
+     41.80391
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Brookdale Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/211173325",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.592,
+     41.76925
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Burnside Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210815064",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.604248,
+     41.721793
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Cheltenham Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/1088651828",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.552043,
+     41.750337
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Front Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210694350",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.613614,
+     41.681559
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Hegewisch Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/211327656",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.549018,
+     41.650587
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Jackson Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/199560762",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622635,
+     41.878661
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metra Laflin Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210013474",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.658953,
+     41.67044
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ohio Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "relation/18052331",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638869,
+     41.892089
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ontario Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/158621273",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.630028,
+     41.893009
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Plymouth Court Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/149119621",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628404,
+     41.875256
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Portage Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449369706",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.74131,
+     41.948283
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Quarry TDC",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/992584924",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654047,
+     41.847308
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "RB-40 Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163490893",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.896442,
+     41.980087
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "River Energy Center Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/493781207",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.559037,
+     41.687212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Roseland Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210701571",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62047,
+     41.69672
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "School Street Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163086993",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.786474,
+     41.939923
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Southeast Chicago EC Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/491648670",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.545474,
+     41.718933
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tower Automotive Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/103532285",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.539823,
+     41.669233
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Traction Power Substation A",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163500151",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.903093,
+     41.976674
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Traction Power Substation B",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163490930",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.891368,
+     41.97643
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Traction Power Substation C",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/163490929",
+    "retrieved": "2026-08-19",
+    "subtype": "traction"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.883155,
+     41.981184
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Transformer Building",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/164021885",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719684,
+     41.986261
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "University Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/210910677",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.606957,
+     41.803634
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Wallace Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/450081265",
+    "retrieved": "2026-08-19",
+    "subtype": "distribution"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639718,
+     41.746665
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Washington Park Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/449369707",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.6194,
+     41.782056
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Wildwood Substation",
+    "category": "substations",
+    "source": "openstreetmap",
+    "source_id": "way/103533965",
+    "retrieved": "2026-08-19",
+    "subtype": "transmission"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618162,
+     41.662952
+    ]
+   }
+  }
+ ]
+}
