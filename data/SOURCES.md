@@ -99,7 +99,56 @@ download records live in `<data_root>/dem/MANIFEST.jsonl` on Google Drive
    labels, not curated place names — several name a road beside the feature
    rather than the feature itself, and the deepest ones are quarries.
 
+9. NLCD 2021 Land Cover, CONUS ("L48") — Multi-Resolution Land
+   Characteristics Consortium (MRLC), 30 m, EPSG:5070 (NAD83 / Conus
+   Albers), released 2023-06-30 (layer keyword
+   `NLCD_2021_Land_Cover_L48_20230630`). Retrieved 2026-08-19 by
+   `pipeline/fetch_cn_inputs.py` as an AOI subset through the MRLC WCS:
+   https://www.mrlc.gov/geoserver/mrlc_download/wcs
+   (service=WCS&version=2.0.1&request=GetCoverage&coverageId=
+   mrlc_download__NLCD_2021_Land_Cover_L48, `subset=X(...)&subset=Y(...)`
+   in EPSG:5070 metres). Product landing page https://www.mrlc.gov/data.
+   Public domain (U.S. Geological Survey / MRLC). Stored on Drive at
+   `<data_root>/landcover/` with `MANIFEST.jsonl`. Used as one of the two
+   inputs to the curve-number grid (`pipeline/cn.py`).
+
+10. NLCD 2021 Percent Developed Imperviousness, CONUS — MRLC, 30 m,
+    EPSG:5070, same release. Values 0–100 = percent of the 30 m cell that is
+    constructed impervious surface; 127 = outside the developed mask / no
+    data. Retrieved 2026-08-19 by `pipeline/fetch_cn_inputs.py` through the
+    same MRLC WCS endpoint, coverageId
+    `mrlc_download__NLCD_2021_Impervious_L48`. Public domain. Stored on
+    Drive at `<data_root>/landcover/`. Used for the impervious fraction in
+    the composite curve number.
+
+11. SSURGO hydrologic soil group — USDA-NRCS Soil Survey Geographic
+    Database, served by Soil Data Access (SDA). Two requests, both retrieved
+    2026-08-19 by `pipeline/fetch_cn_inputs.py`:
+    - map-unit polygons (`mukey`, `musym`, `areasymbol`) from the SDA WFS,
+      https://SDMDataAccess.sc.egov.usda.gov/Spatial/SDMWGS84Geographic.wfs
+      (typename `mapunitpoly`, WFS 1.0.0, EPSG:4326). The service refuses a
+      BBOX larger than 10,100 km2, so the AOI is tiled and results merged
+      and de-duplicated on `mupolygonkey`.
+    - the `component.hydgrp` attribute per `mukey` from the SDA tabular REST
+      endpoint, https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest
+      (JSON POST, SQL over `mapunit` + `component`).
+    Aggregated to one group per map unit by NRCS **dominant component**
+    (largest `comppct_r` with a non-null `hydgrp`; ties broken by the lowest
+    `cokey` so the result is deterministic). Public domain (USDA-NRCS).
+    Stored on Drive at `<data_root>/soils/` with `MANIFEST.jsonl`.
+
+12. Runoff curve numbers (method reference, not a dataset) — USDA-NRCS
+    Technical Release 55, *Urban Hydrology for Small Watersheds*, 2nd ed.,
+    June 1986, Tables 2-2a through 2-2d, and the identical tabulation in the
+    NRCS National Engineering Handbook Part 630, Chapter 9, *Hydrologic
+    Soil-Cover Complexes*. Dual hydrologic soil groups (A/D, B/D, C/D) are
+    defined in NEH Part 630, Chapter 7, *Hydrologic Soil Groups*: the first
+    letter is the drained condition, D the undrained condition.
+    Consulted 2026-08-19. The NLCD-class → TR-55 cover-description
+    assignment is **ours**, not NRCS's, and is written out class by class in
+    `pipeline/cn.py` and docs/MODEL.md.
+
 Planned (not yet used — verify before relying on):
-- NLCD Tree Canopy Cover + Impervious Surface (MRLC), for the shade/heat layer.
+- NLCD Tree Canopy Cover (MRLC), for the shade/heat layer.
 - Landsat Collection 2 surface temperature, for block-scale heat exposure.
 - NOAA Atlas 15 (when published), to extend the design-storm story forward.
