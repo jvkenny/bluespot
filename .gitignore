@@ -1,6 +1,10 @@
 .venv/
 data/raw/
-data/derived/
+data/derived/*
+# ...except the small stats artifacts that docs/ cites by name. These are
+# kilobytes, they are the evidence behind published tables, and a reviewer
+# should not have to re-run the pipeline to check a number.
+!data/derived/v04_comparison.json
 viewer/tiles/
 __pycache__/
 *.pyc

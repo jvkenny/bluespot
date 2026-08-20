@@ -47,7 +47,15 @@ def scenario_table(old_dir, new_dir):
             "old_stored_m3": p.get("stored_m3"), "new_stored_m3": s["stored_m3"],
             "old_max_depth_m": p.get("max_depth_m"),
             "new_max_depth_m": s["max_depth_m"],
-            "old_net_mm": p.get("net_mm"), "new_net_mm_mean": s.get("net_mm_mean"),
+            # v0.3 did not roll net depth up into the citywide file; it is
+            # exactly reconstructible from the constants it used
+            "old_net_mm": (round(max(0.0, 0.55 * s["rain_mm"] - 10.0), 3)
+                           if s["rain_mm"] else None),
+            "old_net_rule": "max(0, 0.55*R - 10 mm), uniform",
+            "new_net_mm_mean": s.get("net_mm_mean"),
+            "new_contrib_area_m2": s.get("contrib_area_m2"),
+            "new_loaded_m3": s.get("domain_loaded_m3"),
+            "new_exported_m3": s.get("exported_m3"),
             "old_balance_rel_err": p.get("balance_rel_err"),
             "new_balance_rel_err": s.get("balance_rel_err"),
             "wet_pct_delta": (round(s["wet_pct"] - p["wet_pct"], 2)
@@ -56,6 +64,14 @@ def scenario_table(old_dir, new_dir):
                 round(100.0 * (s["stored_m3"] - p["stored_m3"]) / p["stored_m3"], 1)
                 if p.get("stored_m3") else None)})
     return rows, nj.get("assumptions", {}), nj.get("balance_check", {})
+
+
+# How many coarse candidates to refine per requested pool. The coarse pass
+# reads COG overviews, which gdal_translate built with cubic resampling and
+# which therefore overshoot at the sharp edges of a trench — good enough to
+# nominate candidates, not to rank them. Refining generously and re-ranking on
+# the exact full-resolution numbers is what makes the answer trustworthy.
+CAND_MULT = 6
 
 
 def top_pools(new_path, old_path, top_n=10, names=False):
@@ -70,14 +86,16 @@ def top_pools(new_path, old_path, top_n=10, names=False):
         lab = np.zeros(d.shape, dtype="int32")
         n = ndimage.label(np.isfinite(d) & (d >= POOL_MIN),
                           structure=np.ones((3, 3)), output=lab)
-        print(f"coarse pass {decim}x ({h}x{w}): {n:,} components", flush=True)
+        print(f"coarse pass {decim}x ({h}x{w}): {n:,} components, "
+              f"refining {CAND_MULT * top_n} candidates at full resolution",
+              flush=True)
         objs = ndimage.find_objects(lab)
         vols = ndimage.sum_labels(np.where(lab > 0, d, 0), lab,
                                   index=np.arange(1, n + 1))
         counts = np.bincount(lab.ravel(), minlength=n + 1)[1:]
         cand = sorted(((float(vols[i]) * cell, i + 1, objs[i])
                        for i in range(n) if counts[i] * cell >= MIN_AREA),
-                      key=lambda t: -t[0])[:2 * top_n]
+                      key=lambda t: -t[0])[:CAND_MULT * top_n]
         del d
 
         out = []

@@ -462,6 +462,7 @@ def solve(dem, valid, water, cell_area, cn, rungs=None, log=print):
         rec = {"id": sid, "rain_in": inches, "rain_mm": round(rain_mm, 1),
                "label": short, "provenance": prov,
                "net_mm_mean": round(net_mean, 3),
+               "contrib_area_m2": contrib_area,
                "loaded_m3": loaded,
                "stored_m3": stored_t, "exported_m3": exported,
                "balance_rel_err": imbal,
@@ -824,6 +825,13 @@ def aggregate(chunk_dir, out_dir, halo_m=1000.0, cname=None):
         wet = sum(r["core_wet_cells"] for r in recs)
         stored = sum(r["core_stored_m3"] for r in recs)
         d_loaded = sum(r["loaded_m3"] for r in recs) if sid != "full" else None
+        # area-weighted mean net runoff over the contributing area. Older
+        # chunk records predate contrib_area_m2; recover it by inverting the
+        # per-chunk mean, which is exactly the quantity it was divided by.
+        d_area = sum(r.get("contrib_area_m2") or
+                     (r["loaded_m3"] / (r["net_mm_mean"] / 1000.0)
+                      if r.get("net_mm_mean") else 0.0)
+                     for r in recs) if sid != "full" else 0.0
         d_stored = sum(r["stored_m3"] for r in recs)
         d_exported = sum(r["exported_m3"] for r in recs) if sid != "full" else None
         proto = recs[0]
@@ -836,6 +844,8 @@ def aggregate(chunk_dir, out_dir, halo_m=1000.0, cname=None):
         # per-pool counts are deliberately NOT rolled up: chunk domains overlap
         # in the halo, so summing them would double-count. They stay per-chunk.
         if sid != "full":
+            rec["net_mm_mean"] = round(1000.0 * d_loaded / d_area, 3) if d_area else 0.0
+            rec["contrib_area_m2"] = round(d_area)
             rec["exported_m3"] = round(d_exported)
             rec["domain_loaded_m3"] = round(d_loaded)
             rec["domain_stored_m3"] = round(d_stored)
