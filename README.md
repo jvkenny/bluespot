@@ -49,8 +49,12 @@ sub-directory — `data/citywide/depth.pmtiles`, `data/regional/depth.pmtiles`
 
     bluespot-data/
       dem/              raw USGS 1 m tiles + MANIFEST.jsonl  (shared)
+      landcover/        NLCD land cover + imperviousness subsets + MANIFEST
+      soils/            SSURGO map units + hydrologic soil group + MANIFEST
+      cn/               curve-number grid: cn30_<aoi>.tif + tiles_<aoi>/
       north-side-pilot/ pilot depth raster + water
-      citywide/         City of Chicago COG + PMTiles + water
+      citywide/         City of Chicago COG + PMTiles + water  (v0.3, live)
+      citywide_v04/     v0.4 curve-number scenario COGs + stats (not published)
       regional/         7-county COG + PMTiles + water + dem_plan.json
 
 (If you have the older link pointing straight at `citywide/`, replace it —
@@ -64,9 +68,17 @@ support them. Serve the viewer with the stdlib Range-capable server instead:
 Rebuild artifacts, city scale: `pipeline/fetch_dem.py` →
 `pipeline/fetch_water.py` → `pipeline/bluespot.py --chunked` →
 `pipeline/pools.py` → `pipeline/make_pmtiles.sh`; rain scenarios:
-`pipeline/scenario.py --chunked` → `pipeline/make_scenario_pmtiles.sh`
-(docs/MODEL.md); region scale: same fill pipeline over
-`data/aoi/region-cmap7.geojson` (docs/METHOD.md).
+`pipeline/fetch_cn_inputs.py` → `pipeline/cn.py grid` → `pipeline/cn.py
+tiles` → `pipeline/scenario.py --chunked` →
+`pipeline/make_scenario_pmtiles.sh` (docs/MODEL.md); region scale: same
+fill pipeline over `data/aoi/region-cmap7.geojson` (docs/METHOD.md).
+
+The three curve-number steps are what turn rain into runoff cell by cell,
+from NLCD land cover and imperviousness and SSURGO soils; they land in
+`bluespot-data/landcover/`, `soils/` and `cn/`, and only need re-running
+when the AOI or the source data changes. `scenario.py --rungs` takes a
+list of rain depths in inches, so the four labelled design-storm
+bookmarks are just the default rungs of a ladder.
 
 Rebuild artifacts, region scale: `pipeline/make_region_aoi.sh` →
 `pipeline/fetch_dem_region.py` → `pipeline/fetch_water_region.py` →
