@@ -1,8 +1,44 @@
 {
  "assumptions": {
-  "runoff_c": 0.55,
+  "runoff": "NRCS curve number, per cell (TR-55). S = 1000/CN - 10 in; Q = (P-0.2S)^2/(P+0.8S) for P > 0.2S. CN from NLCD 2021 land cover + percent imperviousness and SSURGO hydrologic soil group (pipeline/cn.py, data/SOURCES.md #9-#12)",
   "drain_mm": 10.0,
-  "note": "terrain screening, not a flood prediction; C and D are stated assumptions (pipeline/scenario.py)"
+  "drain_note": "mm of runoff removed per event by sewers and inlets, taken off each cell's runoff. The ONLY uniform term left in the model \u2014 the real network is not public data. Adjust DRAIN_MM in pipeline/scenario.py and re-run to test.",
+  "cn_fallback": 74,
+  "curve_numbers": {
+   "name": "chicago",
+   "built": "2026-08-19T21:57:09-0500",
+   "inputs": {
+    "landcover": "nlcd2021_landcover_chicago.tif",
+    "impervious": "nlcd2021_impervious_chicago.tif",
+    "mapunitpoly": "ssurgo_mapunitpoly_chicago.geojson",
+    "hydgrp": "ssurgo_hydgrp_chicago.json"
+   },
+   "rules": {
+    "dual_hsg": "A/D, B/D, C/D -> D (undrained assumption)",
+    "hsg_gap": "nearest mapped cell (Euclidean, 30 m grid)",
+    "impervious": "composite CN = CN_perv + f_imp*(98 - CN_perv)",
+    "wetlands": "NLCD 90/95 -> CN 98 for every soil group",
+    "cn_fallback_outside_grid": 74
+   },
+   "cn_mean_aoi_land": 91.46,
+   "cn_percentiles_aoi_land": {
+    "5": 83,
+    "25": 89,
+    "50": 92,
+    "75": 95,
+    "95": 98
+   },
+   "impervious_mean_pct_aoi_land": 67.98,
+   "hsg_pct_aoi_land_after_fill": {
+    "A": 0.872,
+    "B": 0.046,
+    "C": 64.075,
+    "D": 35.007
+   },
+   "hsg_gap_fraction_aoi_land": 0.007766,
+   "hsg_dual_fraction_aoi_land": 0.036288
+  },
+  "note": "terrain screening, not a flood prediction; the drainage capacity D is a stated assumption (pipeline/scenario.py)"
  },
  "coverage": "City of Chicago",
  "chunking": {
@@ -17,15 +53,17 @@
    "rain_mm": 25.4,
    "label": "1.0\u2033",
    "provenance": "nuisance rain (reference, not a design storm)",
-   "wet_pct": 2.33,
-   "stored_m3": 1356787,
-   "land_cells": 585558393,
-   "wet_cells": 13660012,
-   "max_depth_m": 4.65,
-   "exported_m3": 1829300,
-   "domain_loaded_m3": 6284437,
-   "domain_stored_m3": 4455136,
-   "balance_rel_err": -2.2229261918664046e-16
+   "wet_pct": 1.32,
+   "stored_m3": 813378,
+   "land_cells": 585558392,
+   "wet_cells": 7710905,
+   "max_depth_m": 4.57,
+   "net_mm_mean": 2.03,
+   "contrib_area_m2": 1582937196,
+   "exported_m3": 927655,
+   "domain_loaded_m3": 3213282,
+   "domain_stored_m3": 2285627,
+   "balance_rel_err": 1.2680295476885375e-15
   },
   {
    "id": "b75_2yr",
@@ -33,15 +71,17 @@
    "rain_mm": 84.8,
    "label": "3.34\u2033",
    "provenance": "Bulletin 75 2-yr 24-hr, NE Illinois",
-   "wet_pct": 10.04,
-   "stored_m3": 9268766,
-   "land_cells": 585558393,
-   "wet_cells": 58778674,
-   "max_depth_m": 7.44,
-   "exported_m3": 33238981,
-   "domain_loaded_m3": 58031785,
-   "domain_stored_m3": 24792804,
-   "balance_rel_err": -1.9900128673769697e-15
+   "wet_pct": 11.57,
+   "stored_m3": 11953175,
+   "land_cells": 585558392,
+   "wet_cells": 67731406,
+   "max_depth_m": 7.77,
+   "net_mm_mean": 50.307,
+   "contrib_area_m2": 1582981006,
+   "exported_m3": 49102301,
+   "domain_loaded_m3": 79635764,
+   "domain_stored_m3": 30533463,
+   "balance_rel_err": -1.122698676891547e-15
   },
   {
    "id": "b70_100yr",
@@ -49,15 +89,17 @@
    "rain_mm": 192.5,
    "label": "7.58\u2033",
    "provenance": "Bulletin 70 100-yr 24-hr (superseded 1989 standard)",
-   "wet_pct": 14.42,
-   "stored_m3": 17749785,
-   "land_cells": 585558393,
-   "wet_cells": 84463111,
-   "max_depth_m": 7.91,
-   "exported_m3": 106625930,
-   "domain_loaded_m3": 151796212,
-   "domain_stored_m3": 45170281,
-   "balance_rel_err": 2.944967009077948e-16
+   "wet_pct": 16.39,
+   "stored_m3": 23527367,
+   "land_cells": 585558392,
+   "wet_cells": 95957930,
+   "max_depth_m": 8.05,
+   "net_mm_mean": 153.617,
+   "contrib_area_m2": 1582982910,
+   "exported_m3": 185136211,
+   "domain_loaded_m3": 243173397,
+   "domain_stored_m3": 58037187,
+   "balance_rel_err": -1.2255584997293198e-16
   },
   {
    "id": "b75_100yr",
@@ -65,15 +107,17 @@
    "rain_mm": 217.7,
    "label": "8.57\u2033",
    "provenance": "Bulletin 75 100-yr 24-hr (current standard)",
-   "wet_pct": 15.02,
-   "stored_m3": 19271816,
-   "land_cells": 585558393,
-   "wet_cells": 87930741,
-   "max_depth_m": 7.95,
-   "exported_m3": 124970628,
-   "domain_loaded_m3": 173689321,
-   "domain_stored_m3": 48718693,
-   "balance_rel_err": 8.579204019540984e-17
+   "wet_pct": 16.89,
+   "stored_m3": 25325684,
+   "land_cells": 585558392,
+   "wet_cells": 98883624,
+   "max_depth_m": 8.05,
+   "net_mm_mean": 178.264,
+   "contrib_area_m2": 1582981421,
+   "exported_m3": 219934356,
+   "domain_loaded_m3": 282188775,
+   "domain_stored_m3": 62254419,
+   "balance_rel_err": 4.0132292730665264e-15
   },
   {
    "id": "full",
@@ -83,9 +127,127 @@
    "provenance": "full fill \u2014 static upper envelope, every pool at capacity",
    "wet_pct": 18.74,
    "stored_m3": 43627051,
-   "land_cells": 585558393,
+   "land_cells": 585558392,
    "wet_cells": 109716203,
    "max_depth_m": 14.22
   }
- ]
+ ],
+ "rungs_in": [
+  1.0,
+  3.34,
+  7.58,
+  8.57
+ ],
+ "chunks": [
+  {
+   "tile": "USGS_1M_16_x42y465_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 338.8,
+   "peak_rss_gb": 4.99,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 91.63
+  },
+  {
+   "tile": "USGS_1M_16_x42y466_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 231.0,
+   "peak_rss_gb": 4.69,
+   "domain_cells": 121132036,
+   "cn_mean_valid": 89.42
+  },
+  {
+   "tile": "USGS_1M_16_x43y462_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 196.0,
+   "peak_rss_gb": 5.79,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 87.35
+  },
+  {
+   "tile": "USGS_1M_16_x43y463_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 252.1,
+   "peak_rss_gb": 5.69,
+   "domain_cells": 144000000,
+   "cn_mean_valid": 91.32
+  },
+  {
+   "tile": "USGS_1M_16_x43y464_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 268.5,
+   "peak_rss_gb": 5.98,
+   "domain_cells": 144000000,
+   "cn_mean_valid": 91.54
+  },
+  {
+   "tile": "USGS_1M_16_x43y465_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 332.1,
+   "peak_rss_gb": 5.94,
+   "domain_cells": 144000000,
+   "cn_mean_valid": 91.1
+  },
+  {
+   "tile": "USGS_1M_16_x43y466_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 265.5,
+   "peak_rss_gb": 4.44,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 88.48
+  },
+  {
+   "tile": "USGS_1M_16_x44y462_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 231.8,
+   "peak_rss_gb": 5.99,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 88.86
+  },
+  {
+   "tile": "USGS_1M_16_x44y463_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 307.9,
+   "peak_rss_gb": 5.12,
+   "domain_cells": 144000000,
+   "cn_mean_valid": 90.87
+  },
+  {
+   "tile": "USGS_1M_16_x44y464_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 288.3,
+   "peak_rss_gb": 6.26,
+   "domain_cells": 144000000,
+   "cn_mean_valid": 93.76
+  },
+  {
+   "tile": "USGS_1M_16_x44y465_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 228.3,
+   "peak_rss_gb": 5.57,
+   "domain_cells": 144000000,
+   "cn_mean_valid": 91.68
+  },
+  {
+   "tile": "USGS_1M_16_x44y466_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 279.7,
+   "peak_rss_gb": 6.94,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 88.41
+  },
+  {
+   "tile": "USGS_1M_16_x45y462_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 257.7,
+   "peak_rss_gb": 8.01,
+   "domain_cells": 121132036,
+   "cn_mean_valid": 90.83
+  },
+  {
+   "tile": "USGS_1M_16_x45y463_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 187.5,
+   "peak_rss_gb": 6.93,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 90.35
+  },
+  {
+   "tile": "USGS_1M_16_x45y464_IL_4_County_QL1_LiDAR_2016_B16",
+   "seconds": 122.9,
+   "peak_rss_gb": 6.06,
+   "domain_cells": 132072000,
+   "cn_mean_valid": 92.59
+  }
+ ],
+ "balance_check": {
+  "rule": "loaded = stored + exported over each chunk's whole domain (halo included), per rung",
+  "max_abs_rel_err": 4.0132292730665264e-15,
+  "threshold": 0.001
+ }
 }
