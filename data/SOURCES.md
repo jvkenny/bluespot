@@ -200,8 +200,11 @@ nothing here records condition, capacity, value or management.
     Raw file lives on Google Drive at
     `<data_root>/lifelines_raw/chicago_roads_osm.geojson` (too large for the
     repo, per the data policy in AGENTS.md), with a per-chunk cache beside
-    it. Fetched for the Phase 2b passability work; no routing graph is built
-    yet.
+    it. 160,420 ways, 49.0 MB, over the AOI bounding box + 0.01 deg
+    (deliberately not clipped to the city polygon). `bridge`, `tunnel` and
+    `layer` are retained because viaducts and underpasses are where the
+    city's deepest pools already are. Fetched for the Phase 2b passability
+    work; no routing graph is built yet.
 
 ### HIFLD Open — accessibility as checked 2026-08-19
 

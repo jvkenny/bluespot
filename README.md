@@ -31,6 +31,11 @@ number traceable to a cited public source — built for residents, not agencies.
 ## Layout
 
 - `pipeline/` — fetch + analysis (Python/GDAL/QGIS-grade raster work)
+- `data/lifelines/` — public places the storm work is about reaching:
+  schools, fire and police stations, hospitals, pharmacies, groceries,
+  substations, water and wastewater plants. Small enough to live in the repo.
+  Read `docs/LIFELINES.md` first — every category is incomplete in a
+  different way and the doc says how
 - `data/` — AOI definitions and source manifest. Heavy data (raw DEMs,
   region-scale outputs) lives primarily on Google Drive (`bluespot-data/`,
   see `pipeline/paths.py`); local `data/raw/` is only a transient cache
@@ -52,6 +57,7 @@ sub-directory — `data/citywide/depth.pmtiles`, `data/regional/depth.pmtiles`
       north-side-pilot/ pilot depth raster + water
       citywide/         City of Chicago COG + PMTiles + water
       regional/         7-county COG + PMTiles + water + dem_plan.json
+      lifelines_raw/    OSM road network for the passability work (Drive-only)
 
 (If you have the older link pointing straight at `citywide/`, replace it —
 the viewer now expects the root.)

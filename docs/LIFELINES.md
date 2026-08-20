@@ -51,11 +51,13 @@ Subtype breakdowns:
 
 ## Road network (Phase 2b input, not yet analysed)
 
-Drivable OSM ways over the AOI bounding box + 0.01°, full geometry, written
-to Google Drive per the data policy — see the "Road network" section at the
-bottom of this file for the measured size and class histogram.
+**160,420 drivable OSM ways, 49.0 MB**, full `LineString` geometry, on Google
+Drive at `<data_root>/lifelines_raw/chicago_roads_osm.geojson` (98 MB of
+per-chunk Overpass cache sits beside it, 144 MB for the folder). No graph is
+built and no routing is done — that is Phase 2b/2c.
 
-No graph is built and no routing is done. That is Phase 2b/2c.
+See the "Road network — measured" section at the bottom for the class
+histogram and what to watch out for.
 
 ---
 
@@ -246,5 +248,45 @@ quarterly, the two Chicago portal station layers apparently never.
 
 ## Road network — measured
 
-See `<data_root>/lifelines_raw/chicago_roads_osm.summary.json` on Google Drive
-for the machine-readable version of what follows.
+`<data_root>/lifelines_raw/chicago_roads_osm.geojson`, retrieved 2026-08-19,
+fetched by `pipeline/fetch_roads_osm.py` over a 5×5 grid of sub-bboxes.
+`chicago_roads_osm.summary.json` beside it is the machine-readable version of
+this section.
+
+- **160,420 ways, 49.0 MB**, EPSG:4326 `LineString`, deduplicated by OSM way id.
+- Extent: the AOI **bounding box** + 0.01°, `[-87.95011, 41.63454, -87.51414,
+  42.03304]` — deliberately *not* clipped to the city polygon. A severed
+  street two blocks over the line still cuts access into the city; clipping is
+  the analysis step's decision, not the fetch's.
+- Per-chunk Overpass responses are cached at
+  `<data_root>/lifelines_raw/cache/roads_<r>_<c>.json` (98 MB), so a rerun
+  after a failure refetches only what is missing. Overpass is someone else's
+  free service.
+
+By `highway` class:
+
+| class | ways | | class | ways |
+|---|---:|---|---|---:|
+| `service` | 98,907 | | `motorway` | 1,536 |
+| `residential` | 29,688 | | `motorway_link` | 1,408 |
+| `secondary` | 15,577 | | `unclassified` | 939 |
+| `tertiary` | 6,294 | | `trunk` | 408 |
+| `primary` | 4,919 | | `primary_link` | 261 |
+| `secondary_link` | 253 | | `trunk_link` | 130 |
+| `tertiary_link` | 62 | | `living_street` | 38 |
+
+Two things Phase 2b should know before using this:
+
+1. **`service` is 62% of the file.** That is Chicago's alley grid plus parking
+   aisles. Alleys genuinely flood and genuinely carry vehicles, so they were
+   fetched rather than filtered at source — but a routing graph built over all
+   160k ways will spend most of its edges on parking lots. Filter deliberately.
+2. **1,806 ways are tagged `bridge` and 1,353 `tunnel`**, and `layer` is
+   carried through where present. This is the tagging that separates a road
+   deck *over* standing water from a viaduct *under* it. Given that the city's
+   deepest pools are already at viaducts and underpasses, a passability pass
+   that ignores `bridge`/`tunnel`/`layer` will sever exactly the roads that
+   stay open and miss the ones that close.
+
+Also carried per way, where OSM has it: `name`, `ref`, `oneway`, `maxspeed`,
+`access`, `motor_vehicle`, `lanes`, `surface`.
