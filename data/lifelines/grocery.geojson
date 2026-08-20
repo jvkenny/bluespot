@@ -1,0 +1,5268 @@
+{
+ "type": "FeatureCollection",
+ "name": "grocery",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/1483956935",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.633134,
+     41.867791
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163897024",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719854,
+     41.932222
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "1st Choice Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211359658",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.550377,
+     41.729793
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "88 Marketplace",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210222922",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641171,
+     41.854421
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "A Plus Store",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13963528314",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65436,
+     41.963318
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Adom African Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12146332950",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621898,
+     41.809427
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Adrian's Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6124417262",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719851,
+     41.932231
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Agora Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209404265",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.688043,
+     41.921106
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Al-Bayan Grocery",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12171066721",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.786103,
+     41.937597
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2274247594",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705724,
+     41.803388
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2520636193",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.711497,
+     41.93985
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2742653944",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.660178,
+     41.994996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3882653629",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708268,
+     41.896822
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5025494737",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681885,
+     41.913447
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/8250015418",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.634787,
+     41.903621
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162288626",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.74046,
+     41.740587
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162434169",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.728769,
+     41.928659
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162465204",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.727807,
+     41.972875
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162512437",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.764949,
+     41.867226
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162627002",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766621,
+     41.932015
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163089155",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.788742,
+     41.925997
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163249732",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.800719,
+     41.79165
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163676321",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.723267,
+     41.810092
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163705845",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705671,
+     41.838234
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209474026",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689863,
+     41.961051
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209571534",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699882,
+     41.994437
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209674297",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.683003,
+     41.783812
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209708310",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662916,
+     41.809395
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209783100",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670155,
+     41.851585
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209883422",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674835,
+     41.928605
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210521445",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.640488,
+     41.780438
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210873979",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.605411,
+     41.774528
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211122472",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.58798,
+     41.752655
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211277353",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.566716,
+     41.722158
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/218139210",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632486,
+     41.739312
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/219592193",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.525718,
+     41.703459
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/225102531",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.736627,
+     41.907212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/33972029",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656883,
+     41.963841
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/385779445",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.74275,
+     41.930844
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Aldi",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/416486898",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624415,
+     41.760407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Alta Vista Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/1481578540",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654771,
+     41.953966
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Apple Bite Liquor",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2359667302",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644077,
+     41.935378
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Armitage Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163885262",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.711493,
+     41.917644
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Baltimore Food & Liquor",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211326135",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.547525,
+     41.652933
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Big Apple Finer Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4191676724",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639894,
+     41.924956
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Blak's Corner Store",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13532886529",
+    "retrieved": "2026-08-19",
+    "subtype": "grocery"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.640586,
+     41.706829
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bockwinkel's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2294719602",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622106,
+     41.886638
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bockwinkel's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3908537093",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618969,
+     41.892781
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carniceria Guanajuato",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/392722752",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.698067,
+     41.938784
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carniceria Jimenez",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162631424",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.760274,
+     41.938918
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carniceria Jimenez",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163897191",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.72355,
+     41.924831
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carniceria Ruiz",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163894573",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.707275,
+     41.935844
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carnicerias Guanajuato",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163087910",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.777832,
+     41.931348
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carnicerias Jimenez",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6281921541",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.731594,
+     41.910106
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Carnival Grocery",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/10035040817",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641115,
+     41.92025
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Casa Roman Food & Liquors",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12040423067",
+    "retrieved": "2026-08-19",
+    "subtype": "grocery"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674101,
+     42.008836
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cecy's Molino De Masa",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211360414",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.551847,
+     41.739674
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Central Park Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163811930",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.714881,
+     41.90206
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Centro Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/10905884224",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.747175,
+     41.93194
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2001852056",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.676104,
+     41.831001
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4697806600",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.727934,
+     41.932045
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5631644882",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.724862,
+     41.797715
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/131886407",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679568,
+     42.0024
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162630477",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.754931,
+     41.938463
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163769234",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708258,
+     41.843857
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163946146",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.70851,
+     41.958528
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209782840",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669066,
+     41.851696
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210169006",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.645965,
+     41.83893
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162391340",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.736711,
+     41.916798
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cermak Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209406200",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.69494,
+     41.909895
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Chicago Oriental Wholesale Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/482402739",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.637456,
+     41.857173
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Chicago Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/10080653198",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.716304,
+     41.968578
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "City Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/130802894",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.709982,
+     41.99719
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "County Fair Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209606636",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681723,
+     41.696696
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Dearborn Wholesale Grocers",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209633443",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669835,
+     41.75002
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Devon Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209951338",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667219,
+     41.998378
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Dollar City",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9755201105",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.700439,
+     41.953575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Dona Maris Carniceria y Fruteria",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1780030550",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.721729,
+     41.924403
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Eataly",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11064312683",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626377,
+     41.892164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Edgewater Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209946763",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668174,
+     41.982141
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "El Guero",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211362003",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.550873,
+     41.731028
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "El Tapatio",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211387893",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.535615,
+     41.708099
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Epic Spices",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6538249099",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670697,
+     41.895886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Eric's Food Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211325597",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.546776,
+     41.655177
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fair Share Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162855655",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.782194,
+     41.778336
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fairplay Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2934234442",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.680303,
+     41.691487
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fairplay Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3989351824",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647205,
+     41.810654
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fairplay Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4076939424",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686785,
+     41.851483
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Farmers Best Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9517344549",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.786195,
+     41.925197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Farmfoods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210694861",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.615151,
+     41.685025
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fat Lee Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2359676526",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632723,
+     41.843937
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Food 4 Less",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2361072392",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628247,
+     41.737551
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Food 4 Less",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5404725160",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.747411,
+     41.908369
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Food 4 Less",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209656270",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664481,
+     41.765462
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FoodSmart",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209403689",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699635,
+     41.917165
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FoodSmart Urban Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3649643212",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.713093,
+     41.931642
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Forty Acres Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13278953128",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.768414,
+     41.894624
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fresh Farms International Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6182980427",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.695699,
+     41.997893
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fresh Thyme",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13733117865",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681157,
+     41.926556
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FreshMart",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9025577830",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641816,
+     41.848825
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Freshway Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163773528",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.707235,
+     41.867683
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fruteria Favela",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6292497073",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.672035,
+     41.806593
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Gangnam Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12132865591",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653251,
+     41.896063
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Garden Gourmet Grocery",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5700720321",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667702,
+     41.902424
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Go Green Community Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9579333601",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654897,
+     41.779444
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Go Grocer",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11017125693",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639672,
+     41.935422
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Go Grocer",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13293612475",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624271,
+     41.863961
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Go Grocer",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13293612476",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623883,
+     41.865927
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Go Grocer",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3575120595",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679848,
+     41.91058
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Go Grocer",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9857043926",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642271,
+     41.932724
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Gordon Food Service Store",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163047141",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.786334,
+     41.923264
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "H Mart",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/156356426",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644704,
+     41.877599
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Happy Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162837922",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.763064,
+     41.998113
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "HarvesTime Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/129988898",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.695454,
+     41.968827
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Healthy Food Hub",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4531565044",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.565481,
+     41.758872
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1640172675",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.787687,
+     41.953968
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1924150951",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65348,
+     41.961294
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2168540462",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628573,
+     41.892171
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2237542448",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664606,
+     41.680248
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2264929855",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.582772,
+     41.720275
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2324563345",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669461,
+     41.906535
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2343011988",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.614658,
+     41.832767
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2349058783",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.725028,
+     41.795988
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2361072395",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699998,
+     41.706868
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2837157413",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.837936,
+     41.965628
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2969144317",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.810902,
+     41.975115
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4730413033",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668459,
+     41.865904
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5068386629",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631791,
+     41.904156
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/1007504942",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627871,
+     41.735223
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/122670070",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669169,
+     41.982802
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/131995890",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674474,
+     41.927269
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/132001784",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674655,
+     42.017524
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/132047691",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639886,
+     41.864112
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/147217808",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62627,
+     41.866261
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/149509846",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.645082,
+     41.888692
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/149599781",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.690095,
+     41.943533
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162452620",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.744918,
+     41.955548
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162472404",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.730067,
+     41.976306
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162508511",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.770295,
+     41.793893
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162703752",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766718,
+     41.966937
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163083101",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.786376,
+     41.926197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163906764",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708442,
+     41.945099
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209479023",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.682404,
+     41.958523
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209619049",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.663457,
+     41.723031
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209713550",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.682744,
+     41.827795
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210041420",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664411,
+     41.948187
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210329728",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646168,
+     41.946879
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210717496",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639389,
+     41.905131
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211120821",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.587736,
+     41.758282
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/28357149",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659298,
+     41.979216
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/40779777",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670252,
+     41.935562
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/666759007",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.607358,
+     41.784496
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Joong Boo Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163905856",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.711925,
+     41.941749
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Kordian's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4251831552",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.786376,
+     41.976239
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "L&M Fine Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9354608507",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.683528,
+     41.96126
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Bodega - Food Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/10752100865",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.774785,
+     41.960685
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Casa del Pueblo",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4075429623",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.66189,
+     41.857309
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Cienega Super Food",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211388984",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.53565,
+     41.699794
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Feria Groceries",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211353451",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.5513,
+     41.718873
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Flor",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12537246713",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.53788,
+     41.70444
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Fruteria",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211361664",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.551044,
+     41.733372
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Gloria Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/165153772",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.704039,
+     41.818357
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Hacienda",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6849285436",
+    "retrieved": "2026-08-19",
+    "subtype": "grocery"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.710427,
+     41.785975
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Jerezana",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/7055438568",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.550252,
+     41.730256
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Providencia",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12097699004",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668383,
+     41.854251
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "La Tienda Michoacana",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163280254",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.797674,
+     41.938563
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Leamington Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162518061",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.763924,
+     41.87992
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Lilly's Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211395985",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.53499,
+     41.715969
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Lindo Michoac\u00e1n",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9721820651",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708196,
+     41.968622
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Local Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5056550416",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.663132,
+     41.914013
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Local Market Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/132058357",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.574809,
+     41.764876
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Los Potrillos Food Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163896902",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.718423,
+     41.939472
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "M & H Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5466051562",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.616943,
+     41.7585
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Macias Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211361776",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.550917,
+     41.732651
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1582290547",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618966,
+     41.885405
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2838195042",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674894,
+     41.969035
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4085259565",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646041,
+     41.90801
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4535332415",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644563,
+     41.937256
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/131888902",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.678382,
+     41.895516
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/132058575",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.663597,
+     41.836048
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/149599779",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689981,
+     41.942397
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211325513",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654253,
+     41.976962
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/220950832",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647926,
+     41.880947
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/329025641",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.757485,
+     41.979545
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/330879711",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.669131,
+     41.920923
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/374342885",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.629507,
+     41.859333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariano's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/447343817",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.615881,
+     41.824301
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Metro Spice Mart",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12068333587",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642349,
+     41.880016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mi Mexico",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12123073597",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.68894,
+     41.786335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Midtown Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3627801814",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719653,
+     41.936394
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Milwaukee Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3641114045",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719104,
+     41.93171
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Montrose Food Mart & Deli",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2837157414",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.791395,
+     41.952442
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Montrose Supermarket & Taqueria",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11382450821",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.714692,
+     41.961252
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Morelia Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13627176609",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.691515,
+     42.014207
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Morelia Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162628398",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.747858,
+     41.931263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Morse Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1975236575",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667059,
+     42.008097
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Municipal Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1585375390",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.691589,
+     41.90278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "North Pulaksi Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163887133",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.723556,
+     41.910208
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Old World Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9424562874",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659608,
+     41.975589
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "One Stop Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/156266255",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.598123,
+     41.816428
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Open Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2625982795",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.585123,
+     41.79511
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Par-Birdie Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3758385128",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686469,
+     41.997899
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Park To Shop Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/8152698386",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641211,
+     41.848549
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Park To Shop Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210537370",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638367,
+     41.85648
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Park to Shop Supermarket",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/7147298083",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659054,
+     41.97114
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Patel Brothers",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209570174",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.695276,
+     41.997902
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12882263938",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.703644,
+     41.736637
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2352761134",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705368,
+     41.807559
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3325567180",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.685483,
+     41.880284
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3898009317",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.538921,
+     41.682112
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163675898",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.722428,
+     41.813835
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/165132077",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.703765,
+     41.78886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/165243326",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.6893,
+     41.853273
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210156986",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.723366,
+     41.786571
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210063248",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.658694,
+     41.735529
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Pete's Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211068788",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.586523,
+     41.73664
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Plaza Jiminez",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163897138",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.722173,
+     41.924846
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Plumbers 911 Chicago",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/13841011476",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.66165,
+     41.883287
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Potash Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9442819202",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631481,
+     41.910393
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Potash Markets - State Street",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9672965267",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628066,
+     41.898707
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rahmat Grocery and Zabiha Halal Meat",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/8991647382",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.684829,
+     41.997948
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rico Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163883800",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.715579,
+     41.917559
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rio Grande Fruit Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9478457532",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.714562,
+     41.909834
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rio Valley Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/165131198",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.706137,
+     41.778662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Rogers Park Fruit Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209958739",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674743,
+     42.016136
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Roserach Farms",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12543114174",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.60892,
+     41.658709
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Sahar International Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/9721820668",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708277,
+     41.970029
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/7505577050",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.765158,
+     41.909099
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162222324",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.734102,
+     41.778266
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163776948",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.726276,
+     41.874606
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210031818",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642956,
+     41.698639
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211176461",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.587296,
+     41.763068
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/211379328",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.55436,
+     41.745184
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Save-A-Lot",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/444987426",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646386,
+     41.780691
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Seafood City",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12181054650",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.745844,
+     41.973025
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Shop & Save Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/132058453",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.788758,
+     41.996047
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Shop & Save Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162505561",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.759197,
+     41.7957
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Shop-N-Save",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6154664272",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.620352,
+     41.765426
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Silver State City Food Company",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6726359271",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632055,
+     41.848451
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Siri Indian Groceries",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11123574010",
+    "retrieved": "2026-08-19",
+    "subtype": "grocery"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.620385,
+     41.830955
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "South Deering Food Mart",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/7105380652",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.559861,
+     41.702648
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Spencer's Jolly Posh Foods",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2504509098",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664503,
+     41.954235
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Super Food & Liquors",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12579435110",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65721,
+     41.983575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermarket Martins",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11480994725",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.756608,
+     41.945905
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermercado Chapala",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209958536",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674194,
+     42.012003
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermercado El Guero",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/165156889",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.694078,
+     41.819972
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermercado El Gurero",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209700541",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667598,
+     41.808321
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermercado El G\u00fcero #8",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209785052",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679115,
+     41.851865
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermercado La Chiquita",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163768284",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.724192,
+     41.843266
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Supermercado La Chiquita",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163769382",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.714594,
+     41.844127
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tai Nam Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6329661471",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.658905,
+     41.972375
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ted's Fruit Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/156015212",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.701391,
+     41.997783
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "The Dill Pickle Food Co-op",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6173309675",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.710952,
+     41.931062
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "The Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12253620569",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.649496,
+     41.932572
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ti\u1ec7m T\u1ea1p H\u00f3a Vi\u1ec7t Hoa",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12118231983",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65665,
+     41.973185
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/14068890424",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.69007,
+     41.850745
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3621635474",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.767966,
+     41.938846
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162438607",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.742692,
+     41.940291
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162625198",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766444,
+     41.926902
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163897286",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.717436,
+     41.924298
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/163911105",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.722095,
+     41.956025
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tony's Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209485902",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692012,
+     41.976897
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12229012041",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675105,
+     41.949865
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2296077689",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62627,
+     41.893492
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2356511948",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.625639,
+     41.867844
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/2485876939",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.655139,
+     41.914655
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/7347217046",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.588475,
+     41.796322
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/238492923",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.64627,
+     41.932432
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Uptown Shop and Save",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/5427824242",
+    "retrieved": "2026-08-19",
+    "subtype": "greengrocer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654628,
+     41.965633
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Valley of Jordan",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11425933410",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.600813,
+     41.799276
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Village Food Mart",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209637974",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668014,
+     41.750037
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walmart Neighborhood Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/330307672",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662939,
+     41.75627
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walmart Supercenter",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/162391556",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.742852,
+     41.911662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walmart Supercenter",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/244980699",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.599041,
+     41.69657
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walmart Supercenter",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/442137550",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.742935,
+     41.934714
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/1679535999",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638782,
+     41.868211
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3388711384",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628561,
+     41.896468
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/3403155695",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.620501,
+     41.891629
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/4374526898",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.588013,
+     41.802151
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/7178428621",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.748708,
+     41.990626
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/903239399",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.64981,
+     41.948316
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/131998284",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646869,
+     41.882384
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/132047493",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659688,
+     41.991124
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/181384672",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.652877,
+     41.908719
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/405578088",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668013,
+     41.940168
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Wild Fork",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/10686543463",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653294,
+     41.910264
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Wild Fork",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210268951",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647614,
+     41.880258
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Wild Onion Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/11976406263",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.673697,
+     42.009383
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Windy City Produce",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/12772032073",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.727632,
+     41.942152
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Woodlawn Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/210905077",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.614053,
+     41.779583
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "World Fresh Market",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "way/209570003",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.691723,
+     41.997963
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Zees Supermarket Plus",
+    "category": "grocery",
+    "source": "openstreetmap",
+    "source_id": "node/6154489463",
+    "retrieved": "2026-08-19",
+    "subtype": "supermarket"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.586631,
+     41.76133
+    ]
+   }
+  }
+ ]
+}

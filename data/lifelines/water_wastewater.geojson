@@ -1,0 +1,282 @@
+{
+ "type": "FeatureCollection",
+ "name": "water_wastewater",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/969862689",
+    "retrieved": "2026-08-19",
+    "subtype": "wastewater_plant"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.598698,
+     41.668216
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Calumet Water Reclamation Plant",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "relation/5245272",
+    "retrieved": "2026-08-19",
+    "subtype": "wastewater_plant"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.606961,
+     41.668723
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Chicago Avenue Pumping Station",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/753825655",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623424,
+     41.897186
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Devon Avenue Instream Aeration Station (MWRDGC)",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "relation/6005123",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.71032,
+     41.996406
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Eugene Sawyer Water Purification Plant",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/200454108",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.544345,
+     41.756829
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jardine Water Purification Plant",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/427537797",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.606861,
+     41.894512
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jefferson Pumping Station",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/753821020",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.685753,
+     41.966177
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Lakeview Pumping Station",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/753820107",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.649237,
+     41.965034
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mayfair Pumping Station",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/753810837",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.749309,
+     41.965245
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "McCormick Place Water Tower",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/1286946858",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618133,
+     41.852711
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "North Branch Pumping Station",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/1323561434",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.700949,
+     41.969373
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Northwest Suburban Municipal Joint Action Water Agency",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/1137355933",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.87603,
+     41.978579
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Thomas J. O'Brien Lock & Controlling Works",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/350954862",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.567664,
+     41.651477
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Webster Street Instream Aeration Station (MWRDGC)",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "way/1319135536",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668188,
+     41.921212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Western Avenue Pumping Station",
+    "category": "water_wastewater",
+    "source": "openstreetmap",
+    "source_id": "relation/19943359",
+    "retrieved": "2026-08-19",
+    "subtype": "water_works"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.682553,
+     41.803706
+    ]
+   }
+  }
+ ]
+}

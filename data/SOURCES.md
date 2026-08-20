@@ -237,6 +237,140 @@ download records live in `<data_root>/dem/MANIFEST.jsonl` on Google Drive
    `status` = "N" (in service). Not displayed. Terms: Chicago Data Portal
    open data, City of Chicago.
 
+## Lifeline places (roadmap Phase 2a)
+
+Public places people depend on in a storm, one GeoJSON per category in
+`data/lifelines/`, fetched by `pipeline/fetch_lifelines.py` and clipped to
+`data/aoi/chicago.geojson`. Counts, coverage gaps and the standardisation
+rules are in `docs/LIFELINES.md`. These are locations of public places only —
+nothing here records condition, capacity, value or management.
+
+16. Chicago Public Schools — School Locations SY2526, Chicago Data Portal
+   dataset pb6d-zzuh (https://data.cityofchicago.org/d/pb6d-zzuh), pulled as
+   JSON from https://data.cityofchicago.org/resource/pb6d-zzuh.json
+   Retrieved 2026-08-19; portal reports rows last updated 2025-09-09.
+   Attribution "Chicago Public Schools"; the portal's license field reads
+   "See Terms of Use" (City of Chicago Data Portal Terms of Use,
+   https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html) — open
+   public record, provided as-is with no warranty. 645 rows citywide.
+   Coverage: CPS district-run, charter and contract schools only. Private and
+   parochial schools are not in it — those come from source 9b, and the two
+   are told apart by the `source` property.
+
+9b. Private schools — NCES EDGE geocode file for the Private School Universe
+   Survey 2023-24, layer "Private School Locations 2023-24",
+   https://nces.ed.gov/opengis/rest/services/K12_School_Locations/EDGE_GEOCODE_PRIVATESCH_2324/MapServer/0
+   queried with `where=UPPER(CITY)='CHICAGO' AND STATE='IL'`, fields
+   PPIN / NAME / LAT / LON. Retrieved 2026-08-19. 221 rows returned, 219
+   inside the city polygon, 211 kept after deduplication against CPS (the
+   overlap is schools CPS also lists). US Department of Education, National
+   Center for Education Statistics — a work of the US federal government,
+   public domain. NCES geocodes to the school's reported address, so a
+   campus point can sit at an administrative office rather than the
+   building; treat these as block-accurate, not rooftop-accurate.
+   Cross-check: the matching NCES public-school file
+   (EDGE_GEOCODE_PUBLICSCH_2425, `UPPER(CITY)='CHICAGO' AND STATE='IL'`)
+   returns 656 against CPS's 645 — close enough to corroborate the CPS
+   layer, with the difference explained by mailing-address cities and
+   state-authorised schools outside CPS.
+
+17. Fire Stations, Chicago Data Portal dataset 28km-gtjn
+    (https://data.cityofchicago.org/d/28km-gtjn), JSON endpoint
+    https://data.cityofchicago.org/resource/28km-gtjn.json
+    Retrieved 2026-08-19. Attribution "City of Chicago", same portal Terms of
+    Use as source 9. 92 rows. Caveat: the portal reports rows last updated
+    2011-08-21 — this layer has not been refreshed in over a decade, so
+    station openings, closures and relocations since then are not reflected.
+
+18. Police Stations, Chicago Data Portal dataset z8bn-74gv
+    (https://data.cityofchicago.org/d/z8bn-74gv), JSON endpoint
+    https://data.cityofchicago.org/resource/z8bn-74gv.json
+    Retrieved 2026-08-19; rows last updated 2016-06-10. Attribution "Chicago
+    Police Department", same portal Terms of Use. 23 rows = the 22 district
+    stations plus Headquarters. District stations only; this is not a list of
+    every police facility.
+
+19. Hospitals — CMS "Hospital General Information" (Care Compare), dataset
+    xubh-q36u, https://data.cms.gov/provider-data/dataset/xubh-q36u
+    queried through
+    https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0
+    filtered to state=IL, citytown=CHICAGO. Retrieved 2026-08-19; CMS reports
+    the dataset modified 2026-07-22. A work of the US federal government —
+    public domain, no restrictions asserted. Chosen over the Chicago Data
+    Portal (whose only hospital layer, ucpz-2r55, is a 2011 shapefile) and
+    over HIFLD (see note below) because CMS carries an explicit
+    `emergency_services` Yes/No field, which is what the Phase 2c access work
+    needs. Covers Medicare-certified hospitals, which includes the VA medical
+    center; it does not include non-certified or purely outpatient facilities,
+    and freestanding emergency departments are not separately listed.
+
+20. Geocoding for source 19 — US Census Bureau Geocoding Services,
+    https://geocoding.geo.census.gov/geocoder/locations/onelineaddress
+    benchmark Public_AR_Current. Retrieved 2026-08-19. Public domain.
+    Where a CMS address is prose rather than a house number the Census
+    address-range matcher can resolve, the fetcher falls back to OSM
+    Nominatim (https://nominatim.openstreetmap.org/search, 1 req/s) searching
+    the facility name; those rows record `source`
+    `cms_hospital_general_information+osm_nominatim` and carry an ODbL
+    obligation. © OpenStreetMap contributors, ODbL.
+
+21. OpenStreetMap lifeline places via Overpass API, Chicago AOI bbox + 0.01
+    deg, `out center tags`, then clipped to the city polygon. Retrieved
+    2026-08-19. © OpenStreetMap contributors, ODbL. Tag selectors, one file
+    per category:
+    - `data/lifelines/pharmacies.geojson` — `amenity=pharmacy`,
+      `healthcare=pharmacy`
+    - `data/lifelines/grocery.geojson` — `shop=supermarket`, `shop=grocery`,
+      `shop=greengrocer`
+    - `data/lifelines/substations.geojson` — `power=substation`
+    - `data/lifelines/water_wastewater.geojson` — `man_made=wastewater_plant`,
+      `man_made=water_works`
+    OSM is a volunteer survey, not a register: completeness varies by category
+    and is quantified in docs/LIFELINES.md. Substations in particular are
+    known to be under-mapped.
+
+22. OpenStreetMap drivable road network, City of Chicago, via Overpass
+    (`pipeline/fetch_roads_osm.py`). Retrieved 2026-08-19. © OpenStreetMap
+    contributors, ODbL. Ways with `highway` in motorway / trunk / primary /
+    secondary / tertiary / unclassified / residential / living_street /
+    service / and the corresponding `_link` classes, full `out geom`
+    geometry, fetched over a grid of sub-bboxes and deduplicated by way id.
+    Raw file lives on Google Drive at
+    `<data_root>/lifelines_raw/chicago_roads_osm.geojson` (too large for the
+    repo, per the data policy in AGENTS.md), with a per-chunk cache beside
+    it. 160,420 ways, 49.0 MB, over the AOI bounding box + 0.01 deg
+    (deliberately not clipped to the city polygon). `bridge`, `tunnel` and
+    `layer` are retained because viaducts and underpasses are where the
+    city's deepest pools already are. Fetched for the Phase 2b passability
+    work; no routing graph is built yet.
+
+### HIFLD Open — accessibility as checked 2026-08-19
+
+The roadmap named HIFLD Open as a candidate source. It is no longer usable
+for these categories, and the check is recorded here so it is not repeated:
+
+- `https://hifld-geoplatform.hub.arcgis.com/` still resolves (HTTP 200) but
+  serves an empty ArcGIS Hub shell.
+- The hosting org `services1.arcgis.com/Hp6G80Pky0om7QvQ` lists 526 feature
+  services; none matches hospital, substation, wastewater, water treatment,
+  pharmacy, school, fire station or law enforcement.
+- Two items remain catalogued in ArcGIS Online as "Hospitals (Deprecated
+  HIFLDS)" and "Child Care Centers (Deprecated HIFLDS)"; requesting the
+  service URL behind either returns `{"error":{"code":400,"message":"Invalid
+  URL"}}` — the item record survives, the service does not.
+- Searching ArcGIS Online for the former HIFLD electric-substation,
+  wastewater-treatment and fire-station layers returns only third-party
+  copies of unknown vintage, no authoritative federal service.
+- EPA alternatives were tested for treatment plants and also came up short:
+  Envirofacts FRS (`data.epa.gov/efservice/frs_program_facility`,
+  `frs_facility_site`) returns records but carries no latitude/longitude
+  columns, and ECHO (`echodata.epa.gov/echo/cwa_rest_services`) returns only
+  4 Illinois facilities under NAICS 221320 and would not return coordinates
+  through its public download/facility-info endpoints.
+
+Consequence: substations and treatment plants come from OSM only, with the
+completeness caveats stated in docs/LIFELINES.md.
+
 Planned (not yet used — verify before relying on):
 - NLCD Tree Canopy Cover (MRLC), for the shade/heat layer.
 - Landsat Collection 2 surface temperature, for block-scale heat exposure.

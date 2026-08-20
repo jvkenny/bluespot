@@ -1,0 +1,2568 @@
+{
+ "type": "FeatureCollection",
+ "name": "pharmacies",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Advocate Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/13381814687",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.651271,
+     41.936819
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "AllCareX Discount Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11413743789",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.696593,
+     41.910441
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11173297321",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656214,
+     41.962958
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11374769637",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.720408,
+     41.705468
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11421562656",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631115,
+     41.903734
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11716926490",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.805544,
+     41.913443
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11881628175",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.65361,
+     41.885719
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12062109884",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.586014,
+     41.736197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12218872701",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.673632,
+     41.836029
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12626228698",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653439,
+     41.912608
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12685101588",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.643884,
+     41.937486
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700551993",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.725727,
+     41.92485
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700552000",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.722469,
+     41.778168
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/13021564693",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.687867,
+     41.89555
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/13250348876",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.64533,
+     41.8375
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/1648106605",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.620332,
+     41.885957
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/1695055030",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679457,
+     41.968904
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/2652556177",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.637203,
+     41.890085
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/306742663",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627502,
+     41.881751
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/4409415232",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627861,
+     41.875424
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6331266185",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628486,
+     41.904076
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6920818832",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631304,
+     41.868375
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/7874385742",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62462,
+     41.878151
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/9354635422",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679138,
+     41.955633
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/9434660174",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656966,
+     41.866503
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/9823878786",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627049,
+     41.89235
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/144008984",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.594726,
+     41.799796
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162289679",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.740533,
+     41.735427
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/163226355",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.788583,
+     41.976304
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/163944073",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.712351,
+     41.960925
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209607580",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670076,
+     41.706839
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209905503",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.663683,
+     41.948179
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210308122",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654111,
+     41.896029
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210395717",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.660799,
+     41.993877
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/442713465",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766503,
+     41.946539
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CVS Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/490681552",
+    "retrieved": "2026-08-19",
+    "subtype": "CVS Pharmacy"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659428,
+     41.976853
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cornerstone Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12537246923",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.535111,
+     41.70308
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jesse Brown VA Outpaitiant Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/747424627",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.676987,
+     41.869568
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel Osco Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/13074363101",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.690096,
+     41.943373
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jewel-Osco",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6459431606",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670086,
+     41.93558
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Katsaros Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/5706242136",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.588395,
+     41.799417
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Lawndale Christian Health Center Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6587070504",
+    "retrieved": "2026-08-19",
+    "subtype": "Lawndale Christian Health Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.722661,
+     41.852107
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mariam Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/10080653197",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.716507,
+     41.968675
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mini Th\u01b0\u01a1ng X\u00e1",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/7152419176",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.657581,
+     41.973159
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Oak Street Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6175027779",
+    "retrieved": "2026-08-19",
+    "subtype": "Oak Street Health"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646926,
+     41.780315
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Osco Drug",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/1640172897",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.787468,
+     41.95397
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Osco Drug",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/903251428",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646405,
+     41.946818
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Outpatient Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/244896131",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.614412,
+     41.803379
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Peace Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6654380717",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632087,
+     41.850321
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Roseland Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210695209",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621249,
+     41.689193
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/10945665663",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.634144,
+     41.879506
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11162182859",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627604,
+     41.88494
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11673232438",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.53898,
+     41.680533
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11673232440",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.535869,
+     41.702336
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11698789551",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670418,
+     41.939318
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11716839274",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.806324,
+     41.974441
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/11716926483",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.82253,
+     41.984828
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12062109883",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.583979,
+     41.737237
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12062109898",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.607296,
+     41.80298
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12081723142",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.702708,
+     41.77811
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12091090972",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.680177,
+     41.677989
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12108669568",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.690865,
+     42.017826
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12187113279",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667966,
+     41.965663
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12416746699",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641867,
+     41.780249
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12417374610",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.552324,
+     41.72859
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12488804911",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.747492,
+     41.923866
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12488896040",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639684,
+     41.866453
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12626258506",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644096,
+     41.940476
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12681707816",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.711253,
+     41.925095
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12682129118",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.635893,
+     41.853226
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700551994",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.725965,
+     41.911147
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700551998",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.722807,
+     41.807505
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700551999",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.723378,
+     41.786274
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700639701",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.721863,
+     41.764785
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12700639745",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.729008,
+     41.968623
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12716599643",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653907,
+     41.954111
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12716599645",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.66066,
+     41.984423
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12967366986",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674338,
+     41.85205
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/12968887477",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.728197,
+     41.953203
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/13006749062",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668935,
+     41.981084
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/13736568201",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.713912,
+     41.939593
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/1662043755",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.648096,
+     41.932996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/1699207286",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.587988,
+     41.795603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/2295092728",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.649902,
+     41.937878
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/2708231834",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623957,
+     41.896495
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/3235325379",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.593935,
+     41.810694
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/357043874",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624732,
+     41.883096
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/357044405",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624708,
+     41.889813
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/3637621466",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618488,
+     41.891217
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/3637654283",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.616557,
+     41.894699
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/3637654284",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621241,
+     41.894401
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/3825932402",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.701899,
+     41.844348
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/4186976489",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.649948,
+     41.918284
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/4307742661",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705895,
+     41.917842
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/4381316598",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642066,
+     41.927875
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/5900062524",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.64991,
+     41.967926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6633927108",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692956,
+     41.975693
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6708132366",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654437,
+     41.750137
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6816078302",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.743988,
+     41.798905
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6897183174",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.697969,
+     41.931526
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/6960834419",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.671462,
+     41.999931
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/7606452958",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662578,
+     41.939634
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/130598990",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705135,
+     41.990129
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/132058452",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.788045,
+     41.995914
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/149599772",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689879,
+     41.942825
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/151184014",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766912,
+     41.959916
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/158977718",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659947,
+     41.993107
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162439343",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.745937,
+     41.938584
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162516698",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.755992,
+     41.880695
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162547483",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766666,
+     41.908982
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162551710",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766648,
+     41.924466
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162630337",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.755518,
+     41.931675
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162641381",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.747732,
+     41.954659
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162805417",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.767601,
+     41.974988
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/162852901",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.772345,
+     41.778106
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/163166160",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.775647,
+     41.94555
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/163251620",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.80114,
+     41.792508
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/163280215",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.796559,
+     41.937862
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/163777115",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.711618,
+     41.86598
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/165142806",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.684798,
+     41.807849
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209381333",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.68535,
+     41.881443
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209403722",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.688447,
+     41.917841
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209405662",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.688783,
+     41.910606
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209464181",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686389,
+     41.953747
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209608219",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.680777,
+     41.706143
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209656687",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.682761,
+     41.764094
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209708331",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665868,
+     41.808882
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209711514",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.673773,
+     41.830657
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209853566",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.672237,
+     41.906709
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/209880689",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.666569,
+     41.925442
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210049888",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.663553,
+     41.720623
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210165098",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646252,
+     41.808565
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210329948",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.648448,
+     41.948583
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210430299",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621508,
+     41.706915
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210500648",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624271,
+     41.757201
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210679336",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.630412,
+     41.904146
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/210680548",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.630844,
+     41.89379
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/211173986",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.587753,
+     41.77307
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/241187916",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.701981,
+     41.691933
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walgreens",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "way/31250247",
+    "retrieved": "2026-08-19",
+    "subtype": "Walgreens"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.634165,
+     41.91144
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walmart Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/10264424558",
+    "retrieved": "2026-08-19",
+    "subtype": "Walmart"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.598544,
+     41.697144
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Walmart Pharmacy",
+    "category": "pharmacies",
+    "source": "openstreetmap",
+    "source_id": "node/10279305130",
+    "retrieved": "2026-08-19",
+    "subtype": "Walmart"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.743332,
+     41.911281
+    ]
+   }
+  }
+ ]
+}

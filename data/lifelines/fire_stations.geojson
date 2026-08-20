@@ -1,0 +1,1668 @@
+{
+ "type": "FeatureCollection",
+ "name": "fire_stations",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3/CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E1",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-sfyu_wbfk~h9x6",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.633337,
+     41.876048
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E101",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-nwmi.rp7k.kufz",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679852,
+     41.768394
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E102",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-r7cf_2qbh-u76g",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675024,
+     42.01464
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E103",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-52fd.tpmj-kbjn",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664121,
+     41.880716
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E104",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-fm8r-tces-r6p7",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.540021,
+     41.683848
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E106",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-3vvp.bjgm-mh6f",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.703214,
+     41.943066
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E107",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-n8rg-szk4~vrn2",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.695624,
+     41.868107
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E108",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-vc82~f2d7_rc3b",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.757858,
+     41.96465
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E109",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-iuug-bf39~imtx",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.701811,
+     41.84834
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E11",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-2xyn~fcjz-v5x7",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.836496,
+     41.976856
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E110",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-cj2a~r6jj-4cxj",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.687584,
+     41.975939
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E112",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-zjme.78wd_7vvt",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.678303,
+     41.950755
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E113",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-hx54-a9xw_vu43",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.755069,
+     41.872983
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E115",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-acab~qamf~saiq",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644364,
+     41.676768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E116",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-dmcy~7pzu_b3gi",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664262,
+     41.785691
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E117",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-hd5m-8zm2.g6d7",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.748277,
+     41.895037
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E119",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-6yin~dtw9~2cjc",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.798795,
+     41.991207
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E120",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-bsa2_ypc4_t3h2",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668825,
+     41.693206
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E121",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-pwyb-d6y7.jzjd",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665763,
+     41.721247
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E122",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ihez_w52f~4jv5",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621352,
+     41.750983
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E123",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-nfbe~xuvi.6sjq",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679862,
+     41.80117
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E124",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-fdfu.d4sb_s94d",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708293,
+     41.961691
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E125",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-dnxu.hsi3.aen2",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.787754,
+     41.922085
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E126",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-nin9_5vga~rjeq",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.563936,
+     41.762397
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E127",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-a6m9-wb57~e4gt",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.751975,
+     41.777509
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E129",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-8veq.eb5b-drwt",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.663462,
+     41.746305
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E13",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-nvun-5iqh.iaqt",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.620614,
+     41.886464
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E14",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-kryd.csfs_9vre",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656225,
+     41.895977
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E15",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-4zmu_crzw_hgvs",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.70238,
+     41.747475
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E16",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-5r7g~9v5s.hzuj",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627498,
+     41.821901
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E18",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-2q48.ahg2-v3qu",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.655568,
+     41.864504
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E19",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-x6pb~vat7_dp44",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.617797,
+     41.832278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E22",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-xvkt~yi8c-h985",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.643967,
+     41.91792
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E23",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-g7yz~3erd~bz8x",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675921,
+     41.855619
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E26",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-gpwv-t2wf_zafq",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681855,
+     41.881516
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E28",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-9hsx-yxui-wafp",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656333,
+     41.845579
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E29",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-q4nq.d96r~dkeu",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642132,
+     41.830785
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E30",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ze42_5uu7-zbn9",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667079,
+     41.902209
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E32",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-875b-2csb.d85b",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.781693,
+     41.791236
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E34",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-zyri.uuct_myxm",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.724851,
+     41.8079
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E35",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-xzvk-2it7.iei4",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.677206,
+     41.91623
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E38",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-b4nn.pjfi_bhph",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.724276,
+     41.858502
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E39",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-qvzf.ndjs_ku2q",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.666351,
+     41.833465
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E4",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-9qrd~ubu4~c2vc",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642915,
+     41.90399
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E42",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-b74e-jupr_knjz",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.630093,
+     41.890802
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E43",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-6mqx.5z4f_dydg",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.696442,
+     41.920933
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E44",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-e56n_799i-7gcf",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.706578,
+     41.888791
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E45",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-zmns-zhjb.3ham",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.606626,
+     41.811343
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E46",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-5ts7.i72b_c7m6",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.550078,
+     41.726412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E47",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-kzwp~grfy_jmff",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.614176,
+     41.773
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E49",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-62e3.rqbs_efb8",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664972,
+     41.814042
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E5",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-c9qp_fiaj.77ie",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644309,
+     41.877028
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E50",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-3bny-zrdh~3ayf",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642994,
+     41.803448
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E54",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-9ptu_cebh.2qcz",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.638305,
+     41.76526
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E55",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ixba.cy2y~etgk",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.648994,
+     41.931797
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E56",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-m3fu_6j6z-9at7",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.685766,
+     41.937696
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E57",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ydzz_rk85~2aar",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.687132,
+     41.903828
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E60",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-n3bu-j8yw~guia",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.597519,
+     41.795152
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E62",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-abv2~z3d7.7826",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624137,
+     41.687406
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E63",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-sbat~vp3i~gsaz",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.590202,
+     41.773307
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E64",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-u7mw_tzg5-tcvu",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.721922,
+     41.753006
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E65",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-wzrv-ur7v.3jab",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699504,
+     41.817297
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E68",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-h5md~uk88_je47",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.757473,
+     41.917251
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E69",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-hxfm-prac~fcr2",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.733929,
+     41.953786
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E7",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-u9ei-79cb~vc3t",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.749638,
+     41.938785
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E70/E59",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-igup~uphf~i5e2",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670234,
+     41.991857
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E71",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-zjw8~7kh2.itmg",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.69953,
+     41.995147
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E72",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-pdvh_iiiv_d7ws",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.583412,
+     41.749828
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E73",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-9rzu~upfk_7765",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642455,
+     41.736936
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E74",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-4bjd~5zgc_mted",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.535229,
+     41.702188
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E75",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-k3j9_a3tj.a94h",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622659,
+     41.67673
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E76",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-m34j.imbr_emd9",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.726381,
+     41.912618
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E78",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-2cir.36zg.b4qn",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.656405,
+     41.949208
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E79",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-2nmw~g7t7~wgpt",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.766162,
+     41.997975
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E8",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ita3.e6m6~8ekh",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632357,
+     41.853133
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E80",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-pwf6-ybic-hgpj",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.590597,
+     41.6626
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E81",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-s7hs.tcex_44h3",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.560885,
+     41.705334
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E82",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-4t5x_pnwv~7w45",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.604257,
+     41.729333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E83",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-c3wm.dgzh~5nki",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.659975,
+     41.965639
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E84",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-zypx-9qvz-qpqy",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626421,
+     41.786898
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E86",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-bij8_y477~zczf",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.807219,
+     41.951143
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E88",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-xpmx_nidy~25wr",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.71469,
+     41.785702
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E89",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-tifq-tjzs~vup5",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.72568,
+     41.990057
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E91",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-hcu9_ufsi-ti7j",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.726957,
+     41.932237
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E92",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-mik7_cenb-igrj",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.698919,
+     41.691611
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E93",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-2y33_4uwg~nrjb",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632433,
+     41.705244
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E94",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ia6f.8n39_vezz",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.770694,
+     41.949448
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E95",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-83se-y2td~jqki",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.725764,
+     41.883344
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E96",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-ys7u-epv3.zeay",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.767616,
+     41.888324
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E97",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-carq.eigq_c96y",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.544704,
+     41.652591
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E98",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-7tki~ipv8-uvsb",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622599,
+     41.897065
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Fire station E99",
+    "category": "fire_stations",
+    "source": "chicago_data_portal_28km-gtjn",
+    "source_id": "row-bjw2.cgib~zqi9",
+    "retrieved": "2026-08-19",
+    "subtype": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.728061,
+     41.837386
+    ]
+   }
+  }
+ ]
+}
