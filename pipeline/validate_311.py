@@ -105,7 +105,7 @@ EVENTS = [
     ("2026-08-09", "second August 2026 event; the small end of the range."),
 ]
 
-# Bookmarks published in <data_root>/citywide/. rain_in None = static envelope.
+# Bookmarks. rain_in None = the static max-fill envelope.
 SCENARIOS = [
     ("r10",       1.00, "chicago_depth_r10.tif"),
     ("b75_2yr",   3.34, "chicago_depth_b75_2yr.tif"),
@@ -113,6 +113,21 @@ SCENARIOS = [
     ("b75_100yr", 8.57, "chicago_depth_b75_100yr.tif"),
     ("full",      None, "chicago_depth_cog.tif"),
 ]
+
+# The model versions to score. Everything else — events, windows, nulls, seed,
+# point sets — is held fixed, so any difference in the tables is the physics.
+#
+# The static max-fill envelope is a property of the terrain alone, not of the
+# runoff model, so v0.4 ships no `full` raster; it falls back to v0.3's and is
+# flagged `shared` in the JSON. Identical by construction, not by coincidence.
+PRODUCTS = [
+    ("v03", "citywide",
+     "v0.3 (published) — uniform runoff coefficient C = 0.55"),
+    ("v04", "citywide_v04",
+     "v0.4 — NRCS curve number, spatially varying runoff (TR-55; "
+     "NLCD 2021 cover + imperviousness, SSURGO hydrologic soil group)"),
+]
+BASELINE_RATIO = 1.26    # v0.3 water-on-street, >=30 cm, 25 m, dry-day null
 
 # NWS ASOS climate stations. ACIS station ids (Midway has no usable GHCN id in
 # ACIS; its call-sign id resolves correctly and is what xmACIS2 uses).
@@ -521,8 +536,7 @@ def two_prop_z(k1, n1, k2, n2):
 # ===========================================================================
 def cmd_score():
     os.makedirs(DERIVED, exist_ok=True)
-    cw = os.path.join(data_root(), "citywide")
-    ref_path = os.path.join(cw, SCENARIOS[0][2])
+    ref_path = os.path.join(data_root(), PRODUCTS[0][1], SCENARIOS[0][2])
     with rasterio.open(ref_path) as ds:
         profile = {"transform": ds.transform, "width": ds.width,
                    "height": ds.height, "crs": str(ds.crs)}
@@ -620,35 +634,50 @@ def cmd_score():
         slices[k] = inv[off:off + n]
         off += n
 
-    # ---- score every scenario -------------------------------------------
+    # ---- score every scenario, in every product version -------------------
     pad = max(RADII_M)
-    results = {}
-    for sid, rain_in, fn in SCENARIOS:
-        path = os.path.join(cw, fn)
-        results[sid] = {"rain_in": rain_in, "file": fn, "levels": {}}
-        for level in DEPTH_LEVELS:
-            t0 = time.time()
-            log("scenario %s (%s) at >=%.2f m ..." % (sid, fn, level))
-            mask = build_mask(path, pad, level)
-            wet = int(mask.sum())
-            log("   mask built in %.1fs, wet cells %d" % (time.time() - t0, wet))
-            fh = first_hit_radius(mask, ur_, uc_, pad)
-            del mask
-            log("   scored %d unique locations in %.1fs"
-                % (len(uniq), time.time() - t0))
-            per_set = {}
-            for k in psets:
-                f = fh[slices[k]]
-                n = len(f)
-                row = {"n": n}
-                for i, R in enumerate(RADII_M):
-                    k_ = int(((f >= 0) & (f <= i)).sum())
-                    lo, hi = wilson(k_, n)
-                    row["r%d" % R] = {"hits": k_, "rate": (k_ / n) if n else None,
-                                      "ci95": [lo, hi]}
-                per_set[k] = row
-            results[sid]["levels"]["%.2f" % level] = {
-                "wet_cells": wet, "sets": per_set}
+    products = {}
+    for pid, subdir, plabel in PRODUCTS:
+        cw = os.path.join(data_root(), subdir)
+        results = {}
+        for sid, rain_in, fn in SCENARIOS:
+            path = os.path.join(cw, fn)
+            shared = False
+            if not os.path.exists(path):
+                # the static envelope is terrain-only; fall back to v0.3's
+                alt = os.path.join(data_root(), PRODUCTS[0][1], fn)
+                if rain_in is None and os.path.exists(alt):
+                    path, shared = alt, True
+                else:
+                    raise SystemExit("missing raster: %s" % path)
+            results[sid] = {"rain_in": rain_in, "file": fn,
+                            "shared_with_v03": shared, "levels": {}}
+            for level in DEPTH_LEVELS:
+                t0 = time.time()
+                log("%s / %s (%s) at >=%.2f m ..." % (pid, sid, fn, level))
+                mask = build_mask(path, pad, level)
+                wet = int(mask.sum())
+                log("   mask built in %.1fs, wet cells %d"
+                    % (time.time() - t0, wet))
+                fh = first_hit_radius(mask, ur_, uc_, pad)
+                del mask
+                log("   scored %d unique locations in %.1fs"
+                    % (len(uniq), time.time() - t0))
+                per_set = {}
+                for k in psets:
+                    f = fh[slices[k]]
+                    n = len(f)
+                    row = {"n": n}
+                    for i, R in enumerate(RADII_M):
+                        k_ = int(((f >= 0) & (f <= i)).sum())
+                        lo, hi = wilson(k_, n)
+                        row["r%d" % R] = {"hits": k_,
+                                          "rate": (k_ / n) if n else None,
+                                          "ci95": [lo, hi]}
+                    per_set[k] = row
+                results[sid]["levels"]["%.2f" % level] = {
+                    "wet_cells": wet, "sets": per_set}
+        products[pid] = {"label": plabel, "dir": subdir, "scenarios": results}
 
     # ---- assemble the report --------------------------------------------
     spread = json.load(open(os.path.join(vdir(), "acis_event_spread.json")))
@@ -687,7 +716,7 @@ def cmd_score():
         "acis_retrieved": acis_meta["retrieved"],
         "events": events_out,
         "point_sets": meta,
-        "scenarios": results,
+        "products": products,
     }
     p = os.path.join(DERIVED, "validation_311.json")
     with open(p, "w") as fh:
@@ -707,16 +736,20 @@ NULLS = (("street network", "null|street"),
          ("same type, dry days", "dryday|%s"))
 
 
-def _lvl(out, sid, level):
-    return out["scenarios"][sid]["levels"]["%.2f" % level]["sets"]
+def _lvl(out, pid, sid, level):
+    return out["products"][pid]["scenarios"][sid]["levels"]["%.2f" % level]["sets"]
+
+
+def _sc(out, pid):
+    return out["products"][pid]["scenarios"]
 
 
 def _pct(row, radii):
     return " | ".join("%.1f%%" % (100 * row["r%d" % R]["rate"]) for R in radii)
 
 
-def write_tables(out):
-    """Markdown tables — the numeric body of docs/VALIDATION.md."""
+def product_body(out, pid):
+    """Markdown tables for one model version."""
     L = []
     A = L.append
     R = out["radii_m"]
@@ -771,10 +804,10 @@ def write_tables(out):
     A("")
     A("| bookmark | depth | wet km2 | % of city | reachable @25 m | @50 m | @100 m |")
     A("|---|---|---|---|---|---|---|")
-    for sid in out["scenarios"]:
+    for sid in _sc(out, pid):
         for lv in levels:
-            w = out["scenarios"][sid]["levels"]["%.2f" % lv]["wet_cells"] / 1e6
-            u = _lvl(out, sid, lv)["null|uniform"]
+            w = _sc(out, pid)[sid]["levels"]["%.2f" % lv]["wet_cells"] / 1e6
+            u = _lvl(out, pid, sid, lv)["null|uniform"]
             A("| %s | >=%.2f m | %.1f | %.1f%% | %s |" % (
                 sid, lv, w, 100 * w / city_km2,
                 " | ".join("%.1f%%" % (100 * u["r%d" % r]["rate"])
@@ -791,13 +824,13 @@ def write_tables(out):
             A("|---|---|---|" + "---|" * len(R))
             for e in out["events"]:
                 sid = e["nearest_bookmark"]
-                row = _lvl(out, sid, lv)["ev|%s|%s" % (e["date"], g)]
+                row = _lvl(out, pid, sid, lv)["ev|%s|%s" % (e["date"], g)]
                 A("| %s | %s | %d | %s |" % (e["date"], sid, row["n"],
                                              _pct(row, R)))
             for nm, key in NULLS:
                 k = key % g if "%s" in key else key
                 for sid in ("r10", "b75_2yr"):
-                    row = _lvl(out, sid, lv)[k]
+                    row = _lvl(out, pid, sid, lv)[k]
                     A("| *null: %s* | %s | %d | %s |" % (nm, sid, row["n"],
                                                          _pct(row, R)))
             A("")
@@ -812,10 +845,10 @@ def write_tables(out):
             A("|---|---|" + "---|" * (len(R) + 3))
             for e in out["events"]:
                 sid = e["nearest_bookmark"]
-                ev = _lvl(out, sid, lv)["ev|%s|%s" % (e["date"], g)]
+                ev = _lvl(out, pid, sid, lv)["ev|%s|%s" % (e["date"], g)]
                 for nm, key in NULLS:
                     k = key % g if "%s" in key else key
-                    nu = _lvl(out, sid, lv)[k]
+                    nu = _lvl(out, pid, sid, lv)[k]
                     ratios = []
                     for r in R:
                         a, b = ev["r%d" % r]["rate"], nu["r%d" % r]["rate"]
@@ -848,8 +881,8 @@ def write_tables(out):
                     obs = exp = var = ntot = 0
                     for e in out["events"]:
                         sid = e["nearest_bookmark"]
-                        ev = _lvl(out, sid, lv)["ev|%s|%s" % (e["date"], g)]
-                        pn = _lvl(out, sid, lv)[k]["r%d" % r]["rate"]
+                        ev = _lvl(out, pid, sid, lv)["ev|%s|%s" % (e["date"], g)]
+                        pn = _lvl(out, pid, sid, lv)[k]["r%d" % r]["rate"]
                         obs += ev["r%d" % r]["hits"]
                         ntot += ev["n"]
                         exp += ev["n"] * pn
@@ -877,12 +910,12 @@ def write_tables(out):
     for lv in levels:
         A("**ponded depth >= %.2f m**" % lv)
         A("")
-        A("| point set | " + " | ".join(out["scenarios"]) + " |")
-        A("|---" * (len(out["scenarios"]) + 1) + "|")
+        A("| point set | " + " | ".join(_sc(out, pid)) + " |")
+        A("|---" * (len(_sc(out, pid)) + 1) + "|")
         for k in keys:
             A("| `%s` | %s |" % (k, " | ".join(
-                "%.1f%%" % (100 * _lvl(out, s, lv)[k]["r25"]["rate"])
-                for s in out["scenarios"])))
+                "%.1f%%" % (100 * _lvl(out, pid, s, lv)[k]["r25"]["rate"])
+                for s in _sc(out, pid))))
         A("")
 
     A("## %d. Point-set bookkeeping" % (len(levels) + 5))
@@ -896,19 +929,212 @@ def write_tables(out):
             m["n_scored"]))
     A("")
 
-    body = "\n".join(L) + "\n"
-    p = os.path.join(DERIVED, "validation_311_tables.md")
-    with open(p, "w") as fh:
-        fh.write(body)
-    log("wrote", p)
-    splice_validation_doc(body)
+    return "\n".join(L) + "\n"
+
+
+PRIMARY_LEVEL = 0.30     # the discriminating threshold (see docs/VALIDATION.md)
+PRIMARY_R = 25           # the only tolerance that is both forgiving and sharp
+THIN_HITS = 30           # below this many hits a ratio is not worth reading
+
+
+def pooled(out, pid, g, nullkey, lv, r):
+    """Pool the five events, each against ITS OWN nearest bookmark.
+
+    Returns (observed hits, n, expected hits, variance) — expected and variance
+    from the null rate at each event's own bookmark (Poisson-binomial).
+    """
+    obs = ntot = 0
+    exp = var = 0.0
+    for e in out["events"]:
+        sid = e["nearest_bookmark"]
+        ev = _lvl(out, pid, sid, lv)["ev|%s|%s" % (e["date"], g)]
+        pn = _lvl(out, pid, sid, lv)[nullkey]["r%d" % r]["rate"]
+        obs += ev["r%d" % r]["hits"]
+        ntot += ev["n"]
+        exp += ev["n"] * pn
+        var += ev["n"] * pn * (1 - pn)
+    return obs, ntot, exp, var
+
+
+def _ratio_ci(hits, n, pnull):
+    """95% CI on the hit-rate ratio, from Wilson on the numerator only.
+
+    The null rates come from 14k-100k points, so their own uncertainty is
+    negligible next to the event's; this is deliberately the loose bound.
+    """
+    if not n or not pnull:
+        return None
+    lo, hi = wilson(hits, n)
+    return lo / pnull, hi / pnull
+
+
+def _ratio_cell(hits, n, pnull):
+    if not n or not pnull:
+        return "—"
+    ci = _ratio_ci(hits, n, pnull)
+    flag = " ⚠" if hits < THIN_HITS else ""
+    return "**%.2f** [%.2f–%.2f]%s" % (hits / n / pnull, ci[0], ci[1], flag)
+
+
+def comparison_body(out):
+    """v0.3 vs v0.4 — the whole point of re-running."""
+    L = []
+    A = L.append
+    lv = PRIMARY_LEVEL
+    r = PRIMARY_R
+    ids = [pid for pid, _, _ in PRODUCTS]
+    city = out["city_area_km2"]
+
+    A("<!-- generated by pipeline/validate_311.py — do not hand-edit -->")
+    A("")
+    A("## A. What changed in the maps")
+    A("")
+    A("Measured from the rasters themselves, not quoted from the manifests.")
+    A("\"Reachable\" = share of a uniform random sample of the city within")
+    A("%d m of a ponded cell — the null model's own hit rate, i.e. how hard" % r)
+    A("the map is to beat.")
+    A("")
+    A("| bookmark | depth | v0.3 wet km2 | v0.4 wet km2 | change | v0.3 reachable | v0.4 reachable |")
+    A("|---|---|---|---|---|---|---|")
+    for sid in _sc(out, ids[0]):
+        for level in out["depth_levels_m"]:
+            w = []
+            for pid in ids:
+                sc = _sc(out, pid)[sid]["levels"]["%.2f" % level]
+                w.append(sc["wet_cells"] / 1e6)
+            u = [100 * _lvl(out, pid, sid, level)["null|uniform"]["r%d" % r]["rate"]
+                 for pid in ids]
+            note = " *(shared)*" if _sc(out, ids[1])[sid].get("shared_with_v03") else ""
+            A("| %s%s | >=%.2f m | %.1f (%.1f%%) | %.1f (%.1f%%) | %+.0f%% | %.1f%% | %.1f%% |"
+              % (sid, note, level, w[0], 100 * w[0] / city, w[1],
+                 100 * w[1] / city,
+                 100 * (w[1] - w[0]) / w[0] if w[0] else float("nan"),
+                 u[0], u[1]))
+    A("")
+
+    A("## B. Headline — pooled over all five storms, >=%.2f m, %d m tolerance"
+      % (lv, r))
+    A("")
+    A("| complaint type | null | version | observed | expected | ratio [95% CI] | z | p |")
+    A("|---|---|---|---|---|---|---|---|")
+    for g, gl in GROUP_LABELS:
+        for nm, key in NULLS:
+            k = key % g if "%s" in key else key
+            for pid in ids:
+                obs, n, exp, var = pooled(out, pid, g, k, lv, r)
+                if var <= 0:
+                    continue
+                z = (obs - exp) / math.sqrt(var)
+                pv = math.erfc(abs(z) / math.sqrt(2))
+                A("| %s | %s | **%s** | %d / %d (%.1f%%) | %.0f (%.1f%%) | %s | %+.1f | %.1e |"
+                  % (gl, nm.split(",")[0], pid, obs, n, 100.0 * obs / n, exp,
+                     100.0 * exp / n, _ratio_cell(obs, n, exp / n), z, pv))
+    A("")
+    A("⚠ marks a ratio resting on fewer than %d hits — read the interval, not"
+      % THIN_HITS)
+    A("the point estimate.")
+    A("")
+
+    A("## C. Per storm, water on street, >=%.2f m, %d m" % (lv, r))
+    A("")
+    A("Against the dry-day null of the same complaint type — the only null that")
+    A("controls for where 311 calls come from.")
+    A("")
+    A("| event | total in | bookmark | n | v0.3 hits | v0.3 ratio [95% CI] | v0.4 hits | v0.4 ratio [95% CI] | change |")
+    A("|---|---|---|---|---|---|---|---|---|")
+    for g, gl in GROUP_LABELS[:2]:
+        A("| **%s** | | | | | | | | |" % gl)
+        for e in out["events"]:
+            sid = e["nearest_bookmark"]
+            cells, ratios = [], []
+            n = None
+            for pid in ids:
+                ev = _lvl(out, pid, sid, lv)["ev|%s|%s" % (e["date"], g)]
+                nu = _lvl(out, pid, sid, lv)["dryday|%s" % g]["r%d" % r]["rate"]
+                hits = ev["r%d" % r]["hits"]
+                n = ev["n"]
+                cells.append("%d" % hits)
+                cells.append(_ratio_cell(hits, n, nu))
+                ratios.append(hits / n / nu if n and nu else float("nan"))
+            A("| %s | %.2f | %s | %d | %s | %+.2f |" % (
+                e["date"], e["event_total_in"], sid, n, " | ".join(cells),
+                ratios[1] - ratios[0]))
+        obs = []
+        for pid in ids:
+            o, n, ex, _v = pooled(out, pid, g, "dryday|%s" % g, lv, r)
+            obs.append((o, n, ex))
+        A("| *pooled* | | | %d | %d | %s | %d | %s | %+.2f |" % (
+            obs[0][1], obs[0][0], _ratio_cell(obs[0][0], obs[0][1], obs[0][2] / obs[0][1]),
+            obs[1][0], _ratio_cell(obs[1][0], obs[1][1], obs[1][2] / obs[1][1]),
+            obs[1][0] / obs[1][2] - obs[0][0] / obs[0][2]))
+    A("")
+
+    A("## D. Did the >=5 cm layer become scoreable?")
+    A("")
+    A("The v0.3 finding was that at the product's own >=5 cm threshold the map")
+    A("covers so much of the city that no ratio can move. Same test, both")
+    A("versions, pooled, %d m." % r)
+    A("")
+    A("| complaint type | version | uniform-null reach @%d m | observed | ratio |" % r)
+    A("|---|---|---|---|---|")
+    for g, gl in GROUP_LABELS[:2]:
+        for pid in ids:
+            obs, n, exp, _v = pooled(out, pid, g, "dryday|%s" % g, 0.05, r)
+            reach = 100 * _lvl(out, pid, "b75_2yr", 0.05)["null|uniform"]["r%d" % r]["rate"]
+            A("| %s | %s | %.1f%% | %.1f%% | %.2f |" % (
+                gl, pid, reach, 100.0 * obs / n, obs / exp if exp else float("nan")))
+    A("")
+
+    A("## E. The 1.0 in bookmark, where the footprint moved most")
+    A("")
+    reach10 = [100 * _lvl(out, pid, "r10", 0.05)["dryday|street"]["r%d" % r]["rate"]
+               for pid in ids]
+    A("v0.4 shrinks the 1.0 in map hard, so its >=5 cm layer stops saturating:")
+    A("the dry-day null falls from %.1f%% to %.1f%% reach. That is a genuinely"
+      % (reach10[0], reach10[1]))
+    A("more specific map. The question is whether the specificity buys skill,")
+    A("so here are the only two events that map to that bookmark, at >=5 cm")
+    A("(where they still have usable counts) against the dry-day null.")
+    A("")
+    A("| complaint type | event | version | hits / n | rate | null | ratio [95% CI] |")
+    A("|---|---|---|---|---|---|---|")
+    for g, gl in GROUP_LABELS[:2]:
+        for e in out["events"]:
+            if e["nearest_bookmark"] != "r10":
+                continue
+            for pid in ids:
+                ev = _lvl(out, pid, "r10", 0.05)["ev|%s|%s" % (e["date"], g)]
+                nu = _lvl(out, pid, "r10", 0.05)["dryday|%s" % g]["r%d" % r]["rate"]
+                h, n = ev["r%d" % r]["hits"], ev["n"]
+                A("| %s | %s | %s | %d / %d | %.1f%% | %.1f%% | %s |" % (
+                    gl, e["date"], pid, h, n, 100.0 * h / n, 100 * nu,
+                    _ratio_cell(h, n, nu)))
+    A("")
+    return "\n".join(L) + "\n"
+
+
+def write_tables(out):
+    """Assemble both marker blocks and drop them into docs/VALIDATION.md."""
+    base = product_body(out, PRODUCTS[0][0])
+    cmp_ = comparison_body(out)
+    v04 = product_body(out, PRODUCTS[1][0])
+    for name, body in (("validation_311_tables.md", base),
+                       ("validation_311_v04_tables.md", cmp_ + "\n" + v04)):
+        p = os.path.join(DERIVED, name)
+        with open(p, "w") as fh:
+            fh.write(body)
+        log("wrote", p)
+    splice_validation_doc(BEGIN, END, base)
+    splice_validation_doc(BEGIN4, END4, cmp_ + "\n" + v04)
 
 
 BEGIN = "<!-- BEGIN GENERATED TABLES -->"
 END = "<!-- END GENERATED TABLES -->"
+BEGIN4 = "<!-- BEGIN V04 TABLES -->"
+END4 = "<!-- END V04 TABLES -->"
 
 
-def splice_validation_doc(body):
+def splice_validation_doc(begin, end, body):
     """Drop the generated tables into docs/VALIDATION.md between markers.
 
     Keeps the prose and the numbers in one document without keeping two
@@ -919,15 +1145,15 @@ def splice_validation_doc(body):
         log("note: docs/VALIDATION.md not found, skipping splice")
         return
     doc = open(p).read()
-    i, j = doc.find(BEGIN), doc.find(END)
+    i, j = doc.find(begin), doc.find(end)
     if i < 0 or j < 0:
-        log("note: markers not found in docs/VALIDATION.md, skipping splice")
+        log("note: %s not found in docs/VALIDATION.md, skipping" % begin)
         return
     # demote one level: the block sits under the doc's own "## Results"
     nested = "\n".join(
         "#" + ln if ln.startswith("##") and " " in ln[:5] else ln
         for ln in body.split("\n"))
-    new = doc[:i + len(BEGIN)] + "\n\n" + nested + "\n" + doc[j:]
+    new = doc[:i + len(begin)] + "\n\n" + nested + "\n" + doc[j:]
     if new != doc:
         with open(p, "w") as fh:
             fh.write(new)

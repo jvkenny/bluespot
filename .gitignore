@@ -3,8 +3,8 @@ data/raw/
 data/derived/*
 # ...except the Phase 1c validation results: small, and the whole point of
 # 1c is that the scores are public (docs/VALIDATION.md quotes them).
-!data/derived/validation_311.json
-!data/derived/validation_311_tables.md
+!data/derived/validation_311*.json
+!data/derived/validation_311*.md
 viewer/tiles/
 __pycache__/
 *.pyc

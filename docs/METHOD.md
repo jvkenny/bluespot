@@ -233,9 +233,10 @@ on real land edges of the region.
   flag (in-city fragment only).
 - **Measured, not asserted** (docs/VALIDATION.md): it says nothing useful
   about basement flooding — scored against 311, skill over a matched null is
-  1.05, i.e. none — and at the ≥5 cm threshold the layer is too extensive to
-  discriminate between blocks at all. Where it does earn its keep is surface
-  ponding ≥30 cm, at a skill ratio of about 1.26.
+  1.05-1.07, i.e. none — and at the ≥5 cm threshold the layer is too extensive
+  to discriminate between blocks at all. Where it does earn its keep is
+  surface ponding ≥30 cm, at a skill ratio of about 1.2-1.3 over a matched
+  null. That figure is essentially unchanged between v0.3 and v0.4.
 
 ## Validation against 311 complaints (docs/VALIDATION.md)
 
@@ -261,11 +262,25 @@ signal lives at ≥30 cm. Neither 100-year bookmark is validated by any of this
 and 8.57 in have no observational analogue. Full tables, null models, caveats
 and the specific failure modes are in `docs/VALIDATION.md`.
 
+**The v0.4 curve-number physics was re-scored against the identical test and
+did not improve on this.** The water-on-street ratio moved 1.26 → **1.20**
+(intervals overlapping, so an absence of improvement rather than a
+degradation); basements stayed at no skill, 1.05 → 1.07. The observed hit rate
+rose, 19.6% → 21.6%, but the ≥30 cm design-storm footprints grew 47–56%, so
+the null rose faster. Notably, the 1.0 in map went the *other* way — 44%
+smaller at ≥5 cm, specific enough that it finally stops saturating — and its
+skill ratio still sat at 1.00–1.05. Making the map more selective bought
+nothing, which points at the remaining uniform terms (drainage capacity D, the
+absent sewer network, citywide-uniform rainfall) rather than at runoff as the
+binding constraint. Curve number is worth keeping as citable, defensible
+physics; it is not worth claiming as an accuracy improvement.
+
 ## Validation TODO
 - Riverside pools at the Horner Park reach need a look — possible OSM water
   polygon vs. DEM channel misalignment.
-- Re-run `validate_311.py` after the Phase 1a curve-number physics lands; the
-  number to beat is a 1.26 skill ratio.
+- Phase 1a re-score done (v0.4, 1.20 — did not beat 1.26). Next candidates
+  for the residual, in order of expected effect: non-uniform rainfall per
+  event, then the drainage term D.
 - MWRD overflow records as a second, independent observation set.
 
 ## Pools layer (pipeline/pools.py)
