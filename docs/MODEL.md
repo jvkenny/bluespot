@@ -293,15 +293,18 @@ The mechanism, in mean net runoff over the 1,583 km² that drains to a pool:
 Three things to read out of that:
 
 1. **The 1 in scenario roughly halves, and that is the headline correction.**
-   A Chicago cell at the median CN of 92 sheds about 12 mm from an inch of
-   rain; the 10 mm drainage term eats most of it. Under uniform C = 0.55 the
-   same cell shed 14 mm regardless of what it was made of, so the old map
-   showed nuisance ponding in places — parks, the lakefront, the forest
-   preserve edges — that in the curve-number model produce essentially
-   nothing at an inch. Wet area drops from 2.33% to 1.32% of the city. This
-   is the initial abstraction doing its job, and it is also where the method
-   is weakest: TR-55 warns that accuracy degrades below ~0.5 in of runoff,
-   which is most of the city at this rung.
+   An inch of rain (25.4 mm) yields 3.4 mm of runoff at CN 83 — the city's
+   5th percentile — 7.2 mm at CN 89, and 10.2 mm at the median CN of 92.
+   **CN 92 is exactly where the 10 mm drainage term breaks even**, so at this
+   rung slightly more than half the city now contributes nothing at all and
+   only the genuinely paved end of the distribution (CN 95 gives 4.3 mm net,
+   CN 98 gives 10.1) loads a pool. Uniform C = 0.55 shed 14 mm from a park
+   and a parking lot alike, and 4 mm of it survived D everywhere, so the old
+   map showed nuisance ponding across ground that cannot produce it. Wet area
+   drops from 2.33% to 1.32% of the city. This is the initial abstraction
+   doing its job — and it is also where the method is weakest: TR-55 warns
+   that accuracy degrades below ~0.5 in of runoff, which is the whole city at
+   this rung.
 2. **The design storms get substantially wetter, and stored volume rises much
    less than loading does.** At 8.57 in the model now delivers 62% more water
    to pools, but stores only 31% more: 219.9 of the 282.2 Mm³ loaded is
