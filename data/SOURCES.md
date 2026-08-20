@@ -99,6 +99,53 @@ download records live in `<data_root>/dem/MANIFEST.jsonl` on Google Drive
    labels, not curated place names — several name a road beside the feature
    rather than the feature itself, and the deepest ones are quarries.
 
+9. Chicago 311 Service Requests — Chicago Data Portal dataset v6vf-nfxy
+   (https://data.cityofchicago.org/d/v6vf-nfxy), Socrata SODA API endpoint
+   https://data.cityofchicago.org/resource/v6vf-nfxy.json
+   Retrieved 2026-08-19 by `pipeline/validate_311.py fetch`, cached to
+   `<data_root>/validation/sr_flood.ndjson` on Drive. Records run 2018-07-01
+   to the retrieval date (the current 311 system; earlier requests live in a
+   separate legacy dataset and are NOT used). Pulled fields: sr_number,
+   sr_type, created_date, latitude, longitude, duplicate — filtered to
+   `latitude IS NOT NULL`, i.e. the geocoded subset.
+   SR_TYPE values used, taken from a group-by on the dataset itself rather
+   than guessed (the City's label is "Water **On** Street", not "in street"):
+   "Water On Street Complaint" (80,525 all-time), "Water in Basement
+   Complaint" (69,840), and, scored separately as a secondary group,
+   "Sewer Cleaning Inspection Request" (83,700), "Sewer Cave-In Inspection
+   Request" (43,641), "Alley Sewer Inspection Request" (11,856).
+   Geocodes are block-level (the City geocodes to the address range, not the
+   parcel), which is why hit rates are reported at 0/25/50/100 m tolerances.
+   Terms: Chicago Data Portal open data, City of Chicago.
+
+10. Daily precipitation observations — NOAA/NWS ASOS at Chicago O'Hare
+   International Airport (GHCN-D USW00094846, ACIS sid "ORD") and Chicago
+   Midway Airport (ACIS sid "MDW"), retrieved 2026-08-19 through the Applied
+   Climate Information System (ACIS) Web Services operated by the NOAA
+   Regional Climate Centers, https://data.rcc-acis.org/StnData
+   (documentation: http://www.rcc-acis.org/docs_webservices.html). Cached to
+   `<data_root>/validation/acis_daily.json`. Series 2019-01-01 onward, daily
+   `pcpn` in inches; "T" (trace) is read as 0.00 and "M"/"S" as missing.
+   O'Hare is the official NWS climate station of record for Chicago.
+   A companion ACIS `MultiStnData` query over the Chicago bounding box
+   (-87.95,41.63,-87.50,42.05) for each event day, cached to
+   `<data_root>/validation/acis_event_spread.json`, gives the across-city
+   station spread (COOP + CoCoRaHS + ASOS) used to state how much a single
+   citywide rain total costs. Note the daily-observation caveat: ASOS totals
+   are midnight-to-midnight local, CoCoRaHS totals are 7 am-to-7 am, so the
+   two are not strictly the same 24 hours. Public domain (US Government).
+
+11. Chicago street center lines — Chicago Data Portal dataset pr57-gg9e
+   (https://data.cityofchicago.org/d/pr57-gg9e), GeoJSON export via
+   https://data.cityofchicago.org/api/geospatial/pr57-gg9e?method=export&format=GeoJSON
+   Retrieved 2026-08-19, cached to
+   `<data_root>/validation/street_center_lines.geojson` (56,338 features).
+   Used ONLY to build the street-network null model in
+   `pipeline/validate_311.py`: random points sampled length-weighted along
+   segments with `class` in 1-4 (expressway, arterial, collector, local) and
+   `status` = "N" (in service). Not displayed. Terms: Chicago Data Portal
+   open data, City of Chicago.
+
 Planned (not yet used — verify before relying on):
 - NLCD Tree Canopy Cover + Impervious Surface (MRLC), for the shade/heat layer.
 - Landsat Collection 2 surface temperature, for block-scale heat exposure.
