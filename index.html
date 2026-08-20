@@ -178,7 +178,8 @@
   <button class="tab" id="tab-info" aria-label="sources and caveats">›</button>
   <div class="body">
     <b>Terrain screening, not a flood prediction.</b> This map knows the shape of
-    the ground — not the sewers, culverts, or soil beneath it. It is published
+    the ground, and how much rain the land cover and soil above it shed —
+    not the sewers and culverts beneath it. It is published
     for public understanding: <b>not for insurance, real-estate, or emergency
     decisions</b>, and it carries no warranty. Pool names are the nearest
     named feature, not the pool's identity.
@@ -189,8 +190,11 @@
     water, names &amp; address search © OpenStreetMap (Nominatim) ·
     county boundaries US Census TIGER 2024 · city boundary Chicago Data Portal ·
     basemap USGS The National Map · design storms ISWS Bulletins 70 &amp; 75
-    (NE Illinois, 24-hr) · rain scenarios assume uniform runoff C&nbsp;=&nbsp;0.55
-    and 10&nbsp;mm/event sewer capture — stated assumptions, not data.</p>
+    (NE Illinois, 24-hr) · rain scenarios turn rain into runoff cell by cell
+    with the NRCS curve number method, from NLCD 2021 land cover and
+    imperviousness (MRLC) and SSURGO hydrologic soil groups (USDA) ·
+    the one uniform assumption left is 10&nbsp;mm/event of sewer and inlet
+    capture, which is an assumption, not data — the network is not public.</p>
   </div>
 </aside>
 
