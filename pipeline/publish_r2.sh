@@ -25,7 +25,7 @@ export RCLONE_CONFIG_R2_TYPE=s3 RCLONE_CONFIG_R2_PROVIDER=Cloudflare \
   RCLONE_CONFIG_R2_ENDPOINT=$R2_ENDPOINT \
   RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true
 
-for dir in citywide regional; do
+for dir in citywide regional citywide_v04; do
   echo "-> $dir"
   # Only the tile archives. COGs stay on Drive: they are the working data, not
   # what the viewer reads, and they are far larger.

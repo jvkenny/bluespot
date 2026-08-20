@@ -194,7 +194,11 @@
     with the NRCS curve number method, from NLCD 2021 land cover and
     imperviousness (MRLC) and SSURGO hydrologic soil groups (USDA) ·
     the one uniform assumption left is 10&nbsp;mm/event of sewer and inlet
-    capture, which is an assumption, not data — the network is not public.</p>
+    capture, which is an assumption, not data — the network is not public ·
+    v0.4 (Aug 2026): per-cell runoff replaced a uniform coefficient — the
+    1&nbsp;in map shrank, the design-storm maps grew · scored twice against
+    Chicago 311 flooding reports (honestly: modest skill for streets, none
+    for basements) — method &amp; numbers in docs/VALIDATION.md on GitHub.</p>
   </div>
 </aside>
 
@@ -227,7 +231,7 @@ const REGION_DATA_BOUNDS = [-88.8264,41.1775,-87.4770,42.5414];
 const DATA_MINZOOM = 11;   // lowest zoom present in the PMTiles archives
 const CITY_BOUNDS = [-87.9401,41.6445,-87.5241,42.0231];
 const PILOT_BOUNDS = [-87.7205,41.9295,-87.6595,41.9705];
-const pm = n => ({type:'raster',url:'pmtiles://'+D+'citywide/depth_'+n+'.pmtiles',tileSize:256,bounds:CITY_BOUNDS});
+const pm = n => ({type:'raster',url:'pmtiles://'+D+'citywide_v04/depth_'+n+'.pmtiles',tileSize:256,bounds:CITY_BOUNDS});
 const map = new maplibregl.Map({
   container:'map',
   style:{
