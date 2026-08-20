@@ -5,6 +5,8 @@ data/derived/*
 # kilobytes, they are the evidence behind published tables, and a reviewer
 # should not have to re-run the pipeline to check a number.
 !data/derived/v04_comparison.json
+!data/derived/validation_311*.json
+!data/derived/validation_311*.md
 viewer/tiles/
 __pycache__/
 *.pyc

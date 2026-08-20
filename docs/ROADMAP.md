@@ -39,11 +39,25 @@ depth becomes a lookup between precomputed rungs instead of a live solve.
 Bookmarks (B75 2-yr, B70 100-yr, B75 100-yr) stay as labeled stops on the
 ladder. Region gets a coarser ladder (4–6 rungs) after the city validates.
 
-**1c. Validation against 311.** Chicago's water-in-street / water-in-basement
-311 records (data portal) vs. pond footprints, stratified by rain rung using
-observed storm totals. Publish hit/miss rates in METHOD.md — whatever they
-are. This is the credibility gate for Phase 4; a screening tool that has
-never been scored against observations must not highlight forecasts.
+**1c. Validation against 311.** ✅ **Done 2026-08-19 for the v0.3 baseline —
+`pipeline/validate_311.py`, results in `docs/VALIDATION.md`, summary in
+METHOD.md.** Five storms, 1.0-4.0 in, scored against three null models.
+Headline: water-on-street skill ratio **1.26** over a matched dry-day null at
+≥30 cm / 25 m; **no skill for basements** (1.05, n.s.); the ≥5 cm layer is too
+extensive to score at all; neither 100-yr bookmark has an observational
+analogue.
+
+**v0.4 re-scored on the same test (2026-08-19): 1.26 → 1.20.** Not a
+degradation (intervals overlap) but not an improvement either. Absolute hit
+rate rose 19.6% → 21.6% while the ≥30 cm design-storm footprints grew 47-56%,
+so the null rose faster. The 1.0 in map became 44% smaller and much more
+specific, and its ratio still sat at 1.00-1.05 — evidence the residual is not
+in the runoff term. Keep CN as citable physics; do not claim it as accuracy.
+Next suspects: citywide-uniform rainfall, then the uniform drainage term D.
+
+The Phase 4 gate is **still not passed**, and v0.4 does not change that: a
+1.20-1.26 ratio, no basement skill, and only three of five events carrying
+usable hit counts, does not support block-level forecast highlighting.
 
 **1d. Republish.** Updated citywide numbers with a visible changelog note
 ("v0.4: spatially varying runoff replaces uniform C — here's what changed
