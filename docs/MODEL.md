@@ -48,6 +48,9 @@ Pragmatic choices vs. the design above, in the order of the model steps:
    assumption **D = 10 mm** of runoff removed per event (sewer/inlet capture
    — the real network is not public data). Both are constants at the top of
    scenario.py; NLCD imperviousness refinement remains a stretch goal.
+   *(Superseded 2026-08-19: C is gone, replaced by a per-cell curve number.
+   See "v0.4 — spatially varying runoff" at the end of this file. D is
+   unchanged and is now the only uniform term.)*
 4. **Spill cascade**: simplified Fill-Spill-Merge. Each pool's downstream is
    whatever its lowest adjacent outside cell drains to (excluding cells that
    drain straight back in). Pools process in topological order; overflow
