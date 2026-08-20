@@ -1,6 +1,165 @@
+# Validation — the scenario depths against Chicago 311
+
+Phase 1c of the roadmap. Scored 2026-08-19 against the **currently published**
+citywide scenario model (v0.3: uniform runoff coefficient C = 0.55, uniform
+drainage term D = 10 mm). This is the baseline. It exists so that when the
+curve-number physics of Phase 1a lands, there is something to have improved on.
+
+Everything here is produced by `pipeline/validate_311.py`, deterministically,
+from public sources listed in `data/SOURCES.md` (entries 9-11).
+
+---
+
+## The verdict, first
+
+**Water on the street: real but modest skill.** Pooled over five storms, at a
+25 m tolerance and a ponded depth of at least 30 cm, **19.6%** of
+water-on-street complaints fell inside the model's footprint, against
+**15.5%** expected from the sharpest null model — the same complaint type on
+rain-free days. A ratio of **1.26**. Against a purely geometric null (random
+points on the street network) the ratio is **1.50**.
+
+**Water in the basement: no skill, and that is the right answer.** Same test,
+ratio **1.05** against the dry-day null (z = +1.9, p = 0.06 — not
+significant). Basements flood when the combined sewer surcharges. The model
+contains no sewer. It should not be able to predict this, and it cannot.
+
+**At the product's own definition of wet — 5 cm — the map cannot be scored at
+all.** The published `b75_2yr` layer calls 9.8% of the city wet at ≥5 cm, and
+88% of *random* points in the city sit within 25 m of one of those cells. A
+test whose null is 88% cannot distinguish anything. Every ≥5 cm ratio at 25 m
+or wider — pooled or per event, all three nulls — falls between 1.00 and 1.14.
+This is the single most important thing this exercise
+found, and it is about the metric as much as the model: **the ≥5 cm layer is
+an envelope, not a screen.**
+
+**And skill runs the wrong way with storm size.** The two largest events
+scored (4.01 and 3.39 in) have the *lowest* street-complaint ratios, 1.22 and
+1.13; the mid-size 2.35 in event has the highest, 1.47. A uniform-rain model
+scored against increasingly convective, increasingly patchy storms should
+behave exactly like that — but it is the opposite of what a tool meant to help
+before a big storm needs to do.
+
+So: the terrain screening beats the null, but only when you ask it about
+ponding deep enough to matter, only for the phenomenon it actually models, and
+only by about a quarter to a half over chance — least of all for the storms
+that matter most. It is a weak-but-real signal. It is nowhere near strong
+enough to justify highlighting specific blocks from a forecast, which is what
+Phase 4 wants to do.
+
+---
+
+## What was compared
+
+### The complaints
+
+Chicago 311 Service Requests, dataset `v6vf-nfxy` (2018-07-01 onward — the
+current 311 system; the pre-2019 legacy dataset is not used). Every SR type in
+the dataset that is plausibly a report of water where it should not be,
+discovered by grouping the dataset itself rather than guessing. Note the
+City's label is "Water **On** Street", not "water in street".
+
+| group | SR types | geocoded records |
+|---|---|---|
+| **street** | Water On Street Complaint | 80,383 |
+| **basement** | Water in Basement Complaint | 69,795 |
+| *sewer* (secondary) | Sewer Cleaning Inspection Request, Sewer Cave-In Inspection Request, Alley Sewer Inspection Request | 138,766 |
+
+288,944 geocoded records in total, 99.8% of all records of those types.
+
+**Street and basement are scored separately and never pooled.** They are
+different physical events. Surface ponding on terrain is what this model
+claims to describe; a wet basement is a sewer event that happens to correlate
+with rain. The sewer group is reported alongside as a third, clearly secondary
+signal — those requests describe the pipe, not the puddle.
+
+Geocodes are **block-level**: the City geocodes to an address range, not a
+parcel. That is the entire reason for reporting tolerance radii of 0, 25, 50
+and 100 m rather than a single point-in-polygon test.
+
+Between 24% and 29% of water-on-street records in the event windows carry the
+`duplicate` flag — a second call about the same problem. They are kept. Each
+is a real person reporting water at a real location, and every null model is
+subject to the same clustering.
+
+### The storms
+
+Chosen from the 2019-2026 daily record at the two official NWS climate
+stations, to span sizes with non-overlapping windows. The event total is the
+**mean of O'Hare and Midway**, and the mapping to a bookmark is nearest in
+inches.
+
+Rain totals are not hardcoded — the script fetches them from ACIS at run time.
+
+### The maps
+
+The five published citywide products in `<data_root>/citywide/`: the four rain
+bookmarks (1.0, 3.34, 7.58, 8.57 in) and the static max-fill envelope. Each
+event is scored primarily at its nearest bookmark; the appendix scores every
+point set against every bookmark.
+
+Each raster is thresholded to a boolean "ponded" mask at two depths:
+
+- **≥5 cm**, the product's own `MIN_DEPTH` — the headline definition;
+- **≥30 cm**, added because ≥5 cm saturates. 30 cm is roughly where ponding
+  stops being cosmetic, and is the passability threshold Phase 2b plans to
+  cite to FHWA/NWS vehicle-stall guidance.
+
+### The null models
+
+A hit rate without a baseline is a number with no meaning. Three baselines,
+weakest to strongest:
+
+1. **uniform** — 100,000 points drawn uniformly over the 598.8 km² city
+   polygon. Answers "how often would you hit by pointing anywhere?"
+2. **street network** — 100,000 points drawn length-weighted along 6,633 km of
+   Chicago street centerlines (classes 1-4, status in-service). Expressways
+   are deliberately *included*: leaving them out would strip the deepest pools
+   in the city out of the null and flatter the model.
+3. **dry-day, same type** — the *same* 311 complaint types on the 1,394 days
+   in the record with under 0.10 in at both stations on the day and the two
+   days before. This is the sharpest control available, because it shares the
+   complaint geography, the reporting behaviour, the geocoding convention and
+   the demographic distribution with the event set. The only thing it does not
+   share is a storm.
+
+Null 3 is the one to read. Nulls 1 and 2 flatter the model, because they do
+not know that 311 calls come from where people are.
+
+---
+
+## Method
+
+1. Reproject every point to EPSG:26916 and snap to the depth raster's 1 m
+   grid. Discard points outside the raster or outside the city polygon (a
+   handful: 881 of 100,000 street-null points, 0-3 per event window).
+2. Build the ponded mask for a scenario/threshold pair as one boolean array
+   over the whole 40,000 × 50,000 city grid, padded by 100 cells. NaN (open
+   water, outside the city) counts as dry.
+3. For each of the 271,335 unique locations, find the smallest radius in
+   {0, 25, 50, 100} m at which a ponded cell falls inside a Euclidean disk
+   centred on the point. Each unique location is tested once per
+   scenario/threshold and the answer is shared by every point set that
+   contains it.
+4. Hit rate = fraction of scored points whose first-hit radius is ≤ R, with a
+   Wilson 95% interval.
+5. Skill = event hit rate ÷ null hit rate, with a two-proportion z-test. The
+   pooled statistic scores each event against *its own* bookmark and sums:
+   expected = Σ n_event × null rate at that event's bookmark, with a
+   Poisson-binomial normal approximation for z.
+
+Determinism: one fixed seed (20260819) governs all null sampling; network
+pulls are cached to `<data_root>/validation/` on Drive and reused.
+
+---
+
+## Results
+
+<!-- BEGIN GENERATED TABLES -->
+
 <!-- generated by pipeline/validate_311.py — do not hand-edit -->
 
-## 1. Events scored
+### 1. Events scored
 
 | event | O'Hare in | Midway in | event total in | citywide gauges (n, min / median / max) | nearest bookmark |
 |---|---|---|---|---|---|
@@ -15,7 +174,7 @@ column is every ACIS station in the Chicago bounding box that reported
 that day (ASOS + COOP + CoCoRaHS, mixed observation windows) and is
 there to show how much a single citywide number hides.
 
-## 2. Complaint volume — the temporal signal
+### 2. Complaint volume — the temporal signal
 
 Complaints per day in each event window (event day + 2 days) against
 the dry-day rate over 1394 qualifying dry days.
@@ -29,7 +188,7 @@ the dry-day rate over 1394 qualifying dry days.
 | 2026-08-09 | 181 | **18x** | 75 | **7x** | 151 | **4x** |
 | *dry-day baseline* | 10.1 | 1x | 10.9 | 1x | 36.1 | 1x |
 
-## 3. How much of the city each map covers
+### 3. How much of the city each map covers
 
 The reason tolerance radii saturate. "Reachable" = share of a uniform
 random sample of the city within that radius of a ponded cell.
@@ -47,9 +206,9 @@ random sample of the city within that radius of a ponded cell.
 | r10 | >=0.05 m | 13.7 | 2.3% | 81.7% | 95.0% | 99.1% |
 | r10 | >=0.30 m | 0.3 | 0.1% | 2.7% | 8.3% | 24.1% |
 
-## 4. Hit rates at ponded depth >= 0.05 m
+### 4. Hit rates at ponded depth >= 0.05 m
 
-### Water On Street Complaint
+#### Water On Street Complaint
 
 | point set | bookmark | n | 0 m | 25 m | 50 m | 100 m |
 |---|---|---|---|---|---|---|
@@ -65,7 +224,7 @@ random sample of the city within that radius of a ponded cell.
 | *null: same type, dry days* | r10 | 14059 | 1.9% | 91.8% | 98.5% | 99.9% |
 | *null: same type, dry days* | b75_2yr | 14059 | 8.1% | 96.3% | 99.9% | 100.0% |
 
-### Water in Basement Complaint
+#### Water in Basement Complaint
 
 | point set | bookmark | n | 0 m | 25 m | 50 m | 100 m |
 |---|---|---|---|---|---|---|
@@ -81,7 +240,7 @@ random sample of the city within that radius of a ponded cell.
 | *null: same type, dry days* | r10 | 15133 | 0.7% | 92.7% | 98.3% | 99.7% |
 | *null: same type, dry days* | b75_2yr | 15133 | 4.5% | 97.3% | 99.9% | 100.0% |
 
-### Sewer-related requests
+#### Sewer-related requests
 
 | point set | bookmark | n | 0 m | 25 m | 50 m | 100 m |
 |---|---|---|---|---|---|---|
@@ -97,7 +256,7 @@ random sample of the city within that radius of a ponded cell.
 | *null: same type, dry days* | r10 | 50393 | 2.3% | 92.1% | 98.5% | 99.8% |
 | *null: same type, dry days* | b75_2yr | 50393 | 8.6% | 96.9% | 99.8% | 100.0% |
 
-### 4.1 Skill at >=0.05 m — event rate / null rate
+#### 4.1 Skill at >=0.05 m — event rate / null rate
 
 **Water On Street Complaint**
 
@@ -159,7 +318,7 @@ random sample of the city within that radius of a ponded cell.
 | 2026-08-09 | uniform in city | 1.25 | 1.13 | 1.03 | 1.01 | +0.8 | +6.0 | 1.6e-09 |
 | 2026-08-09 | same type | 1.26 | 1.01 | 1.00 | 1.00 | +0.9 | +0.5 | 6.4e-01 |
 
-### 4.2 Pooled across all five storms, >=0.05 m
+#### 4.2 Pooled across all five storms, >=0.05 m
 
 Each event's complaints are scored against ITS OWN nearest bookmark,
 then pooled. Expected = sum over events of n_event x null rate at
@@ -206,9 +365,9 @@ these p-values as an upper bound on confidence.
 | Sewer-related requests | same type | 50 m | 3234 / 3253 (99.4%) | 3237 (99.5%) | **1.00** | -0.7 | 5.1e-01 |
 | Sewer-related requests | same type | 100 m | 3251 / 3253 (99.9%) | 3251 (99.9%) | **1.00** | -0.2 | 8.2e-01 |
 
-## 5. Hit rates at ponded depth >= 0.30 m
+### 5. Hit rates at ponded depth >= 0.30 m
 
-### Water On Street Complaint
+#### Water On Street Complaint
 
 | point set | bookmark | n | 0 m | 25 m | 50 m | 100 m |
 |---|---|---|---|---|---|---|
@@ -224,7 +383,7 @@ these p-values as an upper bound on confidence.
 | *null: same type, dry days* | r10 | 14059 | 0.0% | 3.3% | 9.6% | 25.0% |
 | *null: same type, dry days* | b75_2yr | 14059 | 1.0% | 19.3% | 40.9% | 72.5% |
 
-### Water in Basement Complaint
+#### Water in Basement Complaint
 
 | point set | bookmark | n | 0 m | 25 m | 50 m | 100 m |
 |---|---|---|---|---|---|---|
@@ -240,7 +399,7 @@ these p-values as an upper bound on confidence.
 | *null: same type, dry days* | r10 | 15133 | 0.0% | 2.1% | 5.6% | 16.9% |
 | *null: same type, dry days* | b75_2yr | 15133 | 0.4% | 16.4% | 33.7% | 62.7% |
 
-### Sewer-related requests
+#### Sewer-related requests
 
 | point set | bookmark | n | 0 m | 25 m | 50 m | 100 m |
 |---|---|---|---|---|---|---|
@@ -256,7 +415,7 @@ these p-values as an upper bound on confidence.
 | *null: same type, dry days* | r10 | 50393 | 0.0% | 2.5% | 7.5% | 21.6% |
 | *null: same type, dry days* | b75_2yr | 50393 | 0.7% | 18.1% | 37.5% | 69.2% |
 
-### 5.1 Skill at >=0.30 m — event rate / null rate
+#### 5.1 Skill at >=0.30 m — event rate / null rate
 
 **Water On Street Complaint**
 
@@ -318,7 +477,7 @@ these p-values as an upper bound on confidence.
 | 2026-08-09 | uniform in city | 0.00 | 1.32 | 1.17 | 0.91 | -0.5 | +1.1 | 2.6e-01 |
 | 2026-08-09 | same type | 0.00 | 1.40 | 1.29 | 1.01 | -0.4 | +1.4 | 1.7e-01 |
 
-### 5.2 Pooled across all five storms, >=0.30 m
+#### 5.2 Pooled across all five storms, >=0.30 m
 
 Each event's complaints are scored against ITS OWN nearest bookmark,
 then pooled. Expected = sum over events of n_event x null rate at
@@ -365,7 +524,7 @@ these p-values as an upper bound on confidence.
 | Sewer-related requests | same type | 50 m | 1148 / 3253 (35.3%) | 997 (30.7%) | **1.15** | +6.0 | 2.4e-09 |
 | Sewer-related requests | same type | 100 m | 1928 / 3253 (59.3%) | 1896 (58.3%) | **1.02** | +1.2 | 2.2e-01 |
 
-## 6. Appendix — every bookmark, every point set
+### 6. Appendix — every bookmark, every point set
 
 Hit rate at 25 m tolerance. `full` is the static max-fill envelope, not
 a rain scenario.
@@ -420,7 +579,7 @@ a rain scenario.
 | `null|street` | 25.1% | 25.9% | 16.5% | 31.0% | 2.2% |
 | `null|uniform` | 24.8% | 25.6% | 16.9% | 29.7% | 2.7% |
 
-## 7. Point-set bookkeeping
+### 7. Point-set bookkeeping
 
 | point set | points | outside raster | outside city | scored |
 |---|---|---|---|---|
@@ -445,3 +604,226 @@ a rain scenario.
 | `null|street` | 100000 | 0 | 881 | 99119 |
 | `null|uniform` | 100000 | 0 | 0 | 100000 |
 
+
+<!-- END GENERATED TABLES -->
+
+---
+
+## Reading the numbers
+
+### 1. The complaint types are genuinely rain-driven
+
+Section 2 is not a test of the model — it is a sanity check that the test is
+pointed at the right thing, and it passes overwhelmingly. Water-in-basement
+complaints ran at **117×** the dry-day rate in the 2023-07-02 window;
+water-on-street peaked at **48×** on 2020-05-17. Even the smallest event
+scored, 1.03 in, produced 18× the dry-day street rate.
+
+So there is a real, enormous signal in *when* these complaints happen. The
+question this document actually asks is whether the model knows *where*, and
+that is a much harder question with a much weaker answer.
+
+### 2. At ≥5 cm the metric saturates and measures nothing
+
+Section 3 is the diagnosis. At ≥5 cm:
+
+| bookmark | wet | within 25 m of wet | within 100 m |
+|---|---|---|---|
+| 1.0 in | 2.3% of the city | 81.7% | 99.1% |
+| 3.34 in | 9.8% | 88.0% | 99.4% |
+| max fill | 18.3% | 91.1% | 99.5% |
+
+A map you can reach from 88% of the city by walking 25 m is not screening
+anything. Consequently every ≥5 cm ratio at 25 m or wider sits between 1.00
+and 1.14 — and several of those are "statistically significant" at z > 18
+purely because n is large. **Significance is not skill.** The
+water-in-basement figure of 1.12 against the uniform null carries a p-value of
+1e-147; it is still a 12% effect against a null that was never plausible.
+
+At ≥30 cm the same maps cover 0.1% (1.0 in) to 6.3% (max fill) of the city and
+the test starts working.
+
+### 3. Water on street, ≥30 cm: the one real result
+
+Pooled over all five storms, at 25 m:
+
+| null | observed | expected | ratio | z | p |
+|---|---|---|---|---|---|
+| street network | 19.6% | 13.1% | **1.50** | +12.4 | 5e-35 |
+| uniform in city | 19.6% | 13.5% | **1.45** | +11.4 | 7e-30 |
+| **dry-day, same type** | 19.6% | 15.5% | **1.26** | +7.2 | 5e-13 |
+
+Per event, against the dry-day null, the ratio is 1.22, 1.13, 1.47, 1.43 and
+1.33 — every one above 1, which is worth more than any single p-value. The
+direction is consistent across five independent storms spanning 1.0 to 4.0 in.
+
+The gap between the geometric nulls (1.45-1.50) and the dry-day null (1.26) is
+itself the lesson: roughly *half* of the model's apparent skill against a
+random-points baseline is just the fact that 311 calls come from where people
+live and drive. That half is not the model's.
+
+### 4. Water in basement: no skill, correctly
+
+Pooled ratio against the dry-day null: **1.05**, z = +1.9, p = 0.06. Against
+the geometric nulls at 50 and 100 m it is actually *below* 1 (0.90-0.92) —
+basement complaints are, if anything, slightly further from modelled ponding
+than a random street point is.
+
+This is the model behaving honestly. `docs/METHOD.md` has always said there
+are no sewers in it. Basement flooding in Chicago is overwhelmingly combined-
+sewer surcharge pushing back up a floor drain, and that is a function of pipe
+capacity and antecedent conditions, not of a depression in the ground surface.
+
+The practical consequence is a labelling requirement: **nothing in this
+project may be presented as saying anything about basements.**
+
+### 5. Exact-cell (0 m) tests are biased against address geocodes
+
+At ≥5 cm, water-in-basement complaints hit the exact modelled cell at 4.4%
+against a street-network null of 11.0% — a ratio of 0.40, z = −17.3. Read
+naively that says the model is worse than random. It is an artefact:
+
+- 311 geocodes land on building addresses, and the DEM is **bare earth**, so
+  the surface under an address is an interpolation across a removed building.
+  Depressions do not survive that.
+- The street-network null, by construction, samples the crown-and-gutter
+  geometry where real depressions are.
+
+The tell is that against the **dry-day** null — which shares the geocoding
+convention exactly — the same ratio is 1.03. The null did its job. This is why
+0 m is reported but never used as the headline.
+
+### 6. 100 m tolerance is worthless
+
+Every pooled 100 m ratio, at both thresholds and against all three nulls,
+falls between 0.91 and 1.04. At ≥5 cm, 99.9% of everything hits. At ≥30 cm
+the null itself is 60-72%.
+A 100 m tolerance in a city on a 60 m alley grid means "somewhere on this
+block or the next one". Do not quote 100 m numbers.
+
+25 m is the only radius that is both forgiving enough for block-level geocodes
+and tight enough to discriminate.
+
+### 7. The design-storm bookmarks are untested — and untestable this way
+
+The largest two-station event in the whole 311 era is **4.01 in** (2023-07-02).
+The two bookmarks the project's design-storm story rests on — Bulletin 70's
+7.58 in and Bulletin 75's 8.57 in — have **no observational analogue** in the
+record. Nothing in this document validates them. They are extrapolations of a
+model that has only ever been checked at the bottom of its range.
+
+Every event scored here mapped to either the 1.0 in or the 3.34 in bookmark.
+
+### 8. One rain number for the whole city is the biggest simplification
+
+The scenario model applies a single rain depth citywide, so the observation it
+is scored against has to be a single number too. The cost of that is visible
+in Section 1: on 2026-07-27 the gauges inside the city bounding box ranged
+from **0.00 to 3.31 in**. On 2023-07-02 they ranged 0.00 to 4.68, and the
+storm's true core sat over the West Side and the near-west suburbs, well above
+either climate station.
+
+And the skill ratios line up with that. Ordered by event total, the
+water-on-street ratio against the dry-day null goes:
+
+| event total | 4.01 in | 3.39 in | 2.35 in | 1.71 in | 1.03 in |
+|---|---|---|---|---|---|
+| skill ratio | 1.22 | **1.13** | **1.47** | 1.43 | 1.33 |
+
+**The two largest storms score worst.** That is the opposite of what you would
+want from a tool meant to help before a big storm, and it is consistent with
+the uniform-rain simplification: the bigger the storm, the more convective and
+spatially concentrated it was, and the worse a single citywide depth describes
+it. 2020-05-17, the weakest of the five, also had 3.5 in of rain three days
+earlier — antecedent wetness the model has no term for.
+
+The caveat on reading too much into this: these are five points, and the
+per-event ratios carry wide intervals (the 1.43 and 1.33 rest on 19 and 24
+hits). The ordering is a hypothesis worth testing with more events, not an
+established relationship.
+
+---
+
+## Where the model fails, specifically
+
+1. **Basements. Entirely.** Ratio 1.05, not significant. Not a defect — a
+   scope boundary — but it must be said out loud wherever the map is shown.
+2. **At its own ≥5 cm threshold it is an envelope, not a screen.** It cannot
+   be scored, and by extension cannot usefully rank blocks, at that depth.
+3. **At the low end it has almost nothing to point at.** The 1.0 in bookmark's
+   ≥30 cm footprint is 0.3 km², 0.1% of the city. The 2026-08-01 and
+   2026-08-09 windows produced 401 and 543 street complaints; the model
+   located 19 and 24 of them. The ratios (1.43, 1.33) rest on those two-digit
+   counts and should not be over-read.
+4. **The nearest-bookmark mapping is crude.** 1.71 in was scored against the
+   1.0 in map — a 40% understatement. Phase 1b's ladder of ~12 rungs is the
+   fix, and this exercise is direct evidence it is needed.
+5. **Uniform rain against non-uniform storms.** Skill is *lowest* for the two
+   largest events scored (§8) — the wrong direction for a tool whose purpose
+   is to be useful before a big storm.
+6. **No antecedent conditions.** 2020-05-17 followed 3.5 in three days
+   earlier; the model treats every event as landing on the same dry ground.
+7. **2016 lidar.** Ten years of regrading, new detention, and construction are
+   invisible to a DEM flown in 2016, and the complaints run to 2026.
+
+---
+
+## Caveats on the statistics
+
+- **Spatial autocorrelation is not accounted for.** Complaints cluster; so do
+  ponds. Every p-value here treats points as independent, which they are not.
+  Read them as an **upper bound on confidence**. The consistency of the
+  direction across five storms is stronger evidence than any single p.
+- **Duplicate SRs are retained** (24-29% of street records in event windows),
+  which inflates effective clustering further.
+- **Dry days skew seasonal.** 1,394 rain-free days include winter, so the
+  dry-day null carries snowmelt and water-main-break street water. That is
+  still "street water not caused by a storm", which is the right control, but
+  it is not a perfectly matched one.
+- **Observation windows differ.** ASOS daily totals are midnight-to-midnight
+  local; the CoCoRaHS gauges in the spread column read at 7 am. The event-day
+  windows are calendar days in America/Chicago.
+- **The event window is 3 days** (event day + 2). Complaints trickle in after
+  a storm; a shorter window loses real reports, a longer one picks up
+  unrelated ones. 3 days was chosen a priori and not tuned.
+- **No temporal holdout.** These five storms are the ones that exist; the
+  model was not fitted to them, but neither is this an out-of-sample test in
+  any formal sense.
+
+---
+
+## What this changes
+
+For the roadmap:
+
+- **Phase 1a/1b should be scored again with this exact script.** That is the
+  point of running it now, on the current physics. The number to beat is
+  **1.26** (water on street, ≥30 cm, 25 m, dry-day null). If curve-number
+  runoff and a proper rain ladder do not move it, they did not help.
+- **Phase 2's passability work should use ≥30 cm, not ≥5 cm.** The validation
+  says that is where the signal lives, independently of the FHWA argument.
+- **Phase 4 is not justified yet.** The roadmap says a screening tool that has
+  never been scored must not highlight forecasts. It has now been scored, and
+  a 1.26 ratio for surface ponding — with no skill at all for the flooding
+  people actually call about most — does not support block-level forecast
+  highlighting. Storm Watch, if it ships, must show these numbers on the same
+  screen.
+
+---
+
+## Reproducing
+
+```
+pipeline/validate_311.py fetch      # caches to <data_root>/validation/
+pipeline/validate_311.py score      # writes data/derived/ + the block above
+```
+
+Cached inputs (Drive, `<data_root>/validation/`): `sr_flood.ndjson`,
+`acis_daily.json`, `acis_event_spread.json`, `street_center_lines.geojson`.
+Outputs: `data/derived/validation_311.json` (full machine-readable matrix —
+every point set × bookmark × depth × radius, with Wilson intervals) and
+`data/derived/validation_311_tables.md`.
+
+`--refresh` forces a re-pull; without it the cached files are reused and a
+re-score reproduces every number exactly (only the `generated` timestamp in
+the JSON changes).

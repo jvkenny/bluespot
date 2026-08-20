@@ -35,7 +35,9 @@ number traceable to a cited public source — built for residents, not agencies.
   region-scale outputs) lives primarily on Google Drive (`bluespot-data/`,
   see `pipeline/paths.py`); local `data/raw/` is only a transient cache
 - `viewer/` — MapLibre globe → neighborhood scrollytelling front end
-- `docs/` — method notes
+- `docs/` — method notes, including `VALIDATION.md`: the rain scenarios
+  scored against Chicago 311 flooding complaints, with null models. Read it
+  before trusting the map about any particular block.
 
 ## Running the viewer
 

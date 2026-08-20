@@ -24,16 +24,16 @@ Usage
   validate_311.py score          compute results into data/derived/
   validate_311.py all            both (default)
 
-Deterministic: all random sampling is seeded (SEED below); re-running from the
-cache reproduces the JSON byte for byte.  Network pulls are cached and skipped
-when the cache file already exists (--refresh forces a re-pull).
+Deterministic: all random sampling is seeded (SEED below), so re-running from
+the cache reproduces every number exactly (only the `generated` timestamp in
+the JSON differs). Network pulls are cached and skipped when the cache file
+already exists; --refresh forces a re-pull.
 """
 import json
 import math
 import os
 import sys
 import time
-import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -86,10 +86,12 @@ SR_GROUPS = {
 SR_ALL = [t for g in SR_GROUPS.values() for t in g]
 
 # ---------------------------------------------------------------------------
-# Storm events. Chosen 2026-08-19 from the 2019-2026 daily record at the two
-# official NWS climate stations (see pick_events() docstring for the ranking
-# that produced them). Rain totals are NOT hardcoded — they are fetched from
-# ACIS at run time and written into the results.
+# Storm events. Chosen 2026-08-19 by ranking every day in the 2019-2026 record
+# by the mean of the two official NWS climate stations, then taking a spread of
+# sizes with non-overlapping windows: the two largest, a mid-size event, and
+# the two largest August 2026 events. Rain totals are NOT hardcoded — they are
+# fetched from ACIS at run time and written into the results, so changing this
+# list is all it takes to score different storms.
 # ---------------------------------------------------------------------------
 EVENTS = [
     ("2023-07-02", "record storm; the wettest calendar day in the 311-era "
@@ -779,8 +781,8 @@ def write_tables(out):
                            for r in R[1:])))
     A("")
 
-    for lv in levels:
-        A("## 4. Hit rates at ponded depth >= %.2f m" % lv)
+    for sec, lv in enumerate(levels, start=4):
+        A("## %d. Hit rates at ponded depth >= %.2f m" % (sec, lv))
         A("")
         for g, gl in GROUP_LABELS:
             A("### %s" % gl)
@@ -800,7 +802,7 @@ def write_tables(out):
                                                          _pct(row, R)))
             A("")
 
-        A("### Skill at >=%.2f m — event rate / null rate" % lv)
+        A("### %d.1 Skill at >=%.2f m — event rate / null rate" % (sec, lv))
         A("")
         for g, gl in GROUP_LABELS:
             A("**%s**" % gl)
@@ -829,7 +831,7 @@ def write_tables(out):
                         ("%.1e" % p25) if p25 is not None else "—"))
             A("")
 
-        A("### Pooled across all five storms, >=%.2f m" % lv)
+        A("### %d.2 Pooled across all five storms, >=%.2f m" % (sec, lv))
         A("")
         A("Each event's complaints are scored against ITS OWN nearest bookmark,")
         A("then pooled. Expected = sum over events of n_event x null rate at")
@@ -863,7 +865,7 @@ def write_tables(out):
                           obs / exp if exp else float("nan"), z, pv))
         A("")
 
-    A("## 5. Appendix — every bookmark, every point set")
+    A("## %d. Appendix — every bookmark, every point set" % (len(levels) + 4))
     A("")
     A("Hit rate at 25 m tolerance. `full` is the static max-fill envelope, not")
     A("a rain scenario.")
@@ -883,7 +885,7 @@ def write_tables(out):
                 for s in out["scenarios"])))
         A("")
 
-    A("## 6. Point-set bookkeeping")
+    A("## %d. Point-set bookkeeping" % (len(levels) + 5))
     A("")
     A("| point set | points | outside raster | outside city | scored |")
     A("|---|---|---|---|---|")
@@ -894,10 +896,42 @@ def write_tables(out):
             m["n_scored"]))
     A("")
 
+    body = "\n".join(L) + "\n"
     p = os.path.join(DERIVED, "validation_311_tables.md")
     with open(p, "w") as fh:
-        fh.write("\n".join(L) + "\n")
+        fh.write(body)
     log("wrote", p)
+    splice_validation_doc(body)
+
+
+BEGIN = "<!-- BEGIN GENERATED TABLES -->"
+END = "<!-- END GENERATED TABLES -->"
+
+
+def splice_validation_doc(body):
+    """Drop the generated tables into docs/VALIDATION.md between markers.
+
+    Keeps the prose and the numbers in one document without keeping two
+    hand-synced copies of the numbers.
+    """
+    p = os.path.join(REPO, "docs", "VALIDATION.md")
+    if not os.path.exists(p):
+        log("note: docs/VALIDATION.md not found, skipping splice")
+        return
+    doc = open(p).read()
+    i, j = doc.find(BEGIN), doc.find(END)
+    if i < 0 or j < 0:
+        log("note: markers not found in docs/VALIDATION.md, skipping splice")
+        return
+    # demote one level: the block sits under the doc's own "## Results"
+    nested = "\n".join(
+        "#" + ln if ln.startswith("##") and " " in ln[:5] else ln
+        for ln in body.split("\n"))
+    new = doc[:i + len(BEGIN)] + "\n\n" + nested + "\n" + doc[j:]
+    if new != doc:
+        with open(p, "w") as fh:
+            fh.write(new)
+    log("spliced tables into", p)
 
 
 def main():

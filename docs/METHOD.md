@@ -231,12 +231,42 @@ on real land edges of the region.
 - The product is clipped to the city limits; ponding physically continues
   into the suburbs and pools crossing the line carry an `edge_truncated`
   flag (in-city fragment only).
+- **Measured, not asserted** (docs/VALIDATION.md): it says nothing useful
+  about basement flooding — scored against 311, skill over a matched null is
+  1.05, i.e. none — and at the ≥5 cm threshold the layer is too extensive to
+  discriminate between blocks at all. Where it does earn its keep is surface
+  ponding ≥30 cm, at a skill ratio of about 1.26.
+
+## Validation against 311 complaints (docs/VALIDATION.md)
+
+The rain scenarios have been scored against Chicago 311 service requests for
+five storms between 1.0 and 4.0 inches, including the 2 July 2023 record
+event (`pipeline/validate_311.py`). Pooled across those storms, **19.6% of
+water-on-street complaints fell within 25 m of modelled ponding at least
+30 cm deep, against 15.5% for the same complaint type on rain-free days — a
+skill ratio of 1.26** (z = +7.2). Every individual storm ran above 1. Against
+purely geometric baselines the ratio looks better, 1.45–1.50, but roughly half
+of that is just the fact that 311 calls come from where people live; the
+dry-day figure is the honest one.
+
+Two results matter as much as that one. **Water-in-basement complaints show no
+skill at all** (ratio 1.05, p = 0.06) — correctly, since basement flooding is
+combined-sewer surcharge and there is no sewer in this model; nothing here
+should be read as describing basements. And **at the layer's own ≥5 cm
+threshold the map cannot be scored**: 88% of random points in the city sit
+within 25 m of a ≥5 cm cell in the 3.34 in scenario, so every ratio collapses
+toward 1. The ≥5 cm depth layer is an upper envelope; the discriminating
+signal lives at ≥30 cm. Neither 100-year bookmark is validated by any of this
+— the largest observed two-station event in the 311 era is 4.01 in, so 7.58
+and 8.57 in have no observational analogue. Full tables, null models, caveats
+and the specific failure modes are in `docs/VALIDATION.md`.
 
 ## Validation TODO
-- Ground-truth against Aug 2026 rain event (maintainer's own observations,
-  311 water-in-street complaints, MWRD overflow records).
 - Riverside pools at the Horner Park reach need a look — possible OSM water
   polygon vs. DEM channel misalignment.
+- Re-run `validate_311.py` after the Phase 1a curve-number physics lands; the
+  number to beat is a 1.26 skill ratio.
+- MWRD overflow records as a second, independent observation set.
 
 ## Pools layer (pipeline/pools.py)
 Connected regions ≥ 15 cm deep and ≥ 400 m², ranked by stored volume; names
