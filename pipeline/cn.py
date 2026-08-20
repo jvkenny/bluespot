@@ -31,41 +31,56 @@ large ones somewhat more. See `runoff_in` below and docs/MODEL.md.
 
 CURVE NUMBER SOURCES AND THE ASSIGNMENT WE MADE
 -----------------------------------------------
-The CN values below are USDA-NRCS TR-55 (2nd ed., June 1986) Tables 2-2a to
-2-2c, reprinted as NEH Part 630 Chapter 9 (data/SOURCES.md #12). NRCS does
-not publish an NLCD crosswalk, so **the assignment of each NLCD class to a
-TR-55 cover description is ours** and is written out class by class in
-`CN_TABLE` — every row names the TR-55 cover it borrows, so any disagreement
-is with one line, not with a black box.
+The CN values below are USDA-NRCS TR-55 (2nd ed., June 1986) Tables 2-2a and
+2-2c, which are current NRCS directives as NEH Part 630 Subpart E, "Runoff
+Curve Numbers" (the June 2025 restructuring of what used to be Chapter 9).
+Every row was checked against both documents; see data/SOURCES.md #12 for
+URLs. NRCS does not publish an NLCD crosswalk, so **the assignment of each
+NLCD class to a TR-55 cover description is ours** and is written out class by
+class in `CN_TABLE` — every row names the cover it borrows, so any
+disagreement is with one line, not with a black box.
 
 Three assignment choices are worth arguing with:
 
   * All four Developed classes take the same pervious CN — "open space, good
     condition" — and get their intensity entirely from the measured
-    imperviousness raster. That is not laziness: TR-55's own composite-CN
-    chart (Figure 2-3) is built on open space in good condition as the
-    pervious cover, and the NLCD Developed classes are *defined* by
-    imperviousness bins, so taking both the class and the percentage would
-    count the same pavement twice.
+    imperviousness raster. That is not laziness, it is NRCS's own method:
+    the composite-CN equation assumes the pervious part of urban land is
+    "equivalent to pasture in good hydrologic condition" (which is why the
+    open-space-good and pasture-good rows below carry the same numbers), and
+    the NLCD Developed classes are *defined* by imperviousness bins, so
+    taking both the class and the percentage would count the same pavement
+    twice.
   * Wetlands (90, 95) are given CN 98 for every soil group. TR-55 has no
     wetland row. Saturated ground has no available retention, so it behaves
     like an impervious surface for the storm's purposes. This is OUR rule,
-    not NRCS's, and it is the most conservative reading; wetlands are 3.0% of
-    the city land area (see the build JSON), and most of them sit inside
+    not NRCS's, and it is the most conservative reading. It is also small:
+    wetlands are 1.3% of Chicago's land area, and most of that sits inside
     depressions that are already pools in this model.
   * Open water (11) and ice (12) are CN 98 as well. In practice those cells
     are usually masked as open water by the scenario model anyway.
 
+And one thing the composite hides: NRCS's CN 98 for impervious surface
+assumes the pavement is **directly connected** to the drainage system. Where
+it is not — a roof draining to a lawn — the real composite is lower. TR-55
+has an unconnected-impervious variant for watersheds under 30% impervious;
+Chicago averages 68%, so the connected assumption is the right one here and
+the wrong one for the leafy end of the region.
+
 DUAL HYDROLOGIC SOIL GROUPS
 ---------------------------
 SSURGO reports A/D, B/D and C/D for soils whose group depends on drainage:
-the first letter applies where the soil has been artificially drained, D
-where it has not (NEH Part 630 Ch. 7). We assume **undrained — dual classes
-become D** — because the drainage state of any given parcel is not public
-data, and D is both the standard default and the conservative one. In the
-Chicago AOI dual classes are a large minority of map units, so this is a real
-assumption, not a corner case; the build JSON records how much land it
-touches.
+"the first letter applies to the drained condition and the second to the
+undrained condition" (NEH Part 630 Subpart C). Only naturally-D wet soils get
+a dual class at all. We assume **undrained — dual classes become D** —
+because the drainage state of any given parcel is not public data, and
+because D is what the soil is unless someone has drained it.
+
+Inside Chicago that rule touches 3.6% of the land and barely moves anything.
+Over the 7-county region it touches **39.9%**, and that is a caveat with
+teeth: NE Illinois farmland is extensively tile-drained, so the regional grid
+systematically overstates runoff on cropland. Whoever runs the regional
+ladder has to say so, or find a public drainage layer.
 
 MAP UNITS WITH NO HYDROLOGIC SOIL GROUP
 ---------------------------------------

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fill-spill rainfall scenario model (docs/MODEL.md v0.2).
+"""Fill-spill rainfall scenario model (docs/MODEL.md v0.4).
 
 For a given rain depth R, estimates how full each terrain depression gets:
 
@@ -7,10 +7,16 @@ For a given rain depth R, estimates how full each terrain depression gets:
   2. catchment per pool      - D8 steepest descent on the FILLED DEM; every
                                cell routes to a terminal pool, open water, or
                                the domain edge (pointer doubling)
-  3. loading                 - V = max(0, C*R - D) * catchment_area
-                               C: uniform runoff coefficient  (RUNOFF_C)
-                               D: drainage-capacity assumption, mm removed
-                                  over the event                (DRAIN_MM)
+  3. loading                 - PER CELL: the NRCS curve number method turns
+                               rain depth into runoff depth using that cell's
+                               land cover, imperviousness and soil
+                               (pipeline/cn.py), then the uniform
+                               drainage-capacity term is taken off:
+                                 S  = 1000/CN - 10                  (inches)
+                                 Q  = (R-0.2S)^2/(R+0.8S), R > 0.2S (inches)
+                                 net = max(0, 25.4*Q - DRAIN_MM)        (mm)
+                               Runoff is summed over each pool's catchment by
+                               the D8 assignment from step 2.
   4. spill cascade           - pools over capacity pass excess to the pool
                                their lowest adjacent outside cell drains to
                                (Barnes fill-spill-merge, simplified);
@@ -18,8 +24,8 @@ For a given rain depth R, estimates how full each terrain depression gets:
                                conservatively (excess marked exported)
 
 STILL TERRAIN SCREENING, NOT A FLOOD PREDICTION. No sewers/pipes (beyond the
-uniform D assumption), no infiltration variation, no hydraulics, no timing.
-C and D are stated assumptions, adjustable below.
+uniform D assumption), no hydraulics, no timing. **D is now the only uniform
+term in the model** — runoff generation varies cell by cell.
 
 Two entry points, sharing one model core (`solve`):
 
@@ -37,8 +43,20 @@ all tiles), run in its OWN SUBPROCESS so the allocator cannot retain arenas
 across chunks. Per-chunk rasters are then mosaicked into one COG per
 scenario, and stats aggregate into <out_dir>/chicago_scenarios.json.
 
-  scenario.py --chunk <vrt> <tile.tif> <aoi> <water> <chunk_dir> <halo_m>
+  scenario.py --chunk <vrt> <tile.tif> <aoi> <water> <chunk_dir> <halo_m> \
+              [cn_vrt]
 is the single-chunk worker (invoked by --chunked; runnable standalone).
+
+Two flags may appear anywhere in the command line and apply to every entry
+point. Both are passed to chunk subprocesses through the environment, so a
+chunked run cannot disagree with itself:
+
+  --rungs 0.5,1,1.5,2,3.34,5,7.58,8.57   the rain depths to solve, inches.
+        Default: the four labelled bookmarks. Depths that coincide with a
+        bookmark keep the bookmark's id and label, so a ladder is a superset
+        of the bookmarks rather than a parallel universe.
+  --cn <name>    which curve-number tile set under <data_root>/cn/ to use.
+        Default: the AOI file's stem (chicago.geojson -> chicago).
 
 CHUNKING CAVEAT: catchments and spill cascades are solved per chunk, so both
 truncate at the halo boundary. See docs/MODEL.md — the bias is toward
@@ -56,18 +74,21 @@ from skimage.morphology import reconstruction
 from skimage.measure import label
 
 from bluespot import load_geoms, geom_bounds, _core_bounds, MIN_DEPTH, GDAL
+from cn import CN_FALLBACK, runoff_mm_by_cn
+from paths import data_root
 
-# ---- stated assumptions (documented in docs/MODEL.md + viewer sources) ----
-RUNOFF_C = 0.55   # uniform runoff coefficient (dense urban residential mix)
+# ---- the one remaining uniform assumption (docs/MODEL.md + viewer note) ----
 DRAIN_MM = 10.0   # drainage capacity: mm of runoff removed per event by
-                  # sewers/infiltration. An assumption, not data - the real
-                  # network is not public. Adjust and re-run to test.
+                  # sewers/inlets. An assumption, not data - the real network
+                  # is not public. Adjust and re-run to test. Everything else
+                  # about runoff generation now varies per cell, from the
+                  # curve-number grid (pipeline/cn.py).
 
 # Rainfall bookmarks. ISWS values verified 2026-08-17 (see data/SOURCES.md):
 # Bulletin 70 (Huff & Angel 1989) NE Illinois 100-yr 24-hr = 7.58 in;
 # Bulletin 75 (ISWS, March 2020) Section 2 (Northeast) 24-hr:
 #   2-yr = 3.34 in, 100-yr = 8.57 in.
-SCENARIOS = [
+BOOKMARKS = [
     # id, rain inches, short label, provenance
     ("r10",       1.00, "1.0″", "nuisance rain (reference, not a design storm)"),
     ("b75_2yr",   3.34, "3.34″", "Bulletin 75 2-yr 24-hr, NE Illinois"),
@@ -75,6 +96,34 @@ SCENARIOS = [
     ("b75_100yr", 8.57, "8.57″", "Bulletin 75 100-yr 24-hr (current standard)"),
 ]
 FULL_PROV = "full fill — static upper envelope, every pool at capacity"
+RUNG_PROV = "ladder rung (interpolation stop, not a design storm)"
+
+
+def scenarios(spec=None):
+    """The rain depths to solve, as (id, inches, label, provenance).
+
+    `spec` is a comma-separated list of depths in inches; empty or None means
+    the four labelled bookmarks. A rung that lands on a bookmark depth keeps
+    the bookmark's id, label and provenance, so ladder outputs stay
+    file-compatible with the bookmark outputs the viewer already knows."""
+    if spec is None:
+        spec = os.environ.get("BLUESPOT_RAIN_IN", "")
+    spec = (spec or "").strip()
+    if not spec:
+        return list(BOOKMARKS)
+    depths = sorted({round(float(x), 4) for x in spec.split(",") if x.strip()})
+    out = []
+    for d in depths:
+        bm = next((b for b in BOOKMARKS if abs(b[1] - d) < 1e-9), None)
+        out.append(bm or (f"p{int(round(d * 100)):04d}", d,
+                          f"{d:g}″".replace(".0″", ".0″"), RUNG_PROV))
+    return out
+
+
+def cn_name(aoi_path):
+    """Which <data_root>/cn/ tile set backs this AOI."""
+    n = os.environ.get("BLUESPOT_CN_NAME", "").strip()
+    return n or os.path.basename(aoi_path).split(".")[0]
 
 # The citywide mosaic is pinned to ONE lidar acquisition (data/SOURCES.md #1):
 # the DEM folder on Drive is shared and may also hold tiles from other
@@ -292,12 +341,48 @@ class PoolIndex:
         return depth.reshape(shape)
 
 
-def solve(dem, valid, water, cell_area, log=print):
-    """The model core. Yields (sid, depth2d, stats) for each rainfall
-    bookmark and finally for the static full fill.
+def pool_cn_hist(root_pool, cn_flat, valid_flat, npools, log=print):
+    """Cells per (pool, curve number), the whole basis of the loading step.
+
+    Built once per domain, in row slabs so no full-size int64 key array is
+    ever materialised, and reduced to only the CN values the domain actually
+    contains (typically ~70 of the 101 possible). Once this exists the D8
+    result can be freed: every rainfall rung is then a matrix-vector product
+    against a 101-entry runoff lookup, which is what makes a 12-rung ladder
+    cost about the same as one rung.
+
+    Returns (hist[npools+1, ncn] int64, cn_values[ncn])."""
+    counts = np.bincount(cn_flat, minlength=256)
+    present = np.flatnonzero(counts).astype(np.int32)
+    ncn = len(present)
+    remap = np.zeros(256, dtype=np.int64)
+    remap[present] = np.arange(ncn, dtype=np.int64)
+    M = (npools + 1) * ncn
+    hist = np.zeros(M, dtype=np.int64)
+    slab = 1 << 24
+    for s in range(0, root_pool.size, slab):
+        sl = slice(s, min(s + slab, root_pool.size))
+        v = valid_flat[sl]
+        if not v.any():
+            continue
+        k = root_pool[sl][v].astype(np.int64) * ncn + remap[cn_flat[sl][v]]
+        hist += np.bincount(k, minlength=M)
+        del k, v
+    log(f"  pool x CN histogram: {npools+1:,} x {ncn} "
+        f"(CN {present.min()}-{present.max()})")
+    return hist.reshape(npools + 1, ncn), present
+
+
+def solve(dem, valid, water, cell_area, cn, rungs=None, log=print):
+    """The model core. Yields (sid, depth2d, stats) for each rainfall rung
+    and finally for the static full fill.
+
+    `cn` is a uint8 curve-number array on the same grid as `dem` (0 = no
+    curve number, loaded at the stated CN_FALLBACK).
 
     Arrays are consumed/freed as the solve proceeds so peak RSS stays near
-    ~6 GB for a 12k x 12k domain."""
+    ~7 GB for a 12k x 12k domain."""
+    rungs = scenarios() if rungs is None else rungs
     t0 = time.time()
     dem_w, filled = fill_depressions(dem, valid, water)
     log(f"  fill {time.time()-t0:.0f}s")
@@ -325,16 +410,24 @@ def solve(dem, valid, water, cell_area, log=print):
     del terminal
     root_pool = lab_flat[root]                       # 0 = water/edge/export
     del root
-    catch_area = np.bincount(root_pool[valid.reshape(-1)],
-                             minlength=npools + 1) * cell_area
-    log(f"  routing {time.time()-t1:.0f}s | catchment "
-        f"{catch_area[1:].sum():,.0f} m2 to pools, "
-        f"{catch_area[0]:,.0f} m2 to water/edge")
+    log(f"  routing {time.time()-t1:.0f}s")
 
     t2 = time.time()
     target, _ = spill_edges(lab, F, root_pool, npools)
-    del F, root_pool, lab
+    del F, lab
     log(f"  spill edges {time.time()-t2:.0f}s")
+
+    t5 = time.time()
+    hist, cn_vals = pool_cn_hist(root_pool, cn.reshape(-1), valid.reshape(-1),
+                                 npools, log=log)
+    del root_pool
+    catch_area = hist.sum(axis=1) * cell_area
+    n_no_cn = int(hist[:, 0].sum()) if cn_vals[0] == 0 else 0
+    log(f"  catchment {catch_area[1:].sum():,.0f} m2 to pools, "
+        f"{catch_area[0]:,.0f} m2 to water/edge | "
+        f"{time.time()-t5:.0f}s"
+        + (f" | WARNING {n_no_cn:,} contributing cells have no curve number, "
+           f"loaded at CN {CN_FALLBACK}" if n_no_cn else ""))
 
     t3 = time.time()
     pi = PoolIndex(lab_flat, dem_w.reshape(-1), depth_full.reshape(-1), npools)
@@ -345,11 +438,16 @@ def solve(dem, valid, water, cell_area, log=print):
     del dem_w
     nan_mask = (~valid) | water
 
-    for sid, inches, short, prov in SCENARIOS:
+    contrib_area = float(catch_area[1:].sum())
+    for sid, inches, short, prov in rungs:
         t4 = time.time()
         rain_mm = inches * 25.4
-        net_mm = max(0.0, RUNOFF_C * rain_mm - DRAIN_MM)
-        load = (net_mm / 1000.0) * catch_area
+        # runoff per curve number, then the uniform drainage capacity off the
+        # top of each cell's runoff (not off the pool's total): sewers and
+        # inlets take their share wherever the water is made.
+        net_m = np.maximum(0.0, runoff_mm_by_cn(rain_mm / 25.4)[cn_vals]
+                           - DRAIN_MM) / 1000.0
+        load = (hist @ net_m) * cell_area
         load[0] = 0.0
         stored, exported = cascade(load, cap, target, pour)
         d = pi.levels(stored, cap, pour, cell_area, shape)
@@ -358,15 +456,18 @@ def solve(dem, valid, water, cell_area, log=print):
         loaded = float(load[1:].sum())
         stored_t = float(stored[1:].sum())
         imbal = (loaded - stored_t - exported) / loaded if loaded > 0 else 0.0
+        # area-weighted mean net runoff over the contributing area: the single
+        # number that replaces v0.3's "net_mm", for like-for-like comparison
+        net_mean = (loaded / contrib_area * 1000.0) if contrib_area else 0.0
         rec = {"id": sid, "rain_in": inches, "rain_mm": round(rain_mm, 1),
                "label": short, "provenance": prov,
-               "net_mm": round(net_mm, 2),
+               "net_mm_mean": round(net_mean, 3),
                "loaded_m3": loaded,
                "stored_m3": stored_t, "exported_m3": exported,
                "balance_rel_err": imbal,
                "pools_at_capacity": int(np.sum(stored[1:] >= cap[1:] * (1 - 1e-9))),
                "n_pools": npools}
-        log(f"  {sid:>10}: net {net_mm:5.1f} mm | stored {stored_t:>14,.0f} "
+        log(f"  {sid:>10}: net {net_mean:5.1f} mm mean | stored {stored_t:>14,.0f} "
             f"| exported {exported:>14,.0f} | imbalance {imbal:+.2e} "
             f"| {time.time()-t4:.0f}s")
         yield sid, d, rec
@@ -390,6 +491,60 @@ def _crop_stats(d, r0, c0, rh, cw, cell_area):
     return dc, {"core_cells": int(fin.sum()), "core_wet_cells": int(wet.sum()),
                 "core_stored_m3": float(np.nansum(dc)) * cell_area,
                 "core_max_depth_m": float(np.nanmax(dc)) if wet.any() else 0.0}
+
+
+# -------------------------------------------------------- curve numbers ----
+def cn_read_window(cn_vrt, transform, shape, log=print):
+    """Read the curve-number mosaic over exactly the window a DEM chunk used.
+
+    The CN tiles were written on the DEM tiles' own grids (pipeline/cn.py
+    stage 2), so this is an index-for-index read with no resampling — and the
+    assertion below is what proves it stayed that way."""
+    with rasterio.open(cn_vrt) as src:
+        win = from_bounds(*rasterio.transform.array_bounds(
+            shape[0], shape[1], transform), src.transform
+                          ).round_offsets().round_lengths()
+        cn = src.read(1, window=win, boundless=True, fill_value=0)
+        wt = src.window_transform(win)
+    if cn.shape != shape:
+        cn = np.zeros(shape, dtype="uint8") if cn.size == 0 else \
+            cn[:shape[0], :shape[1]]
+    if abs(wt.c - transform.c) > 0.5 or abs(wt.f - transform.f) > 0.5 \
+            or abs(wt.a - transform.a) > 1e-6:
+        raise SystemExit(f"curve-number mosaic is not on the DEM grid: "
+                         f"{wt} vs {transform}")
+    return cn.astype("uint8")
+
+
+def cn_warp_domain(name, transform, shape, crs, log=print):
+    """Curve numbers for a domain that has no DEM-tile counterpart (the pilot
+    single-raster path): nearest-resample the 30 m grid into it."""
+    from rasterio.warp import Resampling, reproject
+    src_path = os.path.join(data_root(), "cn", f"cn30_{name}.tif")
+    if not os.path.exists(src_path):
+        sys.exit(f"missing {src_path} — run `cn.py grid <aoi> {name}` first")
+    with rasterio.open(src_path) as src:
+        out = np.zeros(shape, dtype="uint8")
+        reproject(src.read(1), out, src_transform=src.transform,
+                  src_crs=src.crs, dst_transform=transform, dst_crs=crs,
+                  src_nodata=0, dst_nodata=0, resampling=Resampling.nearest)
+    log(f"  curve numbers from {os.path.basename(src_path)}")
+    return out
+
+
+def _cn_record(name):
+    """The curve-number build record, folded into the output JSON so the
+    published numbers carry their own provenance."""
+    p = os.path.join(data_root(), "cn", f"cn30_{name}.json")
+    if not os.path.exists(p):
+        return {"name": name, "note": "build record not found"}
+    d = json.load(open(p))
+    return {k: d[k] for k in ("name", "built", "inputs", "rules",
+                              "cn_mean_aoi_land", "cn_percentiles_aoi_land",
+                              "impervious_mean_pct_aoi_land",
+                              "hsg_pct_aoi_land_after_fill",
+                              "hsg_gap_fraction_aoi_land",
+                              "hsg_dual_fraction_aoi_land") if k in d}
 
 
 # ---------------------------------------------------------------- pilot ----
@@ -417,8 +572,12 @@ def main(dem_path, aoi_path, water_path, out_dir, name, buffer_m=1000.0):
                    nodata=np.nan, compress="deflate", predictor=2, count=1,
                    driver="GTiff")
 
-    meta = {"assumptions": _assumptions(), "scenarios": []}
-    for sid, d, rec in solve(dem, valid, water, cell_area):
+    cname = cn_name(aoi_path)
+    cn = cn_warp_domain(cname, transform, dem.shape, profile["crs"])
+    rungs = scenarios()
+    meta = {"assumptions": _assumptions(cname),
+            "rungs_in": [r[1] for r in rungs], "scenarios": []}
+    for sid, d, rec in solve(dem, valid, water, cell_area, cn, rungs):
         dc, cs = _crop_stats(d, r0, c0, rh, cw, cell_area)
         if sid != "full":
             with rasterio.open(os.path.join(out_dir, f"{name}_depth_{sid}.tif"),
@@ -433,10 +592,23 @@ def main(dem_path, aoi_path, water_path, out_dir, name, buffer_m=1000.0):
     print(f"-> {out_json}")
 
 
-def _assumptions():
-    return {"runoff_c": RUNOFF_C, "drain_mm": DRAIN_MM,
-            "note": "terrain screening, not a flood prediction; C and D are "
-                    "stated assumptions (pipeline/scenario.py)"}
+def _assumptions(cname=None):
+    return {
+        "runoff": "NRCS curve number, per cell (TR-55). "
+                  "S = 1000/CN - 10 in; Q = (P-0.2S)^2/(P+0.8S) for P > 0.2S. "
+                  "CN from NLCD 2021 land cover + percent imperviousness and "
+                  "SSURGO hydrologic soil group (pipeline/cn.py, "
+                  "data/SOURCES.md #9-#12)",
+        "drain_mm": DRAIN_MM,
+        "drain_note": "mm of runoff removed per event by sewers and inlets, "
+                      "taken off each cell's runoff. The ONLY uniform term "
+                      "left in the model — the real network is not public "
+                      "data. Adjust DRAIN_MM in pipeline/scenario.py and "
+                      "re-run to test.",
+        "cn_fallback": CN_FALLBACK,
+        "curve_numbers": _cn_record(cname) if cname else None,
+        "note": "terrain screening, not a flood prediction; the drainage "
+                "capacity D is a stated assumption (pipeline/scenario.py)"}
 
 
 # ------------------------------------------------------------- citywide ----
@@ -473,9 +645,11 @@ def select_tiles(dem_dir, aoi_path, margin_m=0.0):
     return keep
 
 
-def chunk(vrt, tile, aoi_path, water_path, chunk_dir, halo_m=1000.0):
+def chunk(vrt, tile, aoi_path, water_path, chunk_dir, halo_m=1000.0,
+          cn_vrt=None):
     """One DEM tile: core + halo domain, solved and written per scenario."""
     halo_m = float(halo_m)
+    cn_vrt = cn_vrt or os.path.join(os.path.dirname(vrt), "cn_mosaic.vrt")
     name = os.path.basename(tile).replace(".tif", "")
     t0 = time.time()
     log = lambda *a: print(*a, flush=True)
@@ -522,9 +696,14 @@ def chunk(vrt, tile, aoi_path, water_path, chunk_dir, halo_m=1000.0):
         transform.a, transform.b, transform.c + c0 * transform.a,
         transform.d, transform.e, transform.f + r0 * transform.e)
 
+    cn = cn_read_window(cn_vrt, transform, shape, log=log)
+    rungs = scenarios()
     stats = {"tile": name, "halo_m": halo_m, "domain_cells": int(shape[0] * shape[1]),
+             "rungs_in": [r[1] for r in rungs],
+             "cn_mean_valid": round(float(cn[valid & (cn > 0)].mean()), 2)
+                              if (valid & (cn > 0)).any() else 0.0,
              "scenarios": []}
-    for sid, d, rec in solve(dem, valid, water, cell_area, log=log):
+    for sid, d, rec in solve(dem, valid, water, cell_area, cn, rungs, log=log):
         d[~aoi_mask] = np.nan            # product is masked to the city
         dc, cs = _crop_stats(d, r0, c0, rh, cw, cell_area)
         rec.update(cs)
@@ -557,7 +736,26 @@ def chunked(dem_dir, aoi_path, water_path, chunk_dir, out_dir, halo_m=1000.0,
     vrt = os.path.join(chunk_dir, "dem_mosaic.vrt")
     if not os.path.exists(vrt):
         subprocess.run([f"{GDAL}/gdalbuildvrt", "-q", vrt] + tiles, check=True)
-    print(f"{len(tiles)} DEM tiles | halo {halo_m:.0f} m | {jobs} job(s)", flush=True)
+
+    # the curve-number mosaic, built from the SAME tile list so it lands on
+    # the same grid with the same footprint as the DEM mosaic
+    cname = cn_name(aoi_path)
+    cn_dir = os.path.join(data_root(), "cn", f"tiles_{cname}")
+    cn_tiles = [os.path.join(cn_dir, f"cn_{os.path.basename(t)[:-4]}.tif")
+                for t in tiles]
+    missing = [t for t in cn_tiles if not os.path.exists(t)]
+    if missing:
+        sys.exit(f"{len(missing)} curve-number tile(s) missing from {cn_dir}, "
+                 f"first: {missing[0]}\nrun: cn.py grid <aoi> {cname} && "
+                 f"cn.py tiles {cname} <dem_dir> <aoi>")
+    cn_vrt = os.path.join(chunk_dir, "cn_mosaic.vrt")
+    if not os.path.exists(cn_vrt):
+        subprocess.run([f"{GDAL}/gdalbuildvrt", "-q", cn_vrt] + cn_tiles,
+                       check=True)
+    rungs = scenarios()
+    print(f"{len(tiles)} DEM tiles | halo {halo_m:.0f} m | {jobs} job(s) | "
+          f"curve numbers '{cname}' | {len(rungs)} rung(s): "
+          + ", ".join(f"{r[1]:g}\u2033" for r in rungs), flush=True)
 
     t_all = time.time()
     todo = [t for t in tiles
@@ -570,7 +768,7 @@ def chunked(dem_dir, aoi_path, water_path, chunk_dir, out_dir, halo_m=1000.0,
         while todo and len(running) < jobs:
             t = todo.pop(0)
             cmd = [sys.executable, os.path.abspath(__file__), "--chunk", vrt, t,
-                   aoi_path, water_path, chunk_dir, str(halo_m)]
+                   aoi_path, water_path, chunk_dir, str(halo_m), cn_vrt]
             logf = open(os.path.join(chunk_dir,
                                      f"log_{os.path.basename(t)[:-4]}.txt"), "w")
             running.append((subprocess.Popen(cmd, stdout=logf, stderr=subprocess.STDOUT,
@@ -589,7 +787,7 @@ def chunked(dem_dir, aoi_path, water_path, chunk_dir, out_dir, halo_m=1000.0,
     aggregate(chunk_dir, out_dir, halo_m)
 
 
-def aggregate(chunk_dir, out_dir, halo_m=1000.0):
+def aggregate(chunk_dir, out_dir, halo_m=1000.0, cname=None):
     """Mosaic per-chunk rasters into one COG per scenario and roll the
     per-chunk stats up into the citywide scenarios JSON."""
     halo_m = float(halo_m)
@@ -602,14 +800,24 @@ def aggregate(chunk_dir, out_dir, halo_m=1000.0):
             and any(r["core_cells"] for r in c["scenarios"])]
     print(f"aggregating {len(used)} chunks ({len(cstats)-len(used)} skipped)")
 
-    meta = {"assumptions": _assumptions(),
+    meta = {"assumptions": _assumptions(cname),
             "coverage": "City of Chicago",
             "chunking": {"tiles": len(used), "halo_m": halo_m,
                          "note": "catchments and spill cascades are solved per "
                                  "DEM-tile chunk and truncate at the halo; see "
                                  "docs/MODEL.md"},
             "scenarios": []}
-    ids = [s[0] for s in SCENARIOS] + ["full"]
+    # ids come from the chunks themselves, ordered by rain depth, so a ladder
+    # run and a bookmark run aggregate correctly without the aggregator having
+    # to be told which rungs were solved
+    seen = {}
+    for c in used:
+        for r in c["scenarios"]:
+            seen.setdefault(r["id"], r["rain_in"])
+    ids = [k for k, _ in sorted((kv for kv in seen.items() if kv[0] != "full"),
+                                key=lambda kv: kv[1])]
+    meta["rungs_in"] = [seen[k] for k in ids]
+    ids = ids + (["full"] if "full" in seen else [])
     for sid in ids:
         recs = [r for c in used for r in c["scenarios"] if r["id"] == sid]
         cells = sum(r["core_cells"] for r in recs)
@@ -655,17 +863,41 @@ def aggregate(chunk_dir, out_dir, halo_m=1000.0):
                         mvrt, cog], check=True)
         print(f"    COG -> {cog} ({os.path.getsize(cog)/2**20:.0f} MB)", flush=True)
 
+    per_chunk = [{k: c[k] for k in ("tile", "seconds", "peak_rss_gb",
+                                    "domain_cells", "cn_mean_valid")
+                  if k in c} for c in used]
+    meta["chunks"] = sorted(per_chunk, key=lambda c: c["tile"])
+    meta["balance_check"] = {
+        "rule": "loaded = stored + exported over each chunk's whole domain "
+                "(halo included), per rung",
+        "max_abs_rel_err": max((abs(r["balance_rel_err"])
+                                for r in meta["scenarios"]
+                                if "balance_rel_err" in r), default=0.0),
+        "threshold": 1e-3}
     out_json = os.path.join(out_dir, "chicago_scenarios.json")
     json.dump(meta, open(out_json, "w"), indent=1)
     print(f"-> {out_json}")
 
 
+def _pull_flag(argv, flag, env):
+    """Take `--flag value` out of argv and park it in the environment, so
+    chunk subprocesses inherit exactly what the parent was told."""
+    if flag in argv:
+        i = argv.index(flag)
+        os.environ[env] = argv[i + 1]
+        del argv[i:i + 2]
+    return argv
+
+
 if __name__ == "__main__":
-    if sys.argv[1] == "--chunked":
-        chunked(*sys.argv[2:9])
-    elif sys.argv[1] == "--chunk":
-        chunk(*sys.argv[2:8])
-    elif sys.argv[1] == "--aggregate":
-        aggregate(*sys.argv[2:5])
+    argv = list(sys.argv)
+    argv = _pull_flag(argv, "--rungs", "BLUESPOT_RAIN_IN")
+    argv = _pull_flag(argv, "--cn", "BLUESPOT_CN_NAME")
+    if argv[1] == "--chunked":
+        chunked(*argv[2:9])
+    elif argv[1] == "--chunk":
+        chunk(*argv[2:9])
+    elif argv[1] == "--aggregate":
+        aggregate(*argv[2:6])
     else:
-        main(*sys.argv[1:7])
+        main(*argv[1:7])
