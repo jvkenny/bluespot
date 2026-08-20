@@ -47,12 +47,27 @@ def _socrata(dataset, params):
 
 # ---------------------------------------------------------------- portal
 
+NCES_PRIVATE = ("https://nces.ed.gov/opengis/rest/services/"
+                "K12_School_Locations/EDGE_GEOCODE_PRIVATESCH_2324/MapServer/"
+                "0/query?where=UPPER(CITY)%3D%27CHICAGO%27%20AND%20"
+                "STATE%3D%27IL%27&outFields=PPIN,NAME,LAT,LON"
+                "&returnGeometry=false&f=json&resultRecordCount=2000")
+
+
 def schools(clip):
-    """CPS school locations, SY2526. District-run, charter and contract
-    schools that CPS reports; see docs/LIFELINES.md on what that misses."""
-    rows = _socrata("pb6d-zzuh", {"$limit": 5000})
+    """Every school in the city, from two sources because no single public
+    list covers both.
+
+    CPS publishes district-run, charter and contract schools. Private and
+    parochial schools — a large share of Chicago's enrolment — appear in
+    neither CPS nor any city dataset, so they come from the federal NCES
+    Private School Universe Survey geocode file. `source` tells the two
+    apart; `subtype` is CPS's grade band (ES / HS) on CPS rows and the
+    literal `private` on NCES rows, which is the only kind distinction
+    either source publishes.
+    """
     out = []
-    for r in rows:
+    for r in _socrata("pb6d-zzuh", {"$limit": 5000}):
         try:
             lon, lat = float(r["long"]), float(r["lat"])
         except (KeyError, TypeError, ValueError):
@@ -62,6 +77,20 @@ def schools(clip):
         out.append(feature(r.get("short_name"), "schools",
                            "chicago_data_portal_pb6d-zzuh", r["school_id"],
                            TODAY, lon, lat, r.get("grade_cat")))
+    print(f"  CPS SY2526: {len(out)} in AOI")
+    n0 = len(out)
+    for f in get_json(NCES_PRIVATE)["features"]:
+        a = f["attributes"]
+        try:
+            lon, lat = float(a["LON"]), float(a["LAT"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if not clip.contains(lon, lat):
+            continue
+        out.append(feature(a.get("NAME"), "schools",
+                           "nces_edge_geocode_privatesch_2324", a["PPIN"],
+                           TODAY, lon, lat, "private"))
+    print(f"  NCES private 2023-24: {len(out) - n0} in AOI")
     return out
 
 

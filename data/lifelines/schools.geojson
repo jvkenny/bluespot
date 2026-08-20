@@ -11,6 +11,60 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "A.S.B. EDUCATIONAL INSTITUTE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901622",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.587249,
+     41.790744
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ABC ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB021012",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.698031,
+     42.00514
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ACADEMY OF ST BENEDICT THE AFRICAN",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339778",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662584,
+     41.784022
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "ACERO - BRIGHTON PARK",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -281,6 +335,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "AKIBA-SCHECHTER JEWISH DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00351729",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.584943,
+     41.800332
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "ALBANY PARK",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -353,6 +425,60 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "ALL ABOARD LEARNING EXPRESS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB080878",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.729274,
+     41.995568
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ALL DAY MONTESSORI",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9701372",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668141,
+     41.71364
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ALTUS ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1390161",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.700635,
+     41.871363
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "AMUNDSEN HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -365,6 +491,42 @@
     "coordinates": [
      -87.679484,
      41.975067
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ANDERSONVILLE MONTESSORI",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301097",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.660266,
+     41.974389
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ANNUNCIATA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341277",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.531912,
+     41.692312
     ]
    }
   },
@@ -875,6 +1037,78 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "BENNETT DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901635",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.652028,
+     41.890822
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "BERNARD ZELL ANSHE EMET DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00352256",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.648699,
+     41.950819
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "BETHESDA INTERNATIONAL ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00351467",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692181,
+     42.00563
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "BEVERLY MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB941487",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667991,
+     41.71334
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "BLACK",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1001,6 +1235,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "BR RICE HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344948",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.719491,
+     41.71148
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "BRADWELL",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1055,6 +1307,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "BRICKTON MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "AA000162",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.843495,
+     41.979487
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "BRIDGE",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1067,6 +1337,24 @@
     "coordinates": [
      -87.798669,
      41.949114
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "BRIDGEPORT CATHOLIC ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9901746",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642629,
+     41.826857
     ]
    }
   },
@@ -1103,6 +1391,42 @@
     "coordinates": [
      -87.692077,
      41.8239
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "BRITISH INTERNATIONAL SCHOOL OF CHICAGO SOUTH LOOP",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901642",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632501,
+     41.87036
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "BRITISH INTERNATIONAL SCHOOL OF CHICAGO, LINCOLN P",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0501514",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.64866,
+     41.907679
     ]
    }
   },
@@ -1415,6 +1739,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CAMBRIDGE CLASSICAL ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901646",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627456,
+     41.809842
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CAMERON",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1595,6 +1937,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CASA DEI BAMBINI MONTESSORI OF MAYFAIR",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB200829",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.744511,
+     41.97113
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CASALS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1721,6 +2081,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CATHERINE COOK SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB161015",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.635721,
+     41.90788
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CHALMERS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1733,6 +2111,42 @@
     "coordinates": [
      -87.695259,
      41.866435
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHANCE AFTER CHANCE COLLEGE PREPARATORY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1301260",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.745167,
+     41.88501
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHANGING OASIS, INC",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB220268",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.773282,
+     41.886975
     ]
    }
   },
@@ -1787,6 +2201,24 @@
     "coordinates": [
      -87.666037,
      41.807143
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHEDER LUBAVITCH HEBREW DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060783",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.700021,
+     42.015422
     ]
    }
   },
@@ -1865,6 +2297,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CHICAGO CITY DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102356",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.642711,
+     41.94418
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CHICAGO COLLEGIATE",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1895,6 +2345,96 @@
     "coordinates": [
      -87.653727,
      41.691969
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO FREE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1701460",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.598625,
+     41.802906
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO FRIENDS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1100976",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.6619,
+     41.990231
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO HOPE ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060759",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.680583,
+     41.870216
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO JESUIT ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0700824",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.751568,
+     41.877311
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO JEWISH DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0501613",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.698457,
+     41.94961
     ]
    }
   },
@@ -1937,6 +2477,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CHICAGO PREP ELEARNING & ELITE SPORTS ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301110",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.639323,
+     41.894973
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO SDA ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9706204",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.622055,
+     41.766956
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CHICAGO TECH HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1973,6 +2549,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CHICAGO WALDORF SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102358",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.670121,
+     41.976662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHICAGO WEST SIDE CHRISTIAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501546",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.725471,
+     41.86495
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CHICAGO WORLD LANGUAGE ACADEMY",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -1991,6 +2603,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CHILDREN OF PEACE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "01601736",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674131,
+     41.86948
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHILDRENS LAND ON BELMONT",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2170356",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.796607,
+     41.938497
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CHOPIN",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -2003,6 +2651,96 @@
     "coordinates": [
      -87.688937,
      41.896713
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHRIST LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB200860",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.759971,
+     41.90739
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHRIST THE KING ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344813",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674876,
+     41.725335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHRIST THE KING JESUIT COLLEGE PREPARATORY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0901423",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.752707,
+     41.876903
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHRIST THE KING LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00350099",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.605916,
+     41.828605
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CHRISTIAN S.T.E.M. SCHOLARS ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB161026",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.626602,
+     41.723272
     ]
    }
   },
@@ -2273,6 +3011,24 @@
     "coordinates": [
      -87.692614,
      41.745365
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CITY GARDEN WALDORF SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060754",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.649101,
+     41.85692
     ]
    }
   },
@@ -2621,6 +3377,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "CRISTO REY JESUIT HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9701385",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.67267,
+     41.851232
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "CROWN",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -2633,6 +3407,42 @@
     "coordinates": [
      -87.71247,
      41.852663
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CS ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1100984",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654981,
+     41.78446
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "CS ACADEMY COLLEGE PREP",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901670",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.661021,
+     41.77925
     ]
    }
   },
@@ -2747,6 +3557,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "DANK HAUS KINDERSCHULE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301120",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689264,
+     41.968107
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "DARWIN",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -2819,6 +3647,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "DAYSTAR ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2370682",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.628077,
+     41.860431
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "DE DIEGO",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -2831,6 +3677,24 @@
     "coordinates": [
      -87.685756,
      41.905294
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "DE LA SALLE INSTITUTE - INSTITUTE CAMPUS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344926",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623638,
+     41.831658
     ]
    }
   },
@@ -2867,6 +3731,24 @@
     "coordinates": [
      -87.623345,
      41.76249
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "DEPAUL COLLEGE PREP",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00342907",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692049,
+     41.942421
     ]
    }
   },
@@ -3521,6 +4403,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "ESPERANZA THERAPEUTIC SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00352766",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668704,
+     41.891472
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "EVERETT",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -3659,6 +4559,24 @@
     "coordinates": [
      -87.749331,
      41.935785
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FANTASY ISLAND SCHOOL FOR KIDS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB100746",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.783481,
+     41.99224
     ]
    }
   },
@@ -3899,6 +4817,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "FRANCES XAVIER WARDE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501570",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644371,
+     41.88008
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FRANCES XAVIER WARDE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060757",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.627886,
+     41.896437
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "FRANKLIN",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -3935,6 +4889,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "FRENCH AMERICAN SCHOOL OF CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2101590",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.644538,
+     41.924367
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "FULTON",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -3965,6 +4937,42 @@
     "coordinates": [
      -87.716892,
      41.917617
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FUSION ACADEMY LINCOLN PARK",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1790239",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.649941,
+     41.90766
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "FUTUREWORLD NFP",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1701518",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.743975,
+     41.958891
     ]
    }
   },
@@ -4097,6 +5105,78 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "GATEWAY MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB080737",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.727383,
+     41.954931
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GEMS WORLD ACADEMY CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1990357",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.618783,
+     41.88669
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GENESIS SCHOLARS ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301124",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.673338,
+     41.690655
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GERMAN INTERNATIONAL SCHOOL CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1390167",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.671846,
+     41.958143
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "GILLESPIE",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -4169,6 +5249,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "GOOD SHEPHERD CHRISTIAN ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00351172",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.721138,
+     41.922961
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "GOODE HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -4199,6 +5297,42 @@
     "coordinates": [
      -87.657912,
      41.975817
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GRACE LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00350055",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.75592,
+     41.93019
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GRACE LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901697",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.727221,
+     41.84076
     ]
    }
   },
@@ -4271,6 +5405,24 @@
     "coordinates": [
      -87.559907,
      41.742671
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GREATER ROCK GIFTED LEARNING ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501576",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.720741,
+     41.87197
     ]
    }
   },
@@ -4397,6 +5549,42 @@
     "coordinates": [
      -87.553307,
      41.662481
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GUIDANCE EDUCATIONAL ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1701532",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689858,
+     42.010206
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "GUIDEPOST MONTESSORI AT MAGNIFICENT MILE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2170392",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.621483,
+     41.891553
     ]
    }
   },
@@ -4559,6 +5747,24 @@
     "coordinates": [
      -87.758238,
      41.775366
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "HANNA SACKS BAIS YAAKOV HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102419",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705321,
+     41.99685
     ]
    }
   },
@@ -4979,6 +6185,60 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "HOLY ANGELS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343015",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.608307,
+     41.821785
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "HOLY TRINITY HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339712",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664488,
+     41.903079
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "HOPE EXCEL REACHING THE WORLD ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1701538",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.746651,
+     41.89469
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "HORIZON - SOUTHWEST",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5087,6 +6347,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "HUMBOLDT PARK MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301137",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.691685,
+     41.904054
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "HURLEY",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5105,6 +6383,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "HYDE PARK DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0103087",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.6014,
+     41.780666
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "HYDE PARK HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5117,6 +6413,78 @@
     "coordinates": [
      -87.586615,
      41.782257
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ICC ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1101006",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.713175,
+     41.99013
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ICCI ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060775",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.787431,
+     41.937943
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "IMMACULATE CONCEPTION SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343387",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.809184,
+     41.9865
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "IMMACULATE CONCEPTION SCHOOL - EXCHANGE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB040724",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.552337,
+     41.735996
     ]
    }
   },
@@ -5189,6 +6557,24 @@
     "coordinates": [
      -87.651573,
      41.949003
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "INTERCULTURAL MONTESSORI LANGUAGE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1101009",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.657421,
+     41.87947
     ]
    }
   },
@@ -5321,6 +6707,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "JOAN DACHS BAIS YAAKOV ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9303018",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.71006,
+     41.99124
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "JOHNSON",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5393,6 +6797,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "JOSEPHINUM ACADEMY OF THE SACRED HEART",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343412",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.684151,
+     41.90926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "JUAREZ HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5405,6 +6827,24 @@
     "coordinates": [
      -87.664339,
      41.85267
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "JUDAH FOUNDATIONAL COMM SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2101616",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.72584,
+     41.898384
     ]
    }
   },
@@ -5459,6 +6899,24 @@
     "coordinates": [
      -87.705112,
      41.850771
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "KC'S ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB200867",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654451,
+     41.9385
     ]
    }
   },
@@ -5603,6 +7061,42 @@
     "coordinates": [
      -87.640892,
      41.776453
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "KID'Z COLONY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB080853",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.777871,
+     41.79305
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "KIDS IN HARMONY DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1370720",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.753808,
+     41.959583
     ]
    }
   },
@@ -5771,6 +7265,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "KNAPP SCHOOL AND YESHIVA",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102441",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.708831,
+     42.00392
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "KOZMINSKI",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5897,6 +7409,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "LATIN SCHOOL OF CHICAGO UPPER",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2101623",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631279,
+     41.910872
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "LAVIZZO",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -5927,6 +7457,24 @@
     "coordinates": [
      -87.712957,
      41.86296
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "LAWRENCE HALL SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501592",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.700154,
+     41.969628
     ]
    }
   },
@@ -6149,6 +7697,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "LEO CATHOLIC HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343423",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647184,
+     41.750296
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "LES FINCH'S LEARNING TREE DAY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB941277",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.731031,
+     41.85832
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "LEWIS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -6347,6 +7931,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "LOS PEQUENOS ANGELITOS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1370748",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.716341,
+     41.79301
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "LOVETT",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -6395,6 +7997,60 @@
     "coordinates": [
      -87.665093,
      41.908886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "LUBAVITCH GIRLS HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102354",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.706166,
+     41.997172
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "LUBAVITCH MESIVTA OF CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9701399",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699551,
+     42.00691
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "LYCEE FRANCAIS DE CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9701397",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.677643,
+     41.964898
     ]
    }
   },
@@ -6593,6 +8249,24 @@
     "coordinates": [
      -87.729806,
      41.855029
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MATERNITY BVM ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343478",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.718851,
+     41.90924
     ]
    }
   },
@@ -6833,6 +8507,60 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "METROPOLITAN SCHOOLHOUSE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901758",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.67157,
+     41.926347
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MIDWEST ACADEMY FOR GIFTED ED NFP",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB240258",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.636092,
+     41.899221
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MIDWESTERN CHRISTIAN ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00353271",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.746704,
+     41.944288
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "MINOSO",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -6863,6 +8591,24 @@
     "coordinates": [
      -87.552788,
      41.731717
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MISERICORDIA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0901457",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681674,
+     41.994758
     ]
    }
   },
@@ -6923,6 +8669,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "MONTESSORI ACADEMY OF CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0901459",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.660341,
+     41.88377
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "MONTESSORI ENGLEWOOD",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -6935,6 +8699,42 @@
     "coordinates": [
      -87.667639,
      41.76739
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MONTESSORI FOUNDATIONS OF CHGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1100972",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681681,
+     41.83006
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MONTESSORI LEARNING CENTER OF EDISON PARK",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB100720",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.815457,
+     42.003744
     ]
    }
   },
@@ -7025,6 +8825,42 @@
     "coordinates": [
      -87.697463,
      42.003412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MOTHER MCAULEY LIBERAL ARTS HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB000505",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.715579,
+     41.71241
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "MOUNT CARMEL HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343048",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.590082,
+     41.778588
     ]
    }
   },
@@ -7211,6 +9047,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "NEAR NORTH MONTESSORI",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00353362",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.664671,
+     41.90387
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "NEAR THE PIER DEVELOPMENT CENTER",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0103138",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.615671,
+     41.89233
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "NEIL",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -7259,6 +9131,24 @@
     "coordinates": [
      -87.673168,
      42.007703
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "NEW HORIZON CENTER",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0301378",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.795601,
+     41.95846
     ]
    }
   },
@@ -7733,6 +9623,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "NORTH PARK ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102502",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.679893,
+     41.961215
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "NORTH RIVER",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -7763,6 +9671,42 @@
     "coordinates": [
      -87.735238,
      41.911674
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "NORTHSHORE ADVENTIST ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00354887",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699301,
+     41.97651
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "NORTHSIDE CATHOLIC ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341379",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665468,
+     41.995269
     ]
    }
   },
@@ -7841,6 +9785,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "OAKDALE CHRISTIAN ACADEMY & CHILD CARE CENTER",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB941257",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.650611,
+     41.72268
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "OGDEN ES",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -7907,6 +9869,24 @@
     "coordinates": [
      -87.572806,
      41.768602
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "OLD ST MARYS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060753",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.624503,
+     41.861854
     ]
    }
   },
@@ -8111,6 +10091,114 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "OUR LADY OF GRACE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901785",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.721093,
+     41.925867
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "OUR LADY OF GUADALUPE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343627",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.54596,
+     41.730385
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "OUR LADY OF MOUNT CARMEL ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343707",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.64769,
+     41.940327
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "OUR LADY OF TEPAYAC ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344438",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.702571,
+     41.850678
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "OUR LADY OF TEPEYAC HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344427",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.701901,
+     41.85118
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "OUR LADY OF THE SNOWS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501614",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.752118,
+     41.805092
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "OWEN",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -8141,6 +10229,24 @@
     "coordinates": [
      -87.622546,
      41.670618
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "PACTT LEARNING CENTER",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102465",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.667734,
+     42.011799
     ]
    }
   },
@@ -8321,6 +10427,24 @@
     "coordinates": [
      -87.687946,
      41.902841
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "PATHWAYS ACADEMY FOR SPECIAL EDUCATION",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301160",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.705153,
+     42.011316
     ]
    }
   },
@@ -8615,6 +10739,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "PILGRIM LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB962067",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.677861,
+     41.95987
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "PILSEN",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -8705,6 +10847,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "POPE FRANCIS GLOBAL ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340681",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.780739,
+     41.952572
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "POPE JOHN PAUL II CATHOLIC SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344904",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.697755,
+     41.815028
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "PORTAGE PARK",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -8735,6 +10913,24 @@
     "coordinates": [
      -87.556789,
      41.760332
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "PRAIRIE LAND MONTESSORI",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB161017",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675079,
+     41.948045
     ]
    }
   },
@@ -8831,6 +11027,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "PROVIDENCE ST. MEL SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "02023638",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.715416,
+     41.879172
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "PRUSSING",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -8843,6 +11057,24 @@
     "coordinates": [
      -87.772414,
      41.965619
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "PUI TAK CHRISTIAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB161020",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.631631,
+     41.85081
     ]
    }
   },
@@ -8885,6 +11117,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "QUEEN OF ANGELS ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343842",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689121,
+     41.96373
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "QUEEN OF THE UNIVERSE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343864",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.717851,
+     41.763133
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "RABY HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -8897,6 +11165,24 @@
     "coordinates": [
      -87.715423,
      41.88621
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "RAEKWON'S SCHOLASTIC DAYCARE ACADEMY LLC",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1370762",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.629981,
+     41.75058
     ]
    }
   },
@@ -8939,6 +11225,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "RAVENSWOOD CHRISTIAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "02024143",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.680255,
+     41.962571
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "RAY",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -8975,6 +11279,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "REDWOOD DAY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301163",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654857,
+     41.990535
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "REILLY",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -9005,6 +11327,24 @@
     "coordinates": [
      -87.768983,
      41.943019
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "RESURRECTION COLLEGE PREP HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343875",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.815581,
+     41.991307
     ]
    }
   },
@@ -9113,6 +11453,24 @@
     "coordinates": [
      -87.697185,
      42.015265
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ROGERS PARK MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "K9302191",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.675031,
+     41.98041
     ]
    }
   },
@@ -9245,6 +11603,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "SACRED HEART SCHOOL-96TH",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343911",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.552716,
+     41.721276
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "SACRED HEART SCHOOLS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1990376",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.655981,
+     41.99591
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "SADLOWSKI",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -9335,6 +11729,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "SAN MIGUEL SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB962066",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.673651,
+     41.806943
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "SANDOVAL",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -9383,6 +11795,24 @@
     "coordinates": [
      -87.745951,
      41.991169
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "SAUGANASH MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB080880",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.740431,
+     41.98565
     ]
    }
   },
@@ -9491,6 +11921,24 @@
     "coordinates": [
      -87.735612,
      41.946365
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "SCUOLA ITALIANA ENRICO FERMI",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2101670",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.686316,
+     41.908941
     ]
    }
   },
@@ -9857,6 +12305,42 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "SOUTH CENTRAL COMMUNITY SERVICES - SOUTH SHORE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB911477",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.565461,
+     41.75757
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "SOUTH CENTRAL SCHOOL MAIN CAMPUS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB180990",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.599508,
+     41.7438
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "SOUTH LOOP",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -9869,6 +12353,24 @@
     "coordinates": [
      -87.628349,
      41.859741
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "SOUTH LOOP MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1301346",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.629091,
+     41.87173
     ]
    }
   },
@@ -9983,6 +12485,942 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "ST AGNES OF BOHEMIA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9102545",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.714467,
+     41.843196
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST ANDREW SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344121",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.67183,
+     41.947163
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST ANGELA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344143",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.769912,
+     41.90462
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST ANN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344154",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681499,
+     41.856533
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST BARNABAS ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344234",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.668924,
+     41.709822
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST BEDE THE VENERABLE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343944",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.732801,
+     41.74313
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST BENEDICT PREPARATORY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344289",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.683871,
+     41.9525
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST CHRISTINA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344482",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.704845,
+     41.692941
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST CLEMENT SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344507",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.646781,
+     41.92847
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST CONSTANCE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344562",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.774676,
+     41.970056
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST EDWARD SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343977",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.737443,
+     41.962454
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST ELIZABETH OF THE TRINITY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1990371",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.779401,
+     41.98692
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST ETHELREDA ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344631",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665782,
+     41.734656
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST FERDINAND PARISH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344653",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.774627,
+     41.937595
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST FRANCIS BORGIA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00344664",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.828775,
+     41.944482
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST FRANCIS DE SALES HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341368",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.534957,
+     41.710512
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST GABRIEL ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341517",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.641132,
+     41.812441
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST GALL ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341506",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.704454,
+     41.792929
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST GENEVIEVE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341492",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.748519,
+     41.925436
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST HILARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341594",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.698475,
+     41.983759
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST IGNATIUS COLLEGE PREP",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "01601838",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653931,
+     41.8678
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JAMES LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00350736",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.650771,
+     41.9202
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JEROME SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341346",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.63387,
+     41.842406
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JEROME SCHOOL, SANTA LUCIA CAMPUS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301167",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.632564,
+     41.83911
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JOHN BERCHMANS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB140505",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.690726,
+     41.928013
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JOHN DE LA SALLE CATHOLIC ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341299",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.612891,
+     41.708908
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JOHN FISHER ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340943",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.689431,
+     41.70797
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JOHN LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00351026",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.751391,
+     41.96039
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JOSAPHAT SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340965",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662855,
+     41.923263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST JULIANA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341007",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.812104,
+     42.011825
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST LUKE ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00354242",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.666741,
+     41.94003
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST MALACHY ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00341073",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.683749,
+     41.883339
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST MARY OF THE WOODS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339676",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.778061,
+     42.008343
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST MARY STAR OF THE SEA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340808",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.73395,
+     41.775962
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST MATTHIAS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340783",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.688211,
+     41.9708
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST MONICA ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2370716",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.804257,
+     41.974227
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST NICHOLAS CATHEDRAL SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343183",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.68232,
+     41.897016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST NICHOLAS TOLENTINE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501640",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.717212,
+     41.780394
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST PAUL LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00349946",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.590286,
+     41.756264
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST PAUL LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00351252",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.770501,
+     41.89596
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST PHILIP LUTHERAN SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00351004",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.692406,
+     41.983377
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST PHILIP NERI ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340626",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.573244,
+     41.764841
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST PIUS V SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340604",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.665759,
+     41.855319
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST PROCOPIUS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00343219",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.657447,
+     41.859113
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST RITA OF CASCIA HIGH SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339825",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.684686,
+     41.75248
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST ROBERT BELLARMINE SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339836",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.778135,
+     41.965142
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST SABINA ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339858",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.654984,
+     41.752016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST STANISLAUS KOSTKA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB040722",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662018,
+     41.905068
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST SYMPHOROSA SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339949",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.770863,
+     41.780335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST THOMAS THE APOSTLE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339982",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.596147,
+     41.795999
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST VIATOR ELEMENTARY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340116",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.730969,
+     41.946795
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "ST WALTER SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00340171",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.680241,
+     41.68006
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "STAGG",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -9995,6 +13433,24 @@
     "coordinates": [
      -87.649217,
      41.758925
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "STAIR STEP VILLA NURSERY & KINDERGARTEN",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB941620",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.576111,
+     41.77265
     ]
    }
   },
@@ -10103,6 +13559,24 @@
     "coordinates": [
      -87.713318,
      41.911938
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "STS. BRUNO AND RICHARD SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00339803",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.73418,
+     41.801513
     ]
    }
   },
@@ -10325,6 +13799,78 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "THE CHICAGO ACADEMY FOR THE ARTS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A9303202",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.653267,
+     41.896515
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "THE CHICAGO LIGHTHOUSE CHILDRENS DEVELOPMENT CENTE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "02023864",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.672755,
+     41.867287
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "THE FAMILY MATTERS SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2101691",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.671583,
+     42.022062
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "THE LATIN SCHOOL OF CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "00352198",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.629778,
+     41.910507
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "THOMAS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -10373,6 +13919,24 @@
     "coordinates": [
      -87.777631,
      41.948571
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "THRESHOLDS",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2101694",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.681317,
+     41.958369
     ]
    }
   },
@@ -10541,6 +14105,78 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "UCAN ACADEMY",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A0501617",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.704581,
+     41.89792
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "UCAN ACADEMY-SOUTH",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1901851",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.662153,
+     41.720796
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "UNIV OF CHICAGO LAB SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "02024201",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.593925,
+     41.788624
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "UNIVERSITY VILLAGE MONTESSORI SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2301182",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647198,
+     41.865399
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "UPLIFT HS",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -10553,6 +14189,42 @@
     "coordinates": [
      -87.652473,
      41.965547
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "URBAN PRAIRIE",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1101051",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.666773,
+     41.864863
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "URBAN PRAIRIE WALDORF SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB161012",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.666773,
+     41.864863
     ]
    }
   },
@@ -10679,6 +14351,24 @@
     "coordinates": [
      -87.659946,
      41.863452
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "VISITATION CATHOLIC SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "02188340",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.647971,
+     41.79453
     ]
    }
   },
@@ -10937,6 +14627,24 @@
   {
    "type": "Feature",
    "properties": {
+    "name": "WEE CARE NURSERY SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB000532",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.579081,
+     41.75131
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "name": "WELLS ES",
     "category": "schools",
     "source": "chicago_data_portal_pb6d-zzuh",
@@ -11165,6 +14873,24 @@
     "coordinates": [
      -87.62503,
      41.806118
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "WOLCOTT SCHOOL",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1501655",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.674831,
+     41.89179
     ]
    }
   },
@@ -11543,6 +15269,78 @@
     "coordinates": [
      -87.641731,
      41.751377
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "YESHIVA GEDOLA OF THE MIDWEST/YESHIVA EITZ CHAIM",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A1992195",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.729701,
+     41.99142
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "YESHIVAS KESSER YONAH",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "A2400073",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.720665,
+     41.99697
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "YESHIVAS MEOR HATORAH OF CHICAGO",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "BB060784",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.720614,
+     41.996977
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "YESHIVAS TIFERES TZVI",
+    "category": "schools",
+    "source": "nces_edge_geocode_privatesch_2324",
+    "source_id": "AA001700",
+    "retrieved": "2026-08-19",
+    "subtype": "private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.699258,
+     41.996108
     ]
    }
   },

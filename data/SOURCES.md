@@ -115,9 +115,26 @@ nothing here records condition, capacity, value or management.
    "See Terms of Use" (City of Chicago Data Portal Terms of Use,
    https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html) — open
    public record, provided as-is with no warranty. 645 rows citywide.
-   Coverage: CPS district-run, charter and contract schools only. Private,
-   parochial and independent schools are NOT in this dataset and no equivalent
-   citywide public list exists; see docs/LIFELINES.md.
+   Coverage: CPS district-run, charter and contract schools only. Private and
+   parochial schools are not in it — those come from source 9b, and the two
+   are told apart by the `source` property.
+
+9b. Private schools — NCES EDGE geocode file for the Private School Universe
+   Survey 2023-24, layer "Private School Locations 2023-24",
+   https://nces.ed.gov/opengis/rest/services/K12_School_Locations/EDGE_GEOCODE_PRIVATESCH_2324/MapServer/0
+   queried with `where=UPPER(CITY)='CHICAGO' AND STATE='IL'`, fields
+   PPIN / NAME / LAT / LON. Retrieved 2026-08-19. 221 rows returned, 219
+   inside the city polygon, 211 kept after deduplication against CPS (the
+   overlap is schools CPS also lists). US Department of Education, National
+   Center for Education Statistics — a work of the US federal government,
+   public domain. NCES geocodes to the school's reported address, so a
+   campus point can sit at an administrative office rather than the
+   building; treat these as block-accurate, not rooftop-accurate.
+   Cross-check: the matching NCES public-school file
+   (EDGE_GEOCODE_PUBLICSCH_2425, `UPPER(CITY)='CHICAGO' AND STATE='IL'`)
+   returns 656 against CPS's 645 — close enough to corroborate the CPS
+   layer, with the difference explained by mailing-address cities and
+   state-authorised schools outside CPS.
 
 10. Fire Stations, Chicago Data Portal dataset 28km-gtjn
     (https://data.cityofchicago.org/d/28km-gtjn), JSON endpoint
