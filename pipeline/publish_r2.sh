@@ -14,7 +14,23 @@
 set -e
 ROOT=${0:a:h}/..
 [[ -f $ROOT/.env.publish ]] || { echo "missing .env.publish (see header)"; exit 1 }
-set -a; . $ROOT/.env.publish; set +a
+
+# Credentials live in 1Password. .env.publish holds op:// references, not values.
+# Re-exec under `op run` so the vars arrive already resolved in the environment.
+# Passing literal values through `op run` is a no-op, so this path is correct both
+# before and after the 1Password migration.
+if [[ -z ${BLUESPOT_ENV_RESOLVED:-} ]]; then
+  if command -v op >/dev/null 2>&1; then
+    export BLUESPOT_ENV_RESOLVED=1
+    exec op run --env-file="$ROOT/.env.publish" -- "$0" "$@"
+  fi
+  if grep -q 'op://' $ROOT/.env.publish; then
+    echo "1Password CLI (op) not found, but .env.publish holds op:// references." >&2
+    echo "Install it (brew install 1password-cli) or resolve the refs by hand." >&2
+    exit 1
+  fi
+  set -a; . $ROOT/.env.publish; set +a   # pre-migration fallback
+fi
 SRC=$(cd $ROOT && ./.venv/bin/python -c "import sys;sys.path.insert(0,'pipeline');from paths import data_root;print(data_root())")
 DRY=${1:---go}
 [[ $DRY == "--dry-run" ]] && FLAG="--dry-run" || FLAG=""
